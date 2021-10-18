@@ -168,7 +168,8 @@ private extension AddFriendController {
 
     func createViews() {
         textView = UITextView()
-        textView.placeholder = String(localized: "add_contact_tox_id_placeholder")
+        // TODO: fix me, this just avoids the crash, but now does not show a label
+        // textView.placeholder = String(localized: "add_contact_tox_id_placeholder")
         textView.delegate = self
         textView.isScrollEnabled = false
         textView.font = UIFont.systemFont(ofSize: 17)
