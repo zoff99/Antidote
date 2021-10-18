@@ -67,7 +67,7 @@ private extension CallBaseController {
     }
 
     func createTopViews() {
-        topContainer = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+        topContainer = UIView() // UIVisualEffectView(effect: UIBlurEffect(style: .dark))
         view.addSubview(topContainer)
 
         callerLabel = UILabel()

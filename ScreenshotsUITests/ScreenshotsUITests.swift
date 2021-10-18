@@ -41,7 +41,7 @@ class ScreenshotsUITests: XCTestCase {
     func createAccount() {
         let app = XCUIApplication()
 
-        XCUIDevice.shared().orientation = .portrait
+        XCUIDevice.shared.orientation = .portrait
 
         app.buttons[localizedString("create_account")].tap()
 
@@ -98,7 +98,7 @@ class ScreenshotsUITests: XCTestCase {
 
         app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element(boundBy: 2).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 0).children(matching: .textView).element.tap()
         
-        XCUIDevice.shared().orientation = .landscapeRight
+        XCUIDevice.shared.orientation = .landscapeRight
 
         snapshot(Constants.SnapshotConversation)
 
@@ -150,7 +150,7 @@ extension XCUIApplication {
 
     func tapTabBarElement(element: TabBarElement) {
         // TODO refactor me pls
-        let button = children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element(boundBy: 1).children(matching: .other).element(boundBy: element.index).children(matching: .button).element
+        let button = children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element(boundBy: 1).children(matching: .other).element(boundBy: Int(element.index)).children(matching: .button).element
 
         button.tap()
     }
