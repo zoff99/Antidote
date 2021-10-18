@@ -224,7 +224,7 @@ This version is incompatible with 0.2. After update you will lose your old profi
 It is a good idea to remove old version of Antidote before updating.
 
 ### Changed
-- Moving part of Antidote to [objcTox](https://github.com/Antidote-for-Tox/objcTox) library.
+- Moving part of Antidote to [objcTox](https://github.com/Zoxcore/objcTox) library.
 - Total refactoring.
 - Migration to new Tox api.
 - Realm is now used instead of Core Data.
