@@ -6,12 +6,12 @@ platform :ios, '8.0'
 inhibit_all_warnings!
 
 def common_pods
-    pod 'objcTox', :git => 'https://github.com/Zoxcore/objcTox.git', :commit => '3d3183d7182afb7891f428d7a4d830ec9c079649'
+    pod 'objcTox', :git => 'https://github.com/Zoxcore/objcTox.git', :commit => 'bfa95e185938a9a4d13edcb65e6b00f071565574'
     pod 'UITextView+Placeholder', '~> 1.1.0'
     pod 'SDCAlertView', '~> 2.5.4'
     pod 'LNNotificationsUI', :git => 'https://github.com/LeoNatan/LNNotificationsUI.git', :commit => '3f75043fc6e77b4180b76cb6cfff4faa506ab9fc'
     pod 'JGProgressHUD', '~> 1.4.0'
-    pod "toxcore", :git => 'https://github.com/Zoxcore/toxcore.git', :commit => '67aa70da8a23a1b93ade89e660a681e0f2b01117'
+    pod "toxcore", :git => 'https://github.com/Zoxcore/toxcore.git', :commit => 'a50682e795e48769de577a501b7e1b16ba1d5b82'
     pod 'SnapKit'
     pod 'Yaml'
 end
