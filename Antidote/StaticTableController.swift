@@ -81,6 +81,8 @@ extension StaticTableController: UITableViewDataSource {
             case .grouped:
                 cell.setBottomSeparatorHidden(isLastRow)
 
+        case .insetGrouped:
+            print("error")
         }
 
         return cell
@@ -140,6 +142,8 @@ private extension StaticTableController {
                 tableView!.backgroundColor = theme.colorForType(.NormalBackground)
             case .grouped:
                 tableView!.backgroundColor = theme.colorForType(.SettingsBackground)
+        case .insetGrouped:
+            print("error")
         }
 
         view.addSubview(tableView!)

@@ -158,7 +158,6 @@ extension ActiveSessionCoordinator: TopCoordinatorProtocol {
                 showSettings()
         }
     }
-
     func handleLocalNotification(_ notification: UILocalNotification) {
         notificationCoordinator.handleLocalNotification(notification)
     }

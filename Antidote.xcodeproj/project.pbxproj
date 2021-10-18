@@ -294,10 +294,6 @@
 		1164C8F01BC982FF00B91107 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1164C8EF1BC982FF00B91107 /* UIImageExtension.swift */; };
 		1164C8F31BC9880000B91107 /* LoginLogoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1164C8F21BC9880000B91107 /* LoginLogoController.swift */; };
 		1164C8F61BC98F8300B91107 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1164C8F51BC98F8300B91107 /* UIViewControllerExtension.swift */; };
-		116513031C2B4B180066AF06 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1173EFD01BC5C6B300B88B7B /* SnapKit.framework */; };
-		116513041C2B4B180066AF06 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1173EFD01BC5C6B300B88B7B /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		116513071C2B4B180066AF06 /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1173EFF01BC5CF5D00B88B7B /* Yaml.framework */; };
-		116513081C2B4B180066AF06 /* Yaml.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1173EFF01BC5CF5D00B88B7B /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		116513191C2C6C980066AF06 /* FriendCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116513181C2C6C980066AF06 /* FriendCardController.swift */; };
 		116513221C2C74940066AF06 /* StaticTableChatButtonsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116513211C2C74940066AF06 /* StaticTableChatButtonsCell.swift */; };
 		116513241C2C749E0066AF06 /* StaticTableChatButtonsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116513231C2C749E0066AF06 /* StaticTableChatButtonsCellModel.swift */; };
@@ -581,20 +577,6 @@
 			remoteGlobalIDString = 8313C4321C8DC2CB00DEF215;
 			remoteInfo = "Tests tvOS";
 		};
-		116513051C2B4B180066AF06 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1173EFC81BC5C6B300B88B7B /* SnapKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = EEBCC9D719CC627D0083B827;
-			remoteInfo = "SnapKit iOS";
-		};
-		116513091C2B4B180066AF06 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1173EFE41BC5CF5D00B88B7B /* Yaml.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F32DF2571B73054C0011046A;
-			remoteInfo = "Yaml iOS";
-		};
 		1173EFCF1BC5C6B300B88B7B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1173EFC81BC5C6B300B88B7B /* SnapKit.xcodeproj */;
@@ -645,21 +627,6 @@
 			remoteInfo = Antidote;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		1165130B1C2B4B190066AF06 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				116513041C2B4B180066AF06 /* SnapKit.framework in Embed Frameworks */,
-				116513081C2B4B180066AF06 /* Yaml.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		02404DE3D3BB1BF461C45EA0 /* Pods-ScreenshotsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScreenshotsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScreenshotsUITests/Pods-ScreenshotsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -959,8 +926,6 @@
 			files = (
 				1164763519794D3300DB20B8 /* CoreGraphics.framework in Frameworks */,
 				1164763719794D3300DB20B8 /* UIKit.framework in Frameworks */,
-				116513031C2B4B180066AF06 /* SnapKit.framework in Frameworks */,
-				116513071C2B4B180066AF06 /* Yaml.framework in Frameworks */,
 				1164763319794D3300DB20B8 /* Foundation.framework in Frameworks */,
 				D4F896D05F7EAA7C321A2AA8 /* libPods-Antidote.a in Frameworks */,
 			);
@@ -1435,8 +1400,8 @@
 				1164763A19794D3300DB20B8 /* Antidote-Info.plist */,
 				11F08D171DE0610B00F80F5F /* InfoPlist.strings */,
 				11FA0ED31BC5842800F3DA5B /* AppDelegate.swift */,
-				11D17CE81DD11F10006B2910 /* dummy-photo.jpg */,
 				1164764419794D3300DB20B8 /* Images.xcassets */,
+				11D17CE81DD11F10006B2910 /* dummy-photo.jpg */,
 				9CEA6A1E1D957EFC0045F000 /* antidote-acknowledgements.html */,
 				1131D6C71CA9D8BC00B4531C /* import-profile.html */,
 				1173F0711BC5D9DA00B88B7B /* default-theme.yaml */,
@@ -1458,7 +1423,6 @@
 				111782A31DC64391000C1721 /* Sources */,
 				111782A41DC64391000C1721 /* Frameworks */,
 				111782A51DC64391000C1721 /* Resources */,
-				4D208D7A83134C087D6099D3 /* [CP] Embed Pods Frameworks */,
 				008EF89EF3FF486967EBDAF6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -1479,15 +1443,11 @@
 				1164762B19794D3300DB20B8 /* Sources */,
 				1164762C19794D3300DB20B8 /* Frameworks */,
 				1164762D19794D3300DB20B8 /* Resources */,
-				1165130B1C2B4B190066AF06 /* Embed Frameworks */,
-				EB929365DEC3A81A6AF82FFC /* [CP] Embed Pods Frameworks */,
 				F334EF7D7E56B63481570925 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				116513061C2B4B180066AF06 /* PBXTargetDependency */,
-				1165130A1C2B4B180066AF06 /* PBXTargetDependency */,
 			);
 			name = Antidote;
 			productName = Antidote;
@@ -1502,7 +1462,6 @@
 				1173F0521BC5D94400B88B7B /* Sources */,
 				1173F0531BC5D94400B88B7B /* Frameworks */,
 				1173F0541BC5D94400B88B7B /* Resources */,
-				23B2271556C46D6D79F2B8F1 /* [CP] Embed Pods Frameworks */,
 				B98298617DAB39F4AF6E0CCC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -1522,7 +1481,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = dvor;
 				TargetAttributes = {
 					111782A61DC64391000C1721 = {
@@ -1555,7 +1514,7 @@
 			};
 			buildConfigurationList = 1164762A19794D3300DB20B8 /* Build configuration list for PBXProject "Antidote" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -1574,6 +1533,7 @@
 				cs,
 				nl,
 				pl,
+				Base,
 			);
 			mainGroup = 1164762619794D3300DB20B8;
 			productRefGroup = 1164763019794D3300DB20B8 /* Products */;
@@ -1714,13 +1674,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScreenshotsUITests/Pods-ScreenshotsUITests-resources.sh",
+				"${PODS_ROOT}/JGProgressHUD/JGProgressHUD/JGProgressHUD/JGProgressHUD Resources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/objcTox/objcTox.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JGProgressHUD Resources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/objcTox.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScreenshotsUITests/Pods-ScreenshotsUITests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScreenshotsUITests/Pods-ScreenshotsUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		0684EDB5CA4B84C1AF4AF8A4 /* [CP] Check Pods Manifest.lock */ = {
@@ -1729,13 +1694,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AntidoteTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		0E40AAC10D854CCE59CF1B7F /* [CP] Check Pods Manifest.lock */ = {
@@ -1744,43 +1712,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Antidote-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		23B2271556C46D6D79F2B8F1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AntidoteTests/Pods-AntidoteTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4D208D7A83134C087D6099D3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScreenshotsUITests/Pods-ScreenshotsUITests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6544AEF82D801AA2208FA2C0 /* [CP] Check Pods Manifest.lock */ = {
@@ -1789,13 +1730,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScreenshotsUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B98298617DAB39F4AF6E0CCC /* [CP] Copy Pods Resources */ = {
@@ -1804,28 +1748,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AntidoteTests/Pods-AntidoteTests-resources.sh",
+				"${PODS_ROOT}/JGProgressHUD/JGProgressHUD/JGProgressHUD/JGProgressHUD Resources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/objcTox/objcTox.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JGProgressHUD Resources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/objcTox.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AntidoteTests/Pods-AntidoteTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EB929365DEC3A81A6AF82FFC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Antidote/Pods-Antidote-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AntidoteTests/Pods-AntidoteTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F334EF7D7E56B63481570925 /* [CP] Copy Pods Resources */ = {
@@ -1834,13 +1768,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Antidote/Pods-Antidote-resources.sh",
+				"${PODS_ROOT}/JGProgressHUD/JGProgressHUD/JGProgressHUD/JGProgressHUD Resources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/objcTox/objcTox.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JGProgressHUD Resources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/objcTox.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Antidote/Pods-Antidote-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Antidote/Pods-Antidote-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2388,16 +2327,6 @@
 			target = 1164762E19794D3300DB20B8 /* Antidote */;
 			targetProxy = 111782AC1DC64391000C1721 /* PBXContainerItemProxy */;
 		};
-		116513061C2B4B180066AF06 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "SnapKit iOS";
-			targetProxy = 116513051C2B4B180066AF06 /* PBXContainerItemProxy */;
-		};
-		1165130A1C2B4B180066AF06 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Yaml iOS";
-			targetProxy = 116513091C2B4B180066AF06 /* PBXContainerItemProxy */;
-		};
 		1173F05C1BC5D94400B88B7B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1164762E19794D3300DB20B8 /* Antidote */;
@@ -2506,7 +2435,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = ScreenshotsUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = (
@@ -2561,7 +2490,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = ScreenshotsUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = (
@@ -2626,6 +2555,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -2651,7 +2581,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -2681,6 +2611,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -2699,7 +2630,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
@@ -2710,7 +2641,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2D5B916CEDBEC1B69CD1EFA4 /* Pods-Antidote.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_STATIC_ANALYZER_MODE = deep;
@@ -2724,7 +2654,7 @@
 				GCC_PREFIX_HEADER = "Antidote/Antidote-Prefix.pch";
 				GCC_WARN_SIGN_COMPARE = YES;
 				INFOPLIST_FILE = "Antidote/Antidote-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.dvor.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2743,7 +2673,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B3C17AF8CE3B4AD1B68F2B5B /* Pods-Antidote.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_STATIC_ANALYZER_MODE = deep;
@@ -2757,7 +2686,7 @@
 				GCC_PREFIX_HEADER = "Antidote/Antidote-Prefix.pch";
 				GCC_WARN_SIGN_COMPARE = YES;
 				INFOPLIST_FILE = "Antidote/Antidote-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.dvor.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2785,7 +2714,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = AntidoteTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = dvor.AntidoteTests;
@@ -2812,7 +2741,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = AntidoteTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = dvor.AntidoteTests;
