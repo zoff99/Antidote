@@ -5,7 +5,7 @@
 import Foundation
 
 private struct Constants {
-    static let ActiveAccountDataService = "me.dvor.Antidote.KeychainManager.ActiveAccountDataService"
+    static let ActiveAccountDataService = "org.zoxcore.Antidote.KeychainManager.ActiveAccountDataService"
 
     static let toxPasswordForActiveAccount = "toxPasswordForActiveAccount"
     static let failedPinAttemptsNumber = "failedPinAttemptsNumber"

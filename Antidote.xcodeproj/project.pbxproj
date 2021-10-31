@@ -2469,7 +2469,7 @@
 					"-read_only_relocs",
 					suppress,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.dvor.ScreenshotsUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = org.zoxcore.ScreenshotsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ScreenshotsUITests/ScreenshotUITests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2524,7 +2524,7 @@
 					"-read_only_relocs",
 					suppress,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.dvor.ScreenshotsUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = org.zoxcore.ScreenshotsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ScreenshotsUITests/ScreenshotUITests-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -2656,7 +2656,7 @@
 				INFOPLIST_FILE = "Antidote/Antidote-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "me.dvor.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.zoxcore.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -2688,7 +2688,7 @@
 				INFOPLIST_FILE = "Antidote/Antidote-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "me.dvor.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.zoxcore.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;

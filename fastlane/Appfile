@@ -1,4 +1,4 @@
-app_identifier "me.dvor.Antidote" # The bundle identifier of your app
+app_identifier "com.zoxcore.Antidote" # The bundle identifier of your app
 apple_id "d@dvor.me" # Your Apple email address
 
 team_id "NHVF8NSG3J"  # Developer Portal Team ID
