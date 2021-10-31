@@ -12,7 +12,7 @@ See [FAQ](FAQ/en.md).
 
 #### Manual Installation
 
-Clone repo, run install script and open `Antidote.xcworkspace` file with Xcode 8.
+Clone repo, install pods and open `Antidote.xcworkspace` file with Xcode 12+.
 
 ```
 git clone https://github.com/Antidote-for-Tox/Antidote.git
