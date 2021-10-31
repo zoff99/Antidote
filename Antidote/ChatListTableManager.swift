@@ -170,7 +170,8 @@ private extension ChatListTableManager {
                         }
 
                         if let paths = pathsToUpdate {
-                            self.tableView.reloadRows(at: paths, with: .none)
+                            // TODO: fix me, this crashes
+                            // self.tableView.reloadRows(at: paths, with: .none)
                         }
                     }
                 case .error(let error):
