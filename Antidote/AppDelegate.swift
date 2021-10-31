@@ -60,6 +60,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 private extension AppDelegate {
     func configureLoggingStuff() {
         DDLog.add(DDASLLogger.sharedInstance())
-        DDLog.add(DDTTYLogger.sharedInstance())
+        // DDLog.add(DDTTYLogger.sharedInstance())
     }
 }
