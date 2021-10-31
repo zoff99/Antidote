@@ -94,7 +94,8 @@ extension AddFriendController {
 
         let messageView = UITextView()
         messageView.text = cachedMessage
-        messageView.placeholder = String(localized: "add_contact_default_message_text")
+        // TODO: fix me, this just avoids the crash, but now does not show a label
+        // messageView.placeholder = String(localized: "add_contact_default_message_text")
         messageView.font = UIFont.systemFont(ofSize: 17.0)
         messageView.layer.cornerRadius = 5.0
         messageView.layer.masksToBounds = true
