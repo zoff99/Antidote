@@ -1,6 +1,6 @@
 # Reboot of the Tox Messenger for the IPhone
 
-<img src="https://i.imgur.com/Co41uBI.png" width=300><img src="https://i.imgur.com/Co41uBI.png" width=100>
+<img src="https://i.imgur.com/Co41uBI.png" width=300><img src="https://raw.githubusercontent.com/Zoxcore/Antidote/develop/Antidote/icons8-key-1024.png" width=100>
 
 [Tox](https://tox.chat/) client for iOS
 
