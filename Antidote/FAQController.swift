@@ -7,7 +7,7 @@ import WebKit
 import SnapKit
 
 private struct Constants {
-    static let FAQURL = "https://github.com/Antidote-for-Tox/Antidote/blob/master/FAQ/en.md"
+    static let FAQURL = "https://github.com/Zoxcore/Antidote/blob/develop/FAQ/en.md"
 }
 
 class FAQController: UIViewController {
