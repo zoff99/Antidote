@@ -1,6 +1,6 @@
 # Reboot of the Tox Messenger for the IPhone
 
-<img src="https://i.imgur.com/Co41uBI.png" width=300>
+<img src="https://raw.githubusercontent.com/Zoxcore/Antidote/develop/Antidote/icons8-key-1024.png" width=100>&nbsp;&nbsp;<img src="https://i.imgur.com/Co41uBI.png" width=300>
 
 [Tox](https://tox.chat/) client for iOS
 
@@ -45,4 +45,5 @@ Antidote is available under Mozilla Public License Version 2.0. See the [LICENSE
 ## Links
 
 - [icons8](http://icons8.com/) - icons used in app
+- new icon https://icons8.com/icon/jQvC2IpxYkR6/key
 
