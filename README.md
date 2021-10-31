@@ -1,6 +1,6 @@
 # Reboot of the Tox Messenger for the IPhone
 
-![](https://i.imgur.com/Co41uBI.png)
+<img src="https://i.imgur.com/Co41uBI.png" width=300>
 
 [Tox](https://tox.chat/) client for iOS
 
