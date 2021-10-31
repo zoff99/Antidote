@@ -152,6 +152,9 @@ private extension ProfileMainController {
 
         toxIdModel.title = String(localized: "my_tox_id")
         toxIdModel.value = submanagerUser.userAddress
+        // for debugging print own ToxID ----------------
+        // print("TOXID: \(submanagerUser.userAddress)")
+        // for debugging print own ToxID ----------------
         toxIdModel.rightButton = String(localized: "show_qr")
         toxIdModel.rightButtonHandler = showToxIdQR
         toxIdModel.userInteractionEnabled = false
