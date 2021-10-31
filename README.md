@@ -1,6 +1,6 @@
 # Reboot of the Tox Messenger for the IPhone
 
-![](https://i.imgur.com/Co41uBI.png)
+<img src="https://i.imgur.com/Co41uBI.png" width=300>
 
 [Tox](https://tox.chat/) client for iOS
 
@@ -12,7 +12,7 @@ See [FAQ](FAQ/en.md).
 
 #### Manual Installation
 
-Clone repo, run install script and open `Antidote.xcworkspace` file with Xcode 8.
+Clone repo, install pods and open `Antidote.xcworkspace` file with Xcode 12+.
 
 ```
 git clone https://github.com/Antidote-for-Tox/Antidote.git
