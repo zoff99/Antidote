@@ -47,3 +47,4 @@ Antidote is available under Mozilla Public License Version 2.0. See the [LICENSE
 - [icons8](http://icons8.com/) - icons used in app
 - new icon https://icons8.com/icon/jQvC2IpxYkR6/key
 
+
