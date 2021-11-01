@@ -29,6 +29,16 @@ pod install
 open Antidote.xcworkspace
 ```
 
+#### Compile on the Commandline
+Clone repo, install pods and install Xcode 12+
+
+```
+git clone https://github.com/Antidote-for-Tox/Antidote.git
+cd Antidote
+pod install
+env NSUnbufferedIO=YES xcodebuild -workspace ./Antidote.xcworkspace -scheme Antidote -destination 'platform=iOS Simulator,id=EAB9614F-3485-4A6D-8EFB-FC2B5EFB0243'
+```
+
 ## Features
 
 See [CHANGELOG](CHANGELOG.md) for list of notable changes (unreleased, current and previous versions).
