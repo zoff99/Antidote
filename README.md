@@ -4,6 +4,7 @@
 
 [Tox](https://tox.chat/) client for iOS
 
+[![Release](https://img.shields.io/github/v/release/Zoxcore/Antidote.svg)](https://github.com/Zoxcore/Antidote/releases/latest/)
 [![Translations](https://hosted.weblate.org/widgets/antidote/-/svg-badge.svg)](https://hosted.weblate.org/engage/antidote/)
 [![License: GPL v3](https://img.shields.io/badge/License-MPL_2.0-blue.svg)](https://opensource.org/licenses/MPL-2.0)
 [![Android CI](https://github.com/Zoxcore/Antidote/workflows/Nightly/badge.svg)](https://github.com/Zoxcore/Antidote/actions?query=workflow%3A%22Nightly%22)
