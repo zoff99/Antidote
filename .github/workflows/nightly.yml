@@ -28,11 +28,19 @@ jobs:
     - name: Display the OS Version2
       run: system_profiler SPSoftwareDataType
 
-    - name: xcode compile
+    - name: xcode info
       run:  |
             ls -al
             pwd
             id -a
             pod install
+            xcode-select --print-path
+            xcodebuild -list -workspace Antidote.xcworkspace
+            xcodebuild -list -project Antidote.xcodeproj
+
+    - name: xcode compile
+      run:  |
+            xcodebuild -scheme Antidote build
+
 
 
