@@ -57,9 +57,9 @@
 /* PIN screen error */
 "pin_incorrect" = "Code PIN incorrect";
 /* PIN screen error details */
-"pin_failed_attempts" = "Failed attempts: %@";
+"pin_failed_attempts" = "Tentatives échouées : %@";
 /* PIN screen message shown on log out */
-"pin_logout_message" = "Too many failed attempts. You have been logged out.";
+"pin_logout_message" = "Trop de tentatives ratées. Vous avez été déconnecté(e).";
 /* PIN screen screen */
 "pin_enabled" = "Activer le code PIN";
 /* PIN screen screen */
@@ -102,7 +102,7 @@
 /* Contact request section title */
 "contact_requests_section" = "Invitations";
 /* Contact last seen status */
-"contact_last_seen" = "Vu à: %@";
+"contact_last_seen" = "Vu à : %@";
 /* Screen name */
 "contact_request" = "Invitation";
 /* Contact request button */
@@ -112,7 +112,7 @@
 /* Contact request confirmation */
 "contact_request_delete_title" = "Vous voulez bien supprimer l'invitation ?";
 /* Text shown when contact was deleted */
-"contact_deleted" = "Deleted contact";
+"contact_deleted" = "Contact supprimé";
 
 /* Share Tox ID text */
 "show_qr_code" = "Montrer le code QR";
@@ -134,7 +134,7 @@
 /* Add contat default text sended to contact */
 "add_contact_default_message_text" = "Salut ! Pourriez-vous m'ajouter à votre liste de contacts ?";
 /* Add contat error */
-"add_contact_wrong_qr" = "Le code QR est mauvais. Il devrait contenir une identité Tox.";
+"add_contact_wrong_qr" = "Le code QR est mauvais. Il devrait contenir une identité Tox";
 
 /* User name text */
 "name" = "Nom";
@@ -161,9 +161,9 @@
 /* Chat screen placeholder */
 "chat_no_chats" = "Il n'y a pas de conversations";
 /* Chats screen message text */
-"chat_outgoing_file" = "Fichier sortant:";
+"chat_outgoing_file" = "Fichier sortant :";
 /* Chats screen message text */
-"chat_incoming_file" = "Fichier entrant:";
+"chat_incoming_file" = "Fichier entrant :";
 /* Chats screen message text */
 "chat_call_finished" = "Appel terminé";
 /* Chats screen message text */
@@ -173,7 +173,7 @@
 /* Chat notification toast */
 "chat_new_messages" = "↓ Nouveaux messages";
 /* Chat call information */
-"chat_call_message" = "Appel,";
+"chat_call_message" = "Appel, ";
 /* Chat call information */
 "chat_missed_call_message" = "Appel manqué";
 /* Item present in the menu on long press on message */
@@ -304,9 +304,9 @@
 "alert_cancel" = "Annuler";
 
 /* Error while creating new profile */
-"login_enter_username_and_profile" = "Veuillez saisir un nom d'utilisateur et un nom de profil. ";
+"login_enter_username_and_profile" = "Veuillez saisir un nom d'utilisateur et un nom de profil.";
 /* Error while creating new profile */
-"login_profile_already_exists" = "Un profil de ce nom existe déjà.";
+"login_profile_already_exists" = "Un profil de ce nom existe déjà";
 
 /* General error title */
 "error_title" = "Erreur";
@@ -317,7 +317,7 @@
 /* Error */
 "error_contact_not_connected" = "Le contact n'est pas connecté";
 /* Error */
-"error_too_many_files" = "Il y a trop de transferts de fichiers actifs.";
+"error_too_many_files" = "Trop de transferts de fichiers actifs";
 /* Error */
 "error_internal_message" = "Erreur interne";
 /* Error */
@@ -353,12 +353,12 @@
 /* Error */
 "error_proxy_invalid_port_message" = "Le port proxy est invalide.";
 /* Error */
-"error_proxy_host_not_resolved_message" = "L'hôte proxy n'a pas pû être résolu. ";
+"error_proxy_host_not_resolved_message" = "L'hôte proxy n'a pas pû être résolu.";
 
 /* Error */
 "error_name_too_long" = "Le nom est trop long.";
 /* Error */
-"error_status_message_too_long" = "Le message de statut est trop long.";
+"error_status_message_too_long" = "Le message de statut est trop long";
 
 /* Error */
 "error_contact_request_too_long" = "Le message est trop long";

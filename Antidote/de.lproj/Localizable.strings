@@ -135,7 +135,7 @@
 /* User name text */
 "name" = "Name";
 /* User nickname text */
-"nickname" = "Nickname";
+"nickname" = "Spitzname";
 /* User status message text */
 "status_message" = "Status Nachricht";
 /* User status text */
