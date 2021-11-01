@@ -1,0 +1,33 @@
+name: Nightly
+
+on:
+#  push:
+#    paths-ignore:
+#     - 'README.md'
+  schedule:
+    - cron:  '0 0 * * *'
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  macos-test-run:
+    runs-on: macos-10.15
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Display the OS Version1
+      run: sw_vers -productVersion
+
+    - name: Display the OS Version2
+      run: system_profiler SPSoftwareDataType
+
+    - name: xcode compile
+      run:  |
+            ls -al
+            pwd
+            id -a
+            pod install
+
+
