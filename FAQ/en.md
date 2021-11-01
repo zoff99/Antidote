@@ -61,7 +61,7 @@ To do so:
 
 ## More Questions?
 
-Shoot us an email to [feedback@antidote.im](mailto:feedback@antidote.im)
+open an Issue in this Github repository https://github.com/Zoxcore/Antidote/issues
 
 
 ## Translations
@@ -70,4 +70,4 @@ Found any translation issues?
 
 You can help translate Antidote to your language.
 
-Learn more: [https://www.transifex.com/antidote/antidote-ios/](https://www.transifex.com/antidote/antidote-ios/).
+Learn more: https://hosted.weblate.org/engage/antidote/
