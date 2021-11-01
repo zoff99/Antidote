@@ -306,7 +306,7 @@
 /* Error while creating new profile */
 "login_enter_username_and_profile" = "Veuillez saisir un nom d'utilisateur et un nom de profil.";
 /* Error while creating new profile */
-"login_profile_already_exists" = "Un profil de ce nom existe déjà.";
+"login_profile_already_exists" = "Un profil de ce nom existe déjà";
 
 /* General error title */
 "error_title" = "Erreur";
@@ -317,7 +317,7 @@
 /* Error */
 "error_contact_not_connected" = "Le contact n'est pas connecté";
 /* Error */
-"error_too_many_files" = "Il y a trop de transferts de fichiers actifs.";
+"error_too_many_files" = "Trop de transferts de fichiers actifs";
 /* Error */
 "error_internal_message" = "Erreur interne";
 /* Error */
@@ -353,12 +353,12 @@
 /* Error */
 "error_proxy_invalid_port_message" = "Le port proxy est invalide.";
 /* Error */
-"error_proxy_host_not_resolved_message" = "L'hôte proxy n'a pas pû être résolu. ";
+"error_proxy_host_not_resolved_message" = "L'hôte proxy n'a pas pû être résolu.";
 
 /* Error */
 "error_name_too_long" = "Le nom est trop long.";
 /* Error */
-"error_status_message_too_long" = "Le message de statut est trop long.";
+"error_status_message_too_long" = "Le message de statut est trop long";
 
 /* Error */
 "error_contact_request_too_long" = "Le message est trop long";
