@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.4.0] - 2021-11-01
+### Changed
+- Migrating to Swift 4
+- Migrating to XCode 12.5
+- Migrating to toxcore 0.2.12
+
 ## [Unreleased][unreleased]
 ### Changed
 - Migrating to toxcore 0.2.2.
