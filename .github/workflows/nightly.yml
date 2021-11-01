@@ -40,7 +40,7 @@ jobs:
 
     - name: xcode compile
       run:  |
-            xcodebuild -scheme Antidote build
+            env NSUnbufferedIO=YES xcodebuild -workspace ./Antidote.xcworkspace -scheme Antidote -destination 'platform=iOS Simulator,id=C57FF42C-5786-4BD4-B4AE-0CAC22AA74AD'
 
 
 
