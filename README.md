@@ -4,9 +4,17 @@
 
 [Tox](https://tox.chat/) client for iOS
 
+[![Translations](https://hosted.weblate.org/widgets/antidote/-/svg-badge.svg)](https://hosted.weblate.org/engageantidote/)
+[![License: GPL v3](https://img.shields.io/badge/License-MPL_2.0-blue.svg)](https://opensource.org/licenses/MPL-2.0)
+
 ## FAQ
 
 See [FAQ](FAQ/en.md).
+
+## Help Translate the App in your Language
+
+Use Weblate:
+https://hosted.weblate.org/engage/antidote/
 
 ## Usage
 
