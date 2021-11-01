@@ -40,7 +40,8 @@ jobs:
 
     - name: xcode compile
       run:  |
-            env NSUnbufferedIO=YES xcodebuild -workspace ./Antidote.xcworkspace -scheme Antidote -destination 'platform=iOS Simulator,id=C57FF42C-5786-4BD4-B4AE-0CAC22AA74AD'
+            echo "iPhone 11 Simulator"
+            env NSUnbufferedIO=YES xcodebuild -workspace ./Antidote.xcworkspace -scheme Antidote -destination 'platform=iOS Simulator,id=EAB9614F-3485-4A6D-8EFB-FC2B5EFB0243'
 
 
 
