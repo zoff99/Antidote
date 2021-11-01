@@ -17,7 +17,7 @@ defaults:
     shell: bash
 
 jobs:
-  macos-test-run:
+  macos-compile-run:
     runs-on: macos-11
     steps:
     - uses: actions/checkout@v2
