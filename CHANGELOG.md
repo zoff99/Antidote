@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [1.4.0] - 2021-11-01
+## [1.4.0](https://github.com/Zoxcore/Antidote/compare/1.3.5...1.4.0) - 2021-11-01
 ### Changed
 - Migrating to Swift 4
 - Migrating to XCode 12.5
