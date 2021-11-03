@@ -40,7 +40,7 @@ jobs:
 
     - name: xcode list destinations
       run:  |
-            instruments -s devices
+            xcrun xctrace list devices
 
     - name: xcode compile
       run:  |
