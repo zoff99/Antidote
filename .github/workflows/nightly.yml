@@ -38,6 +38,10 @@ jobs:
             xcodebuild -list -workspace Antidote.xcworkspace
             xcodebuild -list -project Antidote.xcodeproj
 
+    - name: xcode list destinations
+      run:  |
+            instruments -s devices
+
     - name: xcode compile
       run:  |
             echo "iPhone 11 Simulator"
