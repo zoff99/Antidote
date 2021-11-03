@@ -40,7 +40,8 @@ jobs:
 
     - name: xcode list destinations
       run:  |
-            xcrun xctrace list devices
+            env NSUnbufferedIO=YES xcodebuild -workspace ./Antidote.xcworkspace -scheme Antidote -destination "name=NoSuchName" -destination-timeout 1 || echo 'NO ERR'
+            xcrun xctrace list devices || echo 'NOERR'
 
     - name: xcode compile
       run:  |
