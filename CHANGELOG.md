@@ -2,13 +2,20 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.4.1](https://github.com/Zoxcore/Antidote/compare/1.4.0...1.4.1) - 2021-11-03
+### Changed
+- convert Localizable.strings to UTF-8
+- Remove labels causing crash
+- Translations from Weblate
+- setup Github Workflows CI
+
 ## [1.4.0](https://github.com/Zoxcore/Antidote/compare/1.3.5...1.4.0) - 2021-11-01
 ### Changed
 - Migrating to Swift 4
 - Migrating to XCode 12.5
 - Migrating to toxcore 0.2.12
 
-## [Unreleased][unreleased]
+## [_Unreleased_]
 ### Changed
 - Migrating to toxcore 0.2.2.
 - Migrating to Realm 3.1.0.
