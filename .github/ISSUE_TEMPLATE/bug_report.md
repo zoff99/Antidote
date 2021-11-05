@@ -22,7 +22,7 @@ A clear and concise description of what you expected to happen.
 
 **Your system information:**
  - Antidote Version: [1.4.0]
- - App from App Store / Testflight / Self compiled / other: [F-Droid]
+ - App from App Store / Testflight / Self compiled / other: [App Store]
  - IOS Version: [IOS 13]
  - Device:
 
