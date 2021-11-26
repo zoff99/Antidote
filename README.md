@@ -50,12 +50,12 @@ env NSUnbufferedIO=YES xcodebuild -workspace ./Antidote.xcworkspace -scheme Anti
 See [CHANGELOG](CHANGELOG.md) for list of notable changes (unreleased, current and previous versions).
 
 -  one to one conversations
--  ~~typing notification~~ *(temporary disabled)*
+-  typing notification
 -  emoticons
 -  spell check
 -  reading/scanning Tox ID via QR code
 -  file transfer
--  ~~read receipts~~ *(temporary disabled)*
+-  read receipts
 -  multiple profiles
 -  tox_save import/export
 -  avatars
