@@ -1,272 +1,71 @@
-# Change Log
-All notable changes to this project will be documented in this file.
-This project adheres to [Semantic Versioning](http://semver.org/).
+# Changelog
 
-## [1.4.1](https://github.com/Zoxcore/Antidote/compare/1.4.0...1.4.1) - 2021-11-03
-### Changed
-- convert Localizable.strings to UTF-8
-- Remove labels causing crash
-- Translations from Weblate
-- setup Github Workflows CI
+## [Unreleased](https://github.com/Zoxcore/Antidote/tree/HEAD)
 
-## [1.4.0](https://github.com/Zoxcore/Antidote/compare/1.3.5...1.4.0) - 2021-11-01
-### Changed
-- Migrating to Swift 4
-- Migrating to XCode 12.5
-- Migrating to toxcore 0.2.12
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.2...HEAD)
 
-## [_Unreleased_]
-### Changed
-- Migrating to toxcore 0.2.2.
-- Migrating to Realm 3.1.0.
-- Migrating to Swift 4.
+**Merged pull requests:**
 
-## [1.3.5] - 2017-08-23
-### Changed
-- Migrating to toxcore 0.1.10.
+- update to release [\#34](https://github.com/Zoxcore/Antidote/pull/34) ([zoff99](https://github.com/zoff99))
 
-## [1.3.4] - 2017-04-08
-### Changed
-- Migrating to toxcore 0.1.7.
+## [1.4.2](https://github.com/Zoxcore/Antidote/tree/1.4.2) (2021-11-26)
 
-## [1.3.3] - 2017-01-24
-### Added
-- Adding ability to send video from camera/photo gallery. [#252](https://github.com/Antidote-for-Tox/Antidote/issues/252).
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.1...1.4.2)
 
-### Changed
-- Migrating to toxcore 0.1.5.
+**Implemented enhancements:**
 
-## [1.3.2] - 2017-01-15
-### Added
-- Limiting number of entering pin attempts to 10.
+- Change notification icon app [\#16](https://github.com/Zoxcore/Antidote/issues/16)
+- Change logo on login screen [\#15](https://github.com/Zoxcore/Antidote/issues/15)
 
-### Changed
-- Migrating to toxcore 0.1.4.
-- Improved bootstraping mechanism, Antidote now should connect to network faster.
+**Fixed bugs:**
 
-## [1.3.1] - 2016-12-03
-### Changed
-- Migrating to toxcore 0.0.5.
+- receiving 2 text messages at the same time crashes the UI [\#30](https://github.com/Zoxcore/Antidote/issues/30)
+- adding a new contact with empty message crashes [\#26](https://github.com/Zoxcore/Antidote/issues/26)
+- Crash after Videocall ends [\#13](https://github.com/Zoxcore/Antidote/issues/13)
 
-## [1.3.0] - 2016-11-25
-### Changed
-- Migrating to Swift 3. [#255](https://github.com/Antidote-for-Tox/Antidote/issues/255).
-- Migrating to toxcore 0.0.4.
+**Merged pull requests:**
 
-### Fixed
-- Bug with new contact appearing as an old one [#257](https://github.com/Antidote-for-Tox/Antidote/issues/257).
-- Various crashes.
-- Keeping keyboard when switching chats on iPad.
-- Don't show keyboard when opening chat.
+- Translations update from Hosted Weblate [\#33](https://github.com/Zoxcore/Antidote/pull/33) ([weblate](https://github.com/weblate))
+- two messages crash [\#32](https://github.com/Zoxcore/Antidote/pull/32) ([zoff99](https://github.com/zoff99))
+- add echobot once on start [\#31](https://github.com/Zoxcore/Antidote/pull/31) ([zoff99](https://github.com/zoff99))
+- fix crash on adding a new friend with empty welcome message [\#29](https://github.com/Zoxcore/Antidote/pull/29) ([zoff99](https://github.com/zoff99))
+- fix crash on remove friend [\#28](https://github.com/Zoxcore/Antidote/pull/28) ([zoff99](https://github.com/zoff99))
+- show own connection status [\#27](https://github.com/Zoxcore/Antidote/pull/27) ([zoff99](https://github.com/zoff99))
+- delivered messages with better bg color [\#25](https://github.com/Zoxcore/Antidote/pull/25) ([zoff99](https://github.com/zoff99))
+- CI updates [\#24](https://github.com/Zoxcore/Antidote/pull/24) ([zoff99](https://github.com/zoff99))
+- typing notifications, faux offline messages, push url [\#23](https://github.com/Zoxcore/Antidote/pull/23) ([zoff99](https://github.com/zoff99))
+- fix crash on videocalls [\#22](https://github.com/Zoxcore/Antidote/pull/22) ([zoff99](https://github.com/zoff99))
+- CI updates [\#20](https://github.com/Zoxcore/Antidote/pull/20) ([zoff99](https://github.com/zoff99))
+- notification icon update [\#19](https://github.com/Zoxcore/Antidote/pull/19) ([zoff99](https://github.com/zoff99))
+- Translations update from Weblate [\#18](https://github.com/Zoxcore/Antidote/pull/18) ([weblate](https://github.com/weblate))
+- Translations update from Weblate [\#12](https://github.com/Zoxcore/Antidote/pull/12) ([weblate](https://github.com/weblate))
+- add matrix \(irc\) room [\#11](https://github.com/Zoxcore/Antidote/pull/11) ([zoff99](https://github.com/zoff99))
 
-## [1.2.0-build-2] - 2016-11-12
-### Fixed
-- Bug with resending old messages to contacts.
+## [1.4.1](https://github.com/Zoxcore/Antidote/tree/1.4.1) (2021-11-03)
 
-## [1.2.0] - 2016-11-12
-### Added
-- Faded color for undelivered messages. [#140](https://github.com/Antidote-for-Tox/Antidote/issues/140).
-- Resending undelivered messages when friend comes online. This should fix [#249](https://github.com/Antidote-for-Tox/Antidote/issues/249).
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.0...1.4.1)
 
-### Changed
-- Migrating to c-toxcore 0.0.3
-- Making Antidote accessible (partly done, more will come in next release) [#115](https://github.com/Antidote-for-Tox/Antidote/issues/115).
+**Merged pull requests:**
 
-## [1.1.0] - 2016-11-05
-### Added
-- Gemfile
-- Fastline
-- Migrating to c-toxcore 0.0.2
-- Dutch, Polish language.
+- Remove labels causing crash [\#10](https://github.com/Zoxcore/Antidote/pull/10) ([Tha14](https://github.com/Tha14))
+- Translations update from Weblate [\#8](https://github.com/Zoxcore/Antidote/pull/8) ([weblate](https://github.com/weblate))
+- Translations update from Weblate [\#7](https://github.com/Zoxcore/Antidote/pull/7) ([weblate](https://github.com/weblate))
+- Translations update from Weblate [\#4](https://github.com/Zoxcore/Antidote/pull/4) ([weblate](https://github.com/weblate))
 
-## [1.0.0-rc.4] - 2016-10-26
-### Changed
-- Removed voip flag.
-- Always enabling IPv6. Removed IPv6 option from settings.
-- Switching to TCP by default [#130](https://github.com/Antidote-for-Tox/Antidote/issues/130).
+## [1.4.0](https://github.com/Zoxcore/Antidote/tree/1.4.0) (2021-11-01)
 
-### Fixed
-- Links are not visible with new bubble colors [#242](https://github.com/Antidote-for-Tox/Antidote/issues/242).
-- Touch ID alert pops during the call [#240](https://github.com/Antidote-for-Tox/Antidote/issues/240).
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.0.0...1.4.0)
 
-## [1.0.0-rc.3] - 2016-10-03
-### Fixed
-- Crash on startup that happened on app reinstall.
+**Merged pull requests:**
 
-## [1.0.0-rc.2] - 2016-10-02
-### Added
-- Added FAQ.
+- Translations update from Weblate [\#3](https://github.com/Zoxcore/Antidote/pull/3) ([weblate](https://github.com/weblate))
+- Translations update from Weblate [\#2](https://github.com/Zoxcore/Antidote/pull/2) ([weblate](https://github.com/weblate))
+- Create PRIVACY\_POLICY.md [\#1](https://github.com/Zoxcore/Antidote/pull/1) ([Tha14](https://github.com/Tha14))
 
-### Fixed
-- Czech language was not working.
-- Freezes when bootstraping on bad network [#231](https://github.com/Antidote-for-Tox/Antidote/issues/231).
-- Password screen is not entirely visible (iPhone 4s) [#229](https://github.com/Antidote-for-Tox/Antidote/issues/229).
-- Ringtone is not reset on next call [#234](https://github.com/Antidote-for-Tox/Antidote/issues/234).
+## [1.0.0](https://github.com/Zoxcore/Antidote/tree/1.0.0) (2016-10-26)
 
-## [1.0.0-rc.1] - 2016-09-28
-### Added
-- Database encryption. Now all message history and relate data is encrypted.
-- Requering password for all accounts.
-- Storing password in keychain. There is no need to login on every application launch.
-- Added PIN screen and TouchID support [#164](https://github.com/Antidote-for-Tox/Antidote/issues/164), [#165](https://github.com/Antidote-for-Tox/Antidote/issues/165).
-- Added Acknowledgements screen [#76](https://github.com/Antidote-for-Tox/Antidote/issues/76).
-- Updating app icon and color scheme [#203](https://github.com/Antidote-for-Tox/Antidote/issues/203).
-- Czech language.
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1cdc1eae2d42aa5ee69a14237f58ab5c044d791a...1.0.0)
 
-## [0.10.4-2] - 2016-08-04
-### Fixed
-- Issue with calls not updating when answered.
 
-## [0.10.4] - 2016-08-04
-### Added
-- Retry button for file transfers.
-- Message removal in chat.
-- Breton, Lithuanian, Chinese (China), French, French (France) languages.
 
-### Changed
-- Migration to new Realm, app speed improvements.
-- Improving file sending UX [#193](https://github.com/Antidote-for-Tox/Antidote/issues/193).
-- Improved cleanup of file transfer leftovers.
-- In-app notifications look like system ones [#205](https://github.com/Antidote-for-Tox/Antidote/issues/205).
-
-### Fixed
-- User stays online for some time after quitting Antidote [#171](https://github.com/Antidote-for-Tox/Antidote/issues/171).
-- Crash when sending files from other apps [#193](https://github.com/Antidote-for-Tox/Antidote/issues/193).
-- Opening files from other aps on iOS 8 [#198](https://github.com/Antidote-for-Tox/Antidote/issues/198).
-- Flashing screen when rotating device on iOS 8 [#196](https://github.com/Antidote-for-Tox/Antidote/issues/196).
-- Password screen layout in landscape [#187](https://github.com/Antidote-for-Tox/Antidote/issues/187).
-- Error messages sometimes not shown.
-
-## [0.10.3] - 2016-04-12
-### Added
-- Arabic localication.
-- Sending files from other apps [#182](https://github.com/Antidote-for-Tox/Antidote/issues/182).
-- Highlighting links in chat [#176](https://github.com/Antidote-for-Tox/Antidote/issues/176).
-
-### Changed
-- Returned back iOS 8.0 support [#188](https://github.com/Antidote-for-Tox/Antidote/issues/188).
-- Translations updated.
-
-### Fixed
-- Music stops when switching to Antidote [#177](https://github.com/Antidote-for-Tox/Antidote/issues/177).
-- Layout for right to left interface [#190](https://github.com/Antidote-for-Tox/Antidote/issues/190).
-- Long contact names overflow in the top bar [#184](https://github.com/Antidote-for-Tox/Antidote/issues/184).
-- Time in chat doesn't fit sometimes [#178](https://github.com/Antidote-for-Tox/Antidote/issues/178).
-- User stays online for some time after quitting Antidote [#171](https://github.com/Antidote-for-Tox/Antidote/issues/171).
-- Top info view with is hidden on video call [#173](https://github.com/Antidote-for-Tox/Antidote/issues/173).
-
-## [0.10.2] - 2016-03-31
-### Added
-- Chinese, Danish, German, Portuguese, Spanish localizations.
-
-## [0.10.1] - 2016-03-29
-### Added
-- Added profile import support [#170](https://github.com/Antidote-for-Tox/Antidote/issues/170).
-
-## [0.10.0] - 2016-03-28
-### Added
-- Audio and video calls.
-- File transfer support.
-- Avatar support.
-- iPad support.
-- Russian translation.
-
-### Changed
-- Antidote fully rewritten in Swift.
-- objcTox updated to version 0.6.0.
-- Dropped 7.0 support.
-- Friends replaced with Contacts.
-
-## [0.6.1] - 2015-09-26
-### Fixed
-- Chat bubbles sometimes were completely black and text was unreadable.
-
-## [0.6.0] - 2015-09-22
-### Added
-- Login/logout, create/import/delete profile features.
-- Encrypted profiles support (login with encrypted profile, change/remove password).
-- Status change support.
-
-### Changed
-- Icon updated.
-- Launch image updated.
-- objcTox updated to version 0.3.0.
-- Profiles list screen removed, login screens are used instead.
-- Themes removed.
-
-## [0.5.0] - 2015-08-30
-### Added
-- "Import profile" instruction.
-
-### Changed
-- objcTox updated to version 0.2.1.
-- Using improved bootstrapping methods from objcTox, now it works better.
-- Feedback email replaced with feedback@antidote.im
-
-### Fixed
-- Updating connection status when changing IPv6/UDP setting.
-- Various fixes and crashes when importing profile.
-
-## [0.4.0] - 2015-08-01
-### Added
-- Profile tab, containing user profile information (avatar, username, status message, Tox ID).
-- Status of connection in tabBar.
-- About screen with version information.
-- Showing alert view with text on different errors.
-- Showing timestamps in chat after every 3 messages (temporary solution, will be improved in future).
-
-### Changed
-- Improving flow for removing friends/requests.
-- Updating UI for friends screen.
-- Updating UI for incoming friend request screen.
-- Updating UI for sending friend request screen.
-- Updating UI for friend card screen.
-- Default colorscheme changed to blue.
-
-### Fixed
-- Bug with copying Tox ID in some cases.
-- Updating profile name in "Settings" tab after renaming.
-- Bug with resetting wrong settings when pressing "Restore default settings".
-- Showing "+" button on requests tab.
-- Ugly avatars (like "I(").
-- Fixing height of "Friends | Requests" bar (it was changing randomly).
-- Blinking of badge icon when Antidote was in background.
-
-## [0.3.0] - 2015-06-30
-This version is incompatible with 0.2. After update you will lose your old profile with all chats and contacts.
-It is a good idea to remove old version of Antidote before updating.
-
-### Changed
-- Moving part of Antidote to [objcTox](https://github.com/Zoxcore/objcTox) library.
-- Total refactoring.
-- Migration to new Tox api.
-- Realm is now used instead of Core Data.
-- File transfers and avatars are temporary disabled.
-- Added connectivity status.
-
-[unreleased]: https://github.com/Antidote-for-Tox/Antidote/compare/1.3.5...master
-[1.3.5]: https://github.com/Antidote-for-Tox/Antidote/compare/1.3.4...1.3.5
-[1.3.4]: https://github.com/Antidote-for-Tox/Antidote/compare/1.3.3...1.3.4
-[1.3.3]: https://github.com/Antidote-for-Tox/Antidote/compare/1.3.2...1.3.3
-[1.3.2]: https://github.com/Antidote-for-Tox/Antidote/compare/1.3.1...1.3.2
-[1.3.1]: https://github.com/Antidote-for-Tox/Antidote/compare/1.3.0...1.3.1
-[1.3.0]: https://github.com/Antidote-for-Tox/Antidote/compare/1.2.0-build-2...1.3.0
-[1.2.0-build-2]: https://github.com/Antidote-for-Tox/Antidote/compare/1.2.0...1.2.0-build-2
-[1.2.0]: https://github.com/Antidote-for-Tox/Antidote/compare/1.1.0...1.2.0
-[1.1.0]: https://github.com/Antidote-for-Tox/Antidote/compare/1.0.0-rc.4...1.1.0
-[1.0.0-rc.4]: https://github.com/Antidote-for-Tox/Antidote/compare/1.0.0-rc.3...1.0.0-rc.4
-[1.0.0-rc.3]: https://github.com/Antidote-for-Tox/Antidote/compare/1.0.0-rc.2...1.0.0-rc.3
-[1.0.0-rc.2]: https://github.com/Antidote-for-Tox/Antidote/compare/1.0.0-rc.1...1.0.0-rc.2
-[1.0.0-rc.1]: https://github.com/Antidote-for-Tox/Antidote/compare/0.10.4-2...1.0.0-rc.1
-[0.10.4-2]: https://github.com/Antidote-for-Tox/Antidote/compare/0.10.4...0.10.4-2
-[0.10.4]: https://github.com/Antidote-for-Tox/Antidote/compare/0.10.3...0.10.4
-[0.10.3]: https://github.com/Antidote-for-Tox/Antidote/compare/0.10.2...0.10.3
-[0.10.2]: https://github.com/Antidote-for-Tox/Antidote/compare/0.10.1...0.10.2
-[0.10.1]: https://github.com/Antidote-for-Tox/Antidote/compare/0.10.0...0.10.1
-[0.10.0]: https://github.com/Antidote-for-Tox/Antidote/compare/0.6.1...0.10.0
-[0.6.1]: https://github.com/Antidote-for-Tox/Antidote/compare/0.6.0...0.6.1
-[0.6.0]: https://github.com/Antidote-for-Tox/Antidote/compare/0.5.0...0.6.0
-[0.5.0]: https://github.com/Antidote-for-Tox/Antidote/compare/0.4.0...0.5.0
-[0.4.0]: https://github.com/Antidote-for-Tox/Antidote/compare/0.3.0...0.4.0
-[0.3.0]: https://github.com/Antidote-for-Tox/Antidote/compare/0.2.5...0.3.0
-
+\* *This Changelog was automatically generated by [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator)*
