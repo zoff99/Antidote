@@ -15,7 +15,8 @@ colors:
   lightblue: 9CBDE9
   purple: 575CCF
   green: 85B452
-  yellow: DECF4E
+  green_bright: 00D116
+  yellow: FFF300
   red: E94F42
   palered: C56258
   rust: B7410E
@@ -45,7 +46,7 @@ values:
   rounded-positive-button-background: simpleblue
   rounded-negative-button-background: gray
   offline-status: darkgray
-  online-status: green
+  online-status: green_bright
   away-status: yellow
   busy-status: palered
   status-background: white
