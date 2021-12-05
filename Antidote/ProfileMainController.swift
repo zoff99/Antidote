@@ -3,6 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import UIKit
+import Firebase
 
 protocol ProfileMainControllerDelegate: class {
     func profileMainControllerLogout(_ controller: ProfileMainController)
@@ -151,7 +152,13 @@ private extension ProfileMainController {
         statusMessageModel.didSelectHandler = changeStatusMessage
 
         toxIdModel.title = String(localized: "my_tox_id")
-        toxIdModel.value = submanagerUser.userAddress
+
+        let pushtoken = Messaging.messaging().fcmToken ?? ""
+        if (pushtoken.count > 0) {
+            toxIdModel.value = submanagerUser.userAddress + "\n\nmy Push URL:\nhttps://tox.zoff.xyz/toxfcm/fcm.php?id=" + pushtoken + "&type=1"
+        } else {
+            toxIdModel.value = submanagerUser.userAddress
+        }
         // for debugging print own ToxID ----------------
         // print("TOXID: \(submanagerUser.userAddress)")
         // for debugging print own ToxID ----------------
