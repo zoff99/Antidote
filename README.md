@@ -14,6 +14,9 @@
 
 See [FAQ](FAQ/en.md).
 
+
+<img src="https://raw.githubusercontent.com/Zoxcore/Antidote/develop/docs/app003.png" height="200px">&nbsp;<img src="https://raw.githubusercontent.com/Zoxcore/Antidote/develop/docs/app002.png" height="200px">&nbsp;<img src="https://raw.githubusercontent.com/Zoxcore/Antidote/develop/docs/app001.png" height="200px">
+
 ## Help Translate the App in your Language
 
 Use Weblate:
