@@ -77,6 +77,7 @@ class Theme {
         case FileImageCancelButtonTint = "file-image-cancel-button-tint"
         case LockGradientTop = "lock-gradient-top"
         case LockGradientBottom = "lock-gradient-bottom"
+        case ChatListCellUnreadArrowBackground = "chat-list-cell-arrow-unread-background"
 
         // Because enums don't support enumerations we have to do this hack. Phew.
         static let allValues = [
@@ -134,6 +135,7 @@ class Theme {
             FileImageCancelButtonTint,
             LockGradientTop,
             LockGradientBottom,
+            ChatListCellUnreadArrowBackground,
         ]
     }
 

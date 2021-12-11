@@ -81,3 +81,4 @@ values:
   file-image-cancel-button-tint: black
   lock-gradient-top: mediumblue
   lock-gradient-bottom: purple
+  chat-list-cell-arrow-unread-background: red

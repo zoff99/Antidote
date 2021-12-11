@@ -52,6 +52,12 @@ class ChatListCell: BaseCell {
         dateLabel.textColor = theme.colorForType(.ChatListCellMessage)
 
         backgroundColor = chatModel.isUnread ? theme.colorForType(.ChatListCellUnreadBackground) : .clear
+
+        if (chatModel.isUnread) {
+            arrowImageView.backgroundColor = theme.colorForType(.ChatListCellUnreadArrowBackground)
+        } else {
+            arrowImageView.backgroundColor = .clear
+        }
     }
 
     override func createViews() {
