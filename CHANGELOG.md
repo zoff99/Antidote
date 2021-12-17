@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.4.5](https://github.com/Zoxcore/Antidote/tree/1.4.5) (2021-12-17)
+
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.4...1.4.5)
+
+**Merged pull requests:**
+
+- fastlane [\#57](https://github.com/Zoxcore/Antidote/pull/57) ([zoff99](https://github.com/zoff99))
+- fix FCM background fetch [\#53](https://github.com/Zoxcore/Antidote/pull/53) ([zoff99](https://github.com/zoff99))
+- toxcore 0.2.13 [\#52](https://github.com/Zoxcore/Antidote/pull/52) ([zoff99](https://github.com/zoff99))
+- use screen better [\#51](https://github.com/Zoxcore/Antidote/pull/51) ([zoff99](https://github.com/zoff99))
+
 ## [1.4.4](https://github.com/Zoxcore/Antidote/tree/1.4.4) (2021-12-08)
 
 [Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.2...1.4.4)
