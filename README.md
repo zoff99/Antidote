@@ -17,7 +17,7 @@
 See [FAQ](FAQ/en.md).
 
 
-<img src="https://raw.githubusercontent.com/Zoxcore/Antidote/develop/docs/app003.png" height="200px">&nbsp;<img src="https://raw.githubusercontent.com/Zoxcore/Antidote/develop/docs/app002.png" height="200px">&nbsp;<img src="https://raw.githubusercontent.com/Zoxcore/Antidote/develop/docs/app001.png" height="200px">
+<img src="https://raw.githubusercontent.com/Zoxcore/Antidote/develop/docs/app003.png" height="200px">&nbsp;<img src="https://raw.githubusercontent.com/Zoxcore/Antidote/develop/docs/app002.png" height="200px">&nbsp;<img src="https://raw.githubusercontent.com/Zoxcore/Antidote/develop/docs/app001.png" height="200px">&nbsp;<img src="https://raw.githubusercontent.com/Zoxcore/Antidote/develop/docs/applewatch_push.jpg" height="200px">
 
 ## Help Translate the App in your Language
 
@@ -65,6 +65,7 @@ See [CHANGELOG](CHANGELOG.md) for list of notable changes (unreleased, current a
 -  reading/scanning Tox ID via QR code
 -  file transfer
 -  read receipts
+-  push message support (via Apple Push Notification)
 -  multiple profiles
 -  tox_save import/export
 -  avatars
