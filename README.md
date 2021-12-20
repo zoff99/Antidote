@@ -10,6 +10,8 @@
 [![Android CI](https://github.com/Zoxcore/Antidote/workflows/Nightly/badge.svg)](https://github.com/Zoxcore/Antidote/actions?query=workflow%3A%22Nightly%22)
 [![Android CI](https://github.com/Zoxcore/Antidote/workflows/PullRequest/badge.svg)](https://github.com/Zoxcore/Antidote/actions?query=workflow%3A%22PullRequest%22)
 
+<a href="https://apps.apple.com/app/antidote-tox-client/id1592895292"><img src="https://raw.githubusercontent.com/Zoxcore/Antidote/develop/docs/appstore-badge.png" width="200"></a>
+
 ## FAQ
 
 See [FAQ](FAQ/en.md).
