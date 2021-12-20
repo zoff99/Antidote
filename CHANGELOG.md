@@ -1,5 +1,22 @@
 # Changelog
 
+## [Unreleased](https://github.com/Zoxcore/Antidote/tree/HEAD)
+
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.6...HEAD)
+
+**Merged pull requests:**
+
+- update FAQ with new features [\#61](https://github.com/Zoxcore/Antidote/pull/61) ([zoff99](https://github.com/zoff99))
+
+## [1.4.6](https://github.com/Zoxcore/Antidote/tree/1.4.6) (2021-12-19)
+
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.5...1.4.6)
+
+**Merged pull requests:**
+
+- use dummy message instead of ignoring invalid UTF-8 [\#59](https://github.com/Zoxcore/Antidote/pull/59) ([zoff99](https://github.com/zoff99))
+- prevent crash on invalid UTF-8 incoming message, ready for msgV3 [\#58](https://github.com/Zoxcore/Antidote/pull/58) ([zoff99](https://github.com/zoff99))
+
 ## [1.4.5](https://github.com/Zoxcore/Antidote/tree/1.4.5) (2021-12-17)
 
 [Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.4...1.4.5)
