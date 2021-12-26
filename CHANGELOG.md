@@ -4,9 +4,21 @@
 
 [Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.6...HEAD)
 
+**Implemented enhancements:**
+
+- red background for arrow on Chatlist looks weired on unread messages [\#55](https://github.com/Zoxcore/Antidote/issues/55)
+
+**Fixed bugs:**
+
+- text input field at bottom too low, top and iphone notch collide [\#54](https://github.com/Zoxcore/Antidote/issues/54)
+
 **Merged pull requests:**
 
+- Translations update from Hosted Weblate [\#64](https://github.com/Zoxcore/Antidote/pull/64) ([weblate](https://github.com/weblate))
+- new release 147 [\#63](https://github.com/Zoxcore/Antidote/pull/63) ([zoff99](https://github.com/zoff99))
+- update objcTox to msgV3 and useragent fix [\#62](https://github.com/Zoxcore/Antidote/pull/62) ([zoff99](https://github.com/zoff99))
 - update FAQ with new features [\#61](https://github.com/Zoxcore/Antidote/pull/61) ([zoff99](https://github.com/zoff99))
+- fix: text input field at bottom too low and make the arrow image view a nice circle shape [\#60](https://github.com/Zoxcore/Antidote/pull/60) ([zoff99](https://github.com/zoff99))
 
 ## [1.4.6](https://github.com/Zoxcore/Antidote/tree/1.4.6) (2021-12-19)
 
