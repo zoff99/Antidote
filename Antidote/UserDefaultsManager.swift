@@ -39,6 +39,15 @@ class UserDefaultsManager {
         }
     }
 
+    var pushnotifications: Bool {
+        get {
+            return boolForKey(Keys.Pushnotifications, defaultValue: true)
+        }
+        set {
+            setBool(newValue, forKey: Keys.Pushnotifications)
+        }
+    }
+
     enum AutodownloadImages: String {
         case Never
         case UsingWiFi
@@ -70,6 +79,7 @@ private extension UserDefaultsManager {
         static let EchobotAdded = "user-info/echobot-added"
         static let UDPEnabled = "user-info/udp-enabled"
         static let ShowNotificationsPreview = "user-info/snow-notification-preview"
+        static let Pushnotifications = "user-info/push-notifications"
         static let AutodownloadImages = "user-info/autodownload-images"
     }
 
