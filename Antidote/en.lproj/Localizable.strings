@@ -223,7 +223,7 @@
 /* Settings screen menu */
 "settings_background_info" = "When the application goes to the background, you will only receive notifications if you have Push Notifications enabled.";
 /* Settings screen menu */
-"settings_pushmessages_info" = "If you disable Push Notifications then you and your friends will not receive any messages. The application will not work porperly. Push Notification uses Apple APS or Google FCM or Unified Push (GotifyUP)";
+"settings_pushmessages_info" = "If you disable Push Notifications then you and your friends will not receive any messages. The application will not work properly. Push Notification uses Apple APS or Google FCM or Unified Push (GotifyUP)";
 /* Settings screen menu */
 "settings_udp_enabled" = "Enable UDP";
 /* Settings screen menu */
