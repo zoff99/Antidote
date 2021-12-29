@@ -217,7 +217,9 @@
 /* Settings screen menu */
 "settings_notifications_message_preview" = "Notification Preview";
 /* Settings screen menu */
-"settings_notifications_description" = "When application goes to background, you will still receive notifications up to 10 minutes.";
+"settings_notifications_description" = "When application goes to the background, you will still receive notifications up to 10 minutes.";
+/* Settings screen menu */
+"settings_background_info" = "When application goes to the background, you will only receive notifications if you have Push Notifications enabled.";
 /* Settings screen menu */
 "settings_udp_enabled" = "Enable UDP";
 /* Settings screen menu */

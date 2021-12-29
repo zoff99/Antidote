@@ -35,15 +35,12 @@ class SettingsMainController: StaticTableController {
             ],
             [
                 advancedSettingsModel,
-            ],
-            [
                 faqModel,
                 aboutModel,
             ],
         ], footers: [
             String(localized: "settings_autodownload_images_description"),
-            String(localized: "settings_notifications_description"),
-            nil,
+            String(localized: "settings_background_info"),
             nil,
         ])
 
