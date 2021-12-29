@@ -17,6 +17,7 @@ extension OCTManagerConfiguration {
 
         configuration.options.ipv6Enabled = true
         configuration.options.udpEnabled = userDefaultsManager.UDPEnabled
+        configuration.options.pushEnabled = userDefaultsManager.pushnotifications
 
         configuration.fileStorage = OCTDefaultFileStorage(baseDirectory: baseDirectory, temporaryDirectory: NSTemporaryDirectory())
 
