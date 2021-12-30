@@ -2,7 +2,15 @@
 
 ## [Unreleased](https://github.com/Zoxcore/Antidote/tree/HEAD)
 
-[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.6...HEAD)
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.7...HEAD)
+
+**Merged pull requests:**
+
+- Translations update from Hosted Weblate [\#65](https://github.com/Zoxcore/Antidote/pull/65) ([weblate](https://github.com/weblate))
+
+## [1.4.7](https://github.com/Zoxcore/Antidote/tree/1.4.7) (2021-12-26)
+
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.6...1.4.7)
 
 **Implemented enhancements:**
 
