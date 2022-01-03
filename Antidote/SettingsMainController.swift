@@ -21,6 +21,7 @@ class SettingsMainController: StaticTableController {
     fileprivate let faqModel = StaticTableDefaultCellModel()
     fileprivate let autodownloadImagesModel = StaticTableInfoCellModel()
     fileprivate let notificationsModel = StaticTableSwitchCellModel()
+    fileprivate let debugmodeModel = StaticTableSwitchCellModel()
     fileprivate let advancedSettingsModel = StaticTableDefaultCellModel()
 
     init(theme: Theme) {
@@ -34,6 +35,9 @@ class SettingsMainController: StaticTableController {
                 notificationsModel,
             ],
             [
+                debugmodeModel,
+            ],
+            [
                 advancedSettingsModel,
             ],
             [
@@ -43,6 +47,7 @@ class SettingsMainController: StaticTableController {
         ], footers: [
             String(localized: "settings_autodownload_images_description"),
             String(localized: "settings_notifications_description"),
+            nil,
             nil,
             nil,
         ])
@@ -89,6 +94,10 @@ private extension SettingsMainController{
         notificationsModel.on = userDefaults.showNotificationPreview
         notificationsModel.valueChangedHandler = notificationsValueChanged
 
+        debugmodeModel.title = "Debug Mode"
+        debugmodeModel.on = userDefaults.DebugMode
+        debugmodeModel.valueChangedHandler = debugmodeValueChanged
+
         advancedSettingsModel.value = String(localized: "settings_advanced_settings")
         advancedSettingsModel.didSelectHandler = showAdvancedSettings
         advancedSettingsModel.rightImageType = .arrow
@@ -104,6 +113,10 @@ private extension SettingsMainController{
 
     func notificationsValueChanged(_ on: Bool) {
         userDefaults.showNotificationPreview = on
+    }
+
+    func debugmodeValueChanged(_ on: Bool) {
+        userDefaults.DebugMode = on
     }
 
     func changeAutodownloadImages(_: StaticTableBaseCell) {

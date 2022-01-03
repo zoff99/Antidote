@@ -388,8 +388,19 @@ extension ChatPrivateController: UITableViewDataSource {
         if message.isOutgoing() {
             if let messageText = message.messageText {
                 let outgoingModel = ChatOutgoingTextCellModel()
-                outgoingModel.message = messageText.text ?? ""
+
+                if (UserDefaultsManager().DebugMode == false) {
+                    outgoingModel.message = messageText.text ?? ""
+                } else {
+                    outgoingModel.message = "" + (messageText.text ?? "") + "\n"
+                                               + "msgv3HashHex:\n" + (messageText.msgv3HashHex ?? "") + "\n"
+                                               + "senderUniqueIdentifier:\n" + (message.senderUniqueIdentifier ?? "") + "\n"
+                                               + "chatUniqueIdentifier:\n" + (message.chatUniqueIdentifier ?? "") + "\n"
+                                               + "isDelivered:\n" + String(messageText.isDelivered) + "\n"
+                }
+
                 outgoingModel.delivered = messageText.isDelivered
+
                 model = outgoingModel
 
                 cell = tableView.dequeueReusableCell(withIdentifier: ChatOutgoingTextCell.staticReuseIdentifier) as! ChatOutgoingTextCell
@@ -409,7 +420,17 @@ extension ChatPrivateController: UITableViewDataSource {
         else {
             if let messageText = message.messageText {
                 let incomingModel = ChatBaseTextCellModel()
-                incomingModel.message = messageText.text ?? ""
+
+                if (UserDefaultsManager().DebugMode == false) {
+                    incomingModel.message = messageText.text ?? ""
+                } else {
+                    incomingModel.message = "" + (messageText.text ?? "") + "\n"
+                                               + "msgv3HashHex:\n" + (messageText.msgv3HashHex ?? "") + "\n"
+                                               + "senderUniqueIdentifier:\n" + (message.senderUniqueIdentifier ?? "") + "\n"
+                                               + "chatUniqueIdentifier:\n" + (message.chatUniqueIdentifier ?? "") + "\n"
+                                               + "isDelivered:\n" + String(messageText.isDelivered) + "\n"
+                }
+
                 model = incomingModel
 
                 cell = tableView.dequeueReusableCell(withIdentifier: ChatIncomingTextCell.staticReuseIdentifier) as! ChatIncomingTextCell
