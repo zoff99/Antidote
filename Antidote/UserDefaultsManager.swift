@@ -30,6 +30,15 @@ class UserDefaultsManager {
         }
     }
 
+    var DebugMode: Bool {
+        get {
+            return boolForKey(Keys.DebugMode, defaultValue: false)
+        }
+        set {
+            setBool(newValue, forKey: Keys.DebugMode)
+        }
+    }
+
     var showNotificationPreview: Bool {
         get {
             return boolForKey(Keys.ShowNotificationsPreview, defaultValue: true)
@@ -68,6 +77,7 @@ private extension UserDefaultsManager {
     struct Keys {
         static let LastActiveProfile = "user-info/last-active-profile"
         static let EchobotAdded = "user-info/echobot-added"
+        static let DebugMode = "user-info/debug-mode"
         static let UDPEnabled = "user-info/udp-enabled"
         static let ShowNotificationsPreview = "user-info/snow-notification-preview"
         static let AutodownloadImages = "user-info/autodownload-images"
