@@ -11,6 +11,7 @@ private struct Constants {
     static let CameraHorizontalOffset: CGFloat = 10.0
     static let CameraBottomOffset: CGFloat = -10.0
     static let TextViewMinHeight: CGFloat = 35.0
+    static let MAX_TEXT_INPUT_CHARS = 1000
 }
 
 protocol ChatInputViewDelegate: class {
@@ -90,6 +91,20 @@ extension ChatInputView: UITextViewDelegate {
         updateViews()
         delegate?.chatInputViewTextDidChange(self)
     }
+
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        // get the current text, or use an empty string if that failed
+        let currentText = textView.text ?? ""
+
+        // attempt to read the range they are trying to change, or exit if we can't
+        guard let stringRange = Range(range, in: currentText) else { return false }
+
+        // add their new text to the existing text
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: text)
+
+        // make sure the result is under MAX_TEXT_INPUT_CHARS characters
+        return updatedText.count <= Constants.MAX_TEXT_INPUT_CHARS
+    }
 }
 
 private extension ChatInputView {
@@ -116,6 +131,8 @@ private extension ChatInputView {
         textView.layer.borderColor = theme.colorForType(.SeparatorsAndBorders).cgColor
         textView.layer.masksToBounds = true
         textView.setContentHuggingPriority(UILayoutPriority(rawValue: 0.0), for: .horizontal)
+        textView.autocapitalizationType = .none
+
         addSubview(textView)
 
         sendButton = UIButton(type: .system)
@@ -139,7 +156,8 @@ private extension ChatInputView {
 
         textView.snp.makeConstraints {
             $0.leading.equalTo(cameraButton.snp.trailing).offset(Constants.CameraHorizontalOffset)
-            $0.top.equalTo(self).offset(Constants.Offset)
+            // HINT: this prevents the textview to show more lines of input text
+            // $0.top.equalTo(self).offset(Constants.Offset)
             $0.bottom.equalTo(self).offset(-Constants.Offset)
             $0.height.greaterThanOrEqualTo(Constants.TextViewMinHeight)
         }
@@ -152,14 +170,11 @@ private extension ChatInputView {
     }
 
     func updateViews() {
-        let size = textView.sizeThatFits(CGSize(width: textView.frame.size.width, height: CGFloat.greatestFiniteMagnitude))
-
-        if maxHeight > 0.0 {
-            textView.isScrollEnabled = (size.height + 2 * Constants.Offset) > maxHeight
-        }
-        else {
-            textView.isScrollEnabled = false
-        }
+        textView.isScrollEnabled = false
+        textView.autocapitalizationType = .none
+        let fixedWidth = textView.frame.size.width
+        let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        textView.frame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
 
         cameraButton.isEnabled = cameraButtonEnabled
         sendButton.isEnabled = !textView.text.isEmpty
