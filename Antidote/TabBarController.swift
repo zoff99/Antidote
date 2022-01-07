@@ -121,6 +121,14 @@ extension TabBarController {
             customTabBarViewHiddenConstraint = $0.top.equalTo(view.snp.bottom).constraint
             $0.leading.trailing.equalTo(view)
             $0.height.equalTo(tabBar.frame.size.height)
+            // TODO: this moves the view a bit more to the top, because the home button "line" is in the way otherwise
+            //       please fix me properly in the future
+            if #available(iOS 11.0, *) {
+                let keyWindow = UIApplication.shared.keyWindow
+                let b = keyWindow?.safeAreaInsets.bottom
+                customTabBarViewVisibleConstraint?.update(offset: -(b ?? 20))
+            }
+
         }
 
         customTabBarViewHiddenConstraint.deactivate()
