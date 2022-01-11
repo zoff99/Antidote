@@ -1,11 +1,21 @@
 # Changelog
 
-## [Unreleased](https://github.com/Zoxcore/Antidote/tree/HEAD)
+## [1.4.8](https://github.com/Zoxcore/Antidote/tree/1.4.8) (2022-01-11)
 
-[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.7...HEAD)
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.7...1.4.8)
+
+**Implemented enhancements:**
+
+- add debug setting and show meta data of chatmessages [\#68](https://github.com/Zoxcore/Antidote/pull/68) ([zoff99](https://github.com/zoff99))
 
 **Merged pull requests:**
 
+- Translations update from Hosted Weblate [\#73](https://github.com/Zoxcore/Antidote/pull/73) ([weblate](https://github.com/weblate))
+- fix tabview at bottom overlapping virtual home button. [\#72](https://github.com/Zoxcore/Antidote/pull/72) ([zoff99](https://github.com/zoff99))
+- Translations update from Hosted Weblate [\#71](https://github.com/Zoxcore/Antidote/pull/71) ([weblate](https://github.com/weblate))
+- v1.4.8 [\#70](https://github.com/Zoxcore/Antidote/pull/70) ([zoff99](https://github.com/zoff99))
+- tweak APN push notification processing [\#67](https://github.com/Zoxcore/Antidote/pull/67) ([zoff99](https://github.com/zoff99))
+- increase the BackgroundFetch time to 27 seconds. [\#66](https://github.com/Zoxcore/Antidote/pull/66) ([zoff99](https://github.com/zoff99))
 - Translations update from Hosted Weblate [\#65](https://github.com/Zoxcore/Antidote/pull/65) ([weblate](https://github.com/weblate))
 
 ## [1.4.7](https://github.com/Zoxcore/Antidote/tree/1.4.7) (2021-12-26)
