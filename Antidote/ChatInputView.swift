@@ -157,7 +157,7 @@ private extension ChatInputView {
         textView.snp.makeConstraints {
             $0.leading.equalTo(cameraButton.snp.trailing).offset(Constants.CameraHorizontalOffset)
             // HINT: this prevents the textview to show more lines of input text
-            // $0.top.equalTo(self).offset(Constants.Offset)
+            $0.top.equalTo(self).offset(Constants.Offset)
             $0.bottom.equalTo(self).offset(-Constants.Offset)
             $0.height.greaterThanOrEqualTo(Constants.TextViewMinHeight)
         }
@@ -170,12 +170,8 @@ private extension ChatInputView {
     }
 
     func updateViews() {
-        textView.isScrollEnabled = false
+        textView.isScrollEnabled = true
         textView.autocapitalizationType = .none
-        let fixedWidth = textView.frame.size.width
-        let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-        textView.frame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
-
         cameraButton.isEnabled = cameraButtonEnabled
         sendButton.isEnabled = !textView.text.isEmpty
     }
