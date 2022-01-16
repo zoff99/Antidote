@@ -11,6 +11,9 @@ private struct Constants {
     static let CameraHorizontalOffset: CGFloat = 10.0
     static let CameraBottomOffset: CGFloat = -10.0
     static let TextViewMinHeight: CGFloat = 35.0
+    static let MIN_MYHEIGHT: CGFloat = 45
+    static let MAX_MYHEIGHT: CGFloat = 90
+    static let MARGIN_MYHEIGHT: CGFloat = 5
     static let MAX_TEXT_INPUT_CHARS = 1000
 }
 
@@ -49,6 +52,8 @@ class ChatInputView: UIView {
     fileprivate var cameraButton: UIButton!
     fileprivate var textView: UITextView!
     fileprivate var sendButton: UIButton!
+    fileprivate var myHeight: Constraint!
+    fileprivate var didconstraint = 0
 
     init(theme: Theme) {
         self.maxHeight = 0.0
@@ -89,7 +94,12 @@ extension ChatInputView {
 extension ChatInputView: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         updateViews()
+        updateTextviewHeight(textView)
         delegate?.chatInputViewTextDidChange(self)
+    }
+
+    override func didMoveToWindow() {
+        updateTextviewHeight(textView)
     }
 
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -108,6 +118,7 @@ extension ChatInputView: UITextViewDelegate {
 }
 
 private extension ChatInputView {
+
     func createViews(_ theme: Theme) {
         topBorder = UIView()
         topBorder.backgroundColor = theme.colorForType(.SeparatorsAndBorders)
@@ -156,7 +167,6 @@ private extension ChatInputView {
 
         textView.snp.makeConstraints {
             $0.leading.equalTo(cameraButton.snp.trailing).offset(Constants.CameraHorizontalOffset)
-            // HINT: this prevents the textview to show more lines of input text
             $0.top.equalTo(self).offset(Constants.Offset)
             $0.bottom.equalTo(self).offset(-Constants.Offset)
             $0.height.greaterThanOrEqualTo(Constants.TextViewMinHeight)
@@ -166,6 +176,34 @@ private extension ChatInputView {
             $0.leading.equalTo(textView.snp.trailing).offset(Constants.Offset)
             $0.trailing.equalTo(self).offset(-Constants.Offset)
             $0.bottom.equalTo(self).offset(-Constants.Offset)
+        }
+    }
+
+    func updateTextviewHeight(_ t : UITextView)
+    {
+        if (self.didconstraint == 1)
+        {
+            self.myHeight.uninstall()
+            self.didconstraint = 0
+        }
+
+        let text_needs_size  = t.sizeThatFits(
+            CGSize(width: t.frame.size.width,
+                   height: CGFloat.greatestFiniteMagnitude))
+        var new_height = text_needs_size.height + Constants.MARGIN_MYHEIGHT
+        if (text_needs_size.height > Constants.MAX_MYHEIGHT)
+        {
+            new_height = Constants.MAX_MYHEIGHT
+        }
+        else if (text_needs_size.height < Constants.MIN_MYHEIGHT) {
+            new_height = Constants.MIN_MYHEIGHT
+        }
+
+        if (self.didconstraint == 0) {
+            self.didconstraint = 1
+            self.snp.makeConstraints {
+                self.myHeight = $0.height.equalTo(new_height).constraint
+            }
         }
     }
 
