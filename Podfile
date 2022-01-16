@@ -13,7 +13,7 @@ def common_pods
     pod 'JGProgressHUD', '~> 1.4.0'
     pod "toxcore", :git => 'https://github.com/Zoxcore/toxcore.git', :commit => 'd532bc6ea2ba417fdade32d950243a3091d3dd83'
     pod 'SnapKit'
-    pod 'Yaml'
+    pod 'Yaml', '~> 3.4.4'
     pod 'Firebase/Messaging'
 end
 
