@@ -88,6 +88,7 @@ extension ChatInputView {
 
     @objc func sendButtonPressed() {
         delegate?.chatInputViewSendButtonPressed(self)
+        updateTextviewHeight(textView)
     }
 }
 
