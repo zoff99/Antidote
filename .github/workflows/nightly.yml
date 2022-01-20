@@ -31,6 +31,10 @@ jobs:
     - name: install pkgs
       run:  |
             brew install ldid
+            brew install autoconf
+            brew install automake
+            brew install libtool
+            brew install gettext
 
     - name: xcode info
       run:  |
