@@ -567,6 +567,8 @@
 		9CEE6B501C528AAA00A1ECB5 /* SettingsAboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEE6B4E1C528AAA00A1ECB5 /* SettingsAboutController.swift */; };
 		9CEE6B521C528AB600A1ECB5 /* SettingsAdvancedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEE6B511C528AB600A1ECB5 /* SettingsAdvancedController.swift */; };
 		9CEE6B531C528AB600A1ECB5 /* SettingsAdvancedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEE6B511C528AB600A1ECB5 /* SettingsAdvancedController.swift */; };
+		AF2C929D279AB3F10094C08D /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C929C279AB3F10094C08D /* NotificationService.swift */; };
+		AF2C92A1279AB3F10094C08D /* pushextension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AF2C929A279AB3F10094C08D /* pushextension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AFA023F4274C069100FBFCC0 /* ConnectionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA023F3274C069100FBFCC0 /* ConnectionStatus.swift */; };
 		AFA024022753CC9000FBFCC0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFA024012753CC9000FBFCC0 /* GoogleService-Info.plist */; };
 		D4F896D05F7EAA7C321A2AA8 /* libPods-Antidote.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 034E57B3AE56E352BBAA0487 /* libPods-Antidote.a */; };
@@ -643,7 +645,28 @@
 			remoteGlobalIDString = 1164762E19794D3300DB20B8;
 			remoteInfo = Antidote;
 		};
+		AF2C929F279AB3F10094C08D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1164762719794D3300DB20B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF2C9299279AB3F10094C08D;
+			remoteInfo = pushextension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AF2C92A2279AB3F10094C08D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AF2C92A1279AB3F10094C08D /* pushextension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		02404DE3D3BB1BF461C45EA0 /* Pods-ScreenshotsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScreenshotsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScreenshotsUITests/Pods-ScreenshotsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -922,6 +945,9 @@
 		9CEE6B451C5289E200A1ECB5 /* SettingsMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsMainController.swift; sourceTree = "<group>"; };
 		9CEE6B4E1C528AAA00A1ECB5 /* SettingsAboutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsAboutController.swift; sourceTree = "<group>"; };
 		9CEE6B511C528AB600A1ECB5 /* SettingsAdvancedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsAdvancedController.swift; sourceTree = "<group>"; };
+		AF2C929A279AB3F10094C08D /* pushextension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = pushextension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF2C929C279AB3F10094C08D /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		AF2C929E279AB3F10094C08D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFA023F3274C069100FBFCC0 /* ConnectionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionStatus.swift; sourceTree = "<group>"; };
 		AFA024012753CC9000FBFCC0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B3C17AF8CE3B4AD1B68F2B5B /* Pods-Antidote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Antidote.release.xcconfig"; path = "Pods/Target Support Files/Pods-Antidote/Pods-Antidote.release.xcconfig"; sourceTree = "<group>"; };
@@ -953,6 +979,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				96166DAAD67996D5A6819984 /* libPods-AntidoteTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF2C9297279AB3F10094C08D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1036,6 +1069,7 @@
 				1164763819794D3300DB20B8 /* Antidote */,
 				1173F0571BC5D94400B88B7B /* AntidoteTests */,
 				111782A81DC64391000C1721 /* ScreenshotsUITests */,
+				AF2C929B279AB3F10094C08D /* pushextension */,
 				1164763119794D3300DB20B8 /* Frameworks */,
 				1164763019794D3300DB20B8 /* Products */,
 				1173EFB21BC5C40100B88B7B /* Submodules */,
@@ -1049,6 +1083,7 @@
 				1164762F19794D3300DB20B8 /* Antidote.app */,
 				1173F0561BC5D94400B88B7B /* AntidoteTests.xctest */,
 				111782A71DC64391000C1721 /* ScreenshotsUITests.xctest */,
+				AF2C929A279AB3F10094C08D /* pushextension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1403,6 +1438,15 @@
 			name = Running;
 			sourceTree = "<group>";
 		};
+		AF2C929B279AB3F10094C08D /* pushextension */ = {
+			isa = PBXGroup;
+			children = (
+				AF2C929C279AB3F10094C08D /* NotificationService.swift */,
+				AF2C929E279AB3F10094C08D /* Info.plist */,
+			);
+			path = pushextension;
+			sourceTree = "<group>";
+		};
 		D5C4D8B82C26B8F47A461D93 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1468,10 +1512,12 @@
 				1164762C19794D3300DB20B8 /* Frameworks */,
 				1164762D19794D3300DB20B8 /* Resources */,
 				F334EF7D7E56B63481570925 /* [CP] Copy Pods Resources */,
+				AF2C92A2279AB3F10094C08D /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AF2C92A0279AB3F10094C08D /* PBXTargetDependency */,
 			);
 			name = Antidote;
 			productName = Antidote;
@@ -1498,13 +1544,30 @@
 			productReference = 1173F0561BC5D94400B88B7B /* AntidoteTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		AF2C9299279AB3F10094C08D /* pushextension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF2C92A5279AB3F10094C08D /* Build configuration list for PBXNativeTarget "pushextension" */;
+			buildPhases = (
+				AF2C9296279AB3F10094C08D /* Sources */,
+				AF2C9297279AB3F10094C08D /* Frameworks */,
+				AF2C9298279AB3F10094C08D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = pushextension;
+			productName = pushextension;
+			productReference = AF2C929A279AB3F10094C08D /* pushextension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		1164762719794D3300DB20B8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = zoxcore;
 				TargetAttributes = {
@@ -1533,6 +1596,11 @@
 							};
 						};
 						TestTargetID = 1164762E19794D3300DB20B8;
+					};
+					AF2C9299279AB3F10094C08D = {
+						CreatedOnToolsVersion = 12.5;
+						DevelopmentTeam = Y46L589C5C;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -1575,6 +1643,7 @@
 				1164762E19794D3300DB20B8 /* Antidote */,
 				1173F0551BC5D94400B88B7B /* AntidoteTests */,
 				111782A61DC64391000C1721 /* ScreenshotsUITests */,
+				AF2C9299279AB3F10094C08D /* pushextension */,
 			);
 		};
 /* End PBXProject section */
@@ -1685,6 +1754,13 @@
 				113E96431E4BB302000282FC /* AppStoreLocalizable.strings in Resources */,
 				113F03081CAFCC9D0009ABE1 /* default-theme.yaml in Resources */,
 				9CEA6A201D957EFC0045F000 /* antidote-acknowledgements.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF2C9298279AB3F10094C08D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2358,6 +2434,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AF2C9296279AB3F10094C08D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF2C929D279AB3F10094C08D /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -2370,6 +2454,11 @@
 			isa = PBXTargetDependency;
 			target = 1164762E19794D3300DB20B8 /* Antidote */;
 			targetProxy = 1173F05B1BC5D94400B88B7B /* PBXContainerItemProxy */;
+		};
+		AF2C92A0279AB3F10094C08D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF2C9299279AB3F10094C08D /* pushextension */;
+			targetProxy = AF2C929F279AB3F10094C08D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2673,6 +2762,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2D5B916CEDBEC1B69CD1EFA4 /* Pods-Antidote.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_STATIC_ANALYZER_MODE = deep;
@@ -2706,6 +2796,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B3C17AF8CE3B4AD1B68F2B5B /* Pods-Antidote.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_STATIC_ANALYZER_MODE = deep;
@@ -2787,6 +2878,65 @@
 			};
 			name = Release;
 		};
+		AF2C92A3279AB3F10094C08D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Y46L589C5C;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = pushextension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.zoxcore.Antidote.pushextension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AF2C92A4279AB3F10094C08D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Y46L589C5C;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = pushextension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.zoxcore.Antidote.pushextension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2822,6 +2972,15 @@
 			buildConfigurations = (
 				1173F05E1BC5D94400B88B7B /* Debug */,
 				1173F05F1BC5D94400B88B7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF2C92A5279AB3F10094C08D /* Build configuration list for PBXNativeTarget "pushextension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF2C92A3279AB3F10094C08D /* Debug */,
+				AF2C92A4279AB3F10094C08D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
