@@ -15,7 +15,8 @@ def common_pods
     pod 'SnapKit', '~> 5.0.1'
     pod 'Yaml', '~> 3.4.4'
     pod 'Firebase/Messaging'
-    pod 'Tor', :podspec => 'https://raw.githubusercontent.com/iCepa/Tor.framework/v406.9.2/TorStatic.podspec'
+    # pod 'Tor', :podspec => 'https://raw.githubusercontent.com/iCepa/Tor.framework/v406.9.2/TorStatic.podspec'
+    pod 'Tor', '~> 406.8.2'
 end
 
 target :Antidote do
