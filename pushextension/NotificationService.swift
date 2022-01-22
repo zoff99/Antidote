@@ -6,7 +6,7 @@ import UserNotifications
 
 class NotificationService: UNNotificationServiceExtension {
 
-    fileprivate var lastRemoteNotifictionTS: TimeInterval = 0
+    var lastRemoteNotifictionTS: Int64 = 0
     var contentHandler: ((UNNotificationContent) -> Void)?
     var bestAttemptContent: UNMutableNotificationContent?
 
@@ -14,16 +14,24 @@ class NotificationService: UNNotificationServiceExtension {
         self.contentHandler = contentHandler
         bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
 
-        var change :Bool = false
-        // check of last notification was received less than 21 seconds ago
-        if ((Date().timeIntervalSince1970 - lastRemoteNotifictionTS) < 21 * 1000) {
+        var change: Bool = false
+
+        var diffTime = Date().millisecondsSince1970 - lastRemoteNotifictionTS
+        print("noti:Tlast=\(lastRemoteNotifictionTS)")
+        print("noti:Tnow=\(Date().millisecondsSince1970)")
+        print("noti:Tdiff=\(diffTime)")
+
+        // check if last notification was received less than 24 seconds ago
+        if (diffTime < (24 * 1000)) {
+            print("noti:change=true")
             change = true
         }
 
-        lastRemoteNotifictionTS = Date().timeIntervalSince1970
+        lastRemoteNotifictionTS = Date().millisecondsSince1970
 
         if let bestAttemptContent = bestAttemptContent {
             if (change) {
+                print("noti:actually changing")
                 bestAttemptContent.title = "connecting ..."
             }
             contentHandler(bestAttemptContent)
@@ -36,4 +44,14 @@ class NotificationService: UNNotificationServiceExtension {
         }
     }
 
+}
+
+extension Date {
+    var millisecondsSince1970: Int64 {
+        Int64((self.timeIntervalSince1970 * 1000.0).rounded())
+    }
+
+    init(milliseconds: Int64) {
+        self = Date(timeIntervalSince1970: TimeInterval(milliseconds) / 1000)
+    }
 }
