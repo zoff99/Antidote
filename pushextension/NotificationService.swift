@@ -17,15 +17,13 @@ class NotificationService: UNNotificationServiceExtension {
         var change: Bool = false
 
         var diffTime = Date().millisecondsSince1970 - NotificationService.lastRemoteNotifictionTS
-        print("noti:Tlast=\(NotificationService.lastRemoteNotifictionTS)")
-        print("noti:Tnow=\(Date().millisecondsSince1970)")
-        print("noti:Tdiff=\(diffTime)")
-
-        var lastTs = NotificationService.lastRemoteNotifictionTS
+        // print("noti:Tlast=\(NotificationService.lastRemoteNotifictionTS)")
+        // print("noti:Tnow=\(Date().millisecondsSince1970)")
+        // print("noti:Tdiff=\(diffTime)")
 
         // check if last notification was received less than 24 seconds ago
-        if (diffTime < (24 * 1000)) {
-            print("noti:change=true")
+        if (diffTime < (25 * 1000)) {
+            // print("noti:change=true")
             change = true
         }
 
@@ -33,8 +31,8 @@ class NotificationService: UNNotificationServiceExtension {
 
         if let bestAttemptContent = bestAttemptContent {
             if (change) {
-                print("noti:actually changing")
-                bestAttemptContent.title = "connecting ... ts=\(lastTs)"
+                // print("noti:actually changing")
+                bestAttemptContent.title = "connecting ..."
             }
             contentHandler(bestAttemptContent)
         }
