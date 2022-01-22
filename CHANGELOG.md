@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.4.9](https://github.com/Zoxcore/Antidote/tree/1.4.9) (2022-01-22)
+
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.8...1.4.9)
+
+**Implemented enhancements:**
+
+- The "my Push URL:" part should be on it's own tile [\#74](https://github.com/Zoxcore/Antidote/issues/74)
+- enable multiline textfield to show more lines and limit to 1000 characters maximum input. [\#69](https://github.com/Zoxcore/Antidote/pull/69) ([zoff99](https://github.com/zoff99))
+
+**Merged pull requests:**
+
+- add push service extension [\#80](https://github.com/Zoxcore/Antidote/pull/80) ([zoff99](https://github.com/zoff99))
+- push url on its own block. [\#79](https://github.com/Zoxcore/Antidote/pull/79) ([zoff99](https://github.com/zoff99))
+- update objcTox [\#78](https://github.com/Zoxcore/Antidote/pull/78) ([zoff99](https://github.com/zoff99))
+- specify that we are using version 3.4.4 of Yaml [\#77](https://github.com/Zoxcore/Antidote/pull/77) ([zoff99](https://github.com/zoff99))
+- upgrade to SnapKit 5.0.1 [\#76](https://github.com/Zoxcore/Antidote/pull/76) ([zoff99](https://github.com/zoff99))
+- Translations update from Hosted Weblate [\#75](https://github.com/Zoxcore/Antidote/pull/75) ([weblate](https://github.com/weblate))
+
 ## [1.4.8](https://github.com/Zoxcore/Antidote/tree/1.4.8) (2022-01-11)
 
 [Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.7...1.4.8)
