@@ -6,7 +6,7 @@ import UserNotifications
 
 class NotificationService: UNNotificationServiceExtension {
 
-    var lastRemoteNotifictionTS: Int64 = 0
+    static var lastRemoteNotifictionTS: Int64 = 0
     var contentHandler: ((UNNotificationContent) -> Void)?
     var bestAttemptContent: UNMutableNotificationContent?
 
@@ -16,8 +16,8 @@ class NotificationService: UNNotificationServiceExtension {
 
         var change: Bool = false
 
-        var diffTime = Date().millisecondsSince1970 - lastRemoteNotifictionTS
-        print("noti:Tlast=\(lastRemoteNotifictionTS)")
+        var diffTime = Date().millisecondsSince1970 - NotificationService.lastRemoteNotifictionTS
+        print("noti:Tlast=\(NotificationService.lastRemoteNotifictionTS)")
         print("noti:Tnow=\(Date().millisecondsSince1970)")
         print("noti:Tdiff=\(diffTime)")
 
@@ -27,7 +27,7 @@ class NotificationService: UNNotificationServiceExtension {
             change = true
         }
 
-        lastRemoteNotifictionTS = Date().millisecondsSince1970
+        NotificationService.lastRemoteNotifictionTS = Date().millisecondsSince1970
 
         if let bestAttemptContent = bestAttemptContent {
             if (change) {
