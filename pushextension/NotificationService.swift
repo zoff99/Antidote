@@ -34,7 +34,7 @@ class NotificationService: UNNotificationServiceExtension {
         if let bestAttemptContent = bestAttemptContent {
             if (change) {
                 print("noti:actually changing")
-                bestAttemptContent.title = "connecting ... " + String(lastTs)
+                bestAttemptContent.title = "connecting ... ts=\(lastTs)"
             }
             contentHandler(bestAttemptContent)
         }
