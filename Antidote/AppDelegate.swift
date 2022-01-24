@@ -51,8 +51,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         application.registerForRemoteNotifications()
-        // HINT: try to go online every 120 minutes
-        let bgfetchInterval: TimeInterval = 2 * 60 * 60
+        // HINT: try to go online every 90 minutes
+        let bgfetchInterval: TimeInterval = 90 * 60
         application.setMinimumBackgroundFetchInterval(bgfetchInterval);
 
         return true
