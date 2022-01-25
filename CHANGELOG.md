@@ -1,5 +1,21 @@
 # Changelog
 
+## [Unreleased](https://github.com/Zoxcore/Antidote/tree/HEAD)
+
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.10...HEAD)
+
+**Merged pull requests:**
+
+- Translations update from Hosted Weblate [\#82](https://github.com/Zoxcore/Antidote/pull/82) ([weblate](https://github.com/weblate))
+
+## [1.4.10](https://github.com/Zoxcore/Antidote/tree/1.4.10) (2022-01-23)
+
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.9...1.4.10)
+
+**Merged pull requests:**
+
+- fix push extension version [\#81](https://github.com/Zoxcore/Antidote/pull/81) ([zoff99](https://github.com/zoff99))
+
 ## [1.4.9](https://github.com/Zoxcore/Antidote/tree/1.4.9) (2022-01-22)
 
 [Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.8...1.4.9)
