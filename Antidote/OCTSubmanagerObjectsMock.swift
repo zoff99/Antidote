@@ -40,7 +40,7 @@ class OCTSubmanagerObjectsMock: NSObject, OCTSubmanagerObjects {
             case .call:
                 return OCTCall.object(in: realm, forPrimaryKey: uniqueIdentifier)
             case .messageAbstract:
-                return OCTMessageAbstract(in: realm, forPrimaryKey: uniqueIdentifier)
+                return OCTMessageAbstract.object(in: realm, forPrimaryKey: uniqueIdentifier)
         }
     }
     
