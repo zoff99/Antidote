@@ -11,7 +11,7 @@ def common_pods
     pod 'SDCAlertView', '~> 2.5.4'
     pod 'LNNotificationsUI', :git => 'https://github.com/LeoNatan/LNNotificationsUI.git', :commit => '3f75043fc6e77b4180b76cb6cfff4faa506ab9fc'
     pod 'JGProgressHUD', '~> 1.4.0'
-    pod "toxcore", :git => 'https://github.com/Zoxcore/toxcore.git', :commit => '009f4b92b47a6c7c7cc8bfd6146d05df8fbf69e2'
+    pod "toxcore", :git => 'https://github.com/Zoxcore/toxcore.git', :commit => '25c99383d200d3a616b4e979dfdd0ed55276c3ea'
     pod 'SnapKit', '~> 5.0.1'
     pod 'Yaml', '~> 3.4.4'
     pod 'Firebase/Messaging'
