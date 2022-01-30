@@ -32,13 +32,13 @@ class OCTSubmanagerObjectsMock: NSObject, OCTSubmanagerObjects {
     func object(withUniqueIdentifier uniqueIdentifier: String!, for type: OCTFetchRequestType) -> OCTObject! {
         switch type {
             case .friend:
-                return OCTFriend(in: realm, forPrimaryKey: uniqueIdentifier)
+                return OCTFriend.object(in: realm, forPrimaryKey: uniqueIdentifier)
             case .friendRequest:
-                return OCTFriendRequest(in: realm, forPrimaryKey: uniqueIdentifier)
+                return OCTFriendRequest.object(in: realm, forPrimaryKey: uniqueIdentifier)
             case .chat:
-                return OCTChat(in: realm, forPrimaryKey: uniqueIdentifier)
+                return OCTChat.object(in: realm, forPrimaryKey: uniqueIdentifier)
             case .call:
-                return OCTCall(in: realm, forPrimaryKey: uniqueIdentifier)
+                return OCTCall.object(in: realm, forPrimaryKey: uniqueIdentifier)
             case .messageAbstract:
                 return OCTMessageAbstract(in: realm, forPrimaryKey: uniqueIdentifier)
         }
