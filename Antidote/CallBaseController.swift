@@ -34,6 +34,17 @@ class CallBaseController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // HINT: turn on ProximitySensor to blank screen when near the ear
+        UIDevice.current.isProximityMonitoringEnabled = true
+    }
+
+    deinit {
+        // HINT: reset ProximitySensor when calling screen is closed
+        UIDevice.current.isProximityMonitoringEnabled = false
+    }
+
     override func loadView() {
         loadViewWithBackgroundColor(.clear)
 
