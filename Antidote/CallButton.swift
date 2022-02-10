@@ -97,8 +97,16 @@ class CallButton: UIButton {
 
         tintColor = normalTintColor
 
-        let image = UIImage.templateNamed(imageName)
-        setImage(image, for: UIControlState())
+        switch type {
+            case .mute:
+                let image = UIImage.templateNamed("mute")
+                setImage(image, for: .normal)
+                let image2 = UIImage.templateNamed("mute-selected")
+                setImage(image2, for: .selected)
+            default:
+                let image = UIImage.templateNamed(imageName)
+                setImage(image, for: UIControlState())
+        }
 
         let backgroundImage = UIImage.imageWithColor(backgroundColor, size: CGSize(width: 1.0, height: 1.0))
         setBackgroundImage(backgroundImage, for:UIControlState())

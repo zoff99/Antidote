@@ -51,15 +51,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         application.registerForRemoteNotifications()
+        // HINT: try to go online every 47 minutes
+        let bgfetchInterval: TimeInterval = 47 * 60
+        application.setMinimumBackgroundFetchInterval(bgfetchInterval);
 
         return true
     }
 
+    func applicationWillTerminate(_ application: UIApplication) {
+        print("WillTerminate")
+    }
+
+    func applicationDidReceiveMemoryWarning(_ application: UIApplication) {
+        print("DidReceiveMemoryWarning")
+    }
+
     func applicationDidEnterBackground(_ application: UIApplication) {
+        print("DidEnterBackground")
         backgroundTask = UIApplication.shared.beginBackgroundTask (expirationHandler: { [unowned self] in
             UIApplication.shared.endBackgroundTask(self.backgroundTask)
             self.backgroundTask = UIBackgroundTaskInvalid
         })
+    }
+
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+
+        print("performFetchWithCompletionHandler:start")
+        // HINT: we have 30 seconds here. use 25 of those 30 seconds to be on the safe side
+        DispatchQueue.main.asyncAfter(deadline: .now() + 25) { [weak self] in
+            completionHandler(UIBackgroundFetchResult.newData)
+            print("performFetchWithCompletionHandler:end")
+        }
     }
 
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
