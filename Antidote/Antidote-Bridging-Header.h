@@ -41,5 +41,3 @@
 #import <JGProgressHUD/JGProgressHUD.h>
 
 #import "ExceptionHandling.h"
-
-#import "RLMListBase.h"
