@@ -33,6 +33,8 @@ jobs:
             sudo $(which gem) install -N github_changelog_generator-1.15.2.gem
 
     - name: run github-changelog-generator
+      env:
+            CHANGELOG_GEN_TOKEN: ${{ secrets.CHANGELOG_GEN_TOKEN }}
       run:  |
             sudo $(which ruby) $(which github_changelog_generator) -u Zoxcore -p Antidote --exclude-tags "echo $(git tag -l '1.[0123].*'| tr '\n' ',')","$(git tag -l '0.*'| tr '\n' ',')" --token "$CHANGELOG_GEN_TOKEN"
 
