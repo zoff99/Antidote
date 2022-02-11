@@ -1,11 +1,24 @@
 # Changelog
 
-## [Unreleased](https://github.com/Zoxcore/Antidote/tree/HEAD)
+## [1.4.11](https://github.com/Zoxcore/Antidote/tree/1.4.11) (2022-02-11)
 
-[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.10...HEAD)
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.10...1.4.11)
+
+**Implemented enhancements:**
+
+- implement periodic background fetch [\#56](https://github.com/Zoxcore/Antidote/issues/56)
+- Turn screen off using the proximity sensor when in a call [\#40](https://github.com/Zoxcore/Antidote/issues/40)
 
 **Merged pull requests:**
 
+- use ProximitySensor in Callscreen to blank screen when near to the ear. [\#90](https://github.com/Zoxcore/Antidote/pull/90) ([zoff99](https://github.com/zoff99))
+- 006 reduce audio codec bitrate from 48 to 24 kbits/sec. [\#89](https://github.com/Zoxcore/Antidote/pull/89) ([zoff99](https://github.com/zoff99))
+- 005 allow Bluetooth headsets and use mono audio [\#88](https://github.com/Zoxcore/Antidote/pull/88) ([zoff99](https://github.com/zoff99))
+- 004 tweak the mute mic icon to make it clear when mic is actually muted [\#87](https://github.com/Zoxcore/Antidote/pull/87) ([zoff99](https://github.com/zoff99))
+- Translations update from Hosted Weblate [\#86](https://github.com/Zoxcore/Antidote/pull/86) ([weblate](https://github.com/weblate))
+- 003 update dependencies [\#85](https://github.com/Zoxcore/Antidote/pull/85) ([zoff99](https://github.com/zoff99))
+- 002 do not call bootstrap functions in a background thread to avoid a crash. [\#84](https://github.com/Zoxcore/Antidote/pull/84) ([zoff99](https://github.com/zoff99))
+- 001 implement periodic background fetch [\#83](https://github.com/Zoxcore/Antidote/pull/83) ([zoff99](https://github.com/zoff99))
 - Translations update from Hosted Weblate [\#82](https://github.com/Zoxcore/Antidote/pull/82) ([weblate](https://github.com/weblate))
 
 ## [1.4.10](https://github.com/Zoxcore/Antidote/tree/1.4.10) (2022-01-23)
