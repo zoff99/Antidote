@@ -40,7 +40,7 @@ jobs:
 
     - name: chmod
       run:  |
-            sudo chmod a+r /root/project/CHANGELOG.md
+            sudo chmod a+r /home/runner/work/Antidote/Antidote/CHANGELOG.md
             ls -rattlh
 
     - name: upload IPA file
@@ -48,6 +48,6 @@ jobs:
       with:
         name: Changelog
         path: |
-          /root/project/CHANGELOG.md
+          /home/runner/work/Antidote/Antidote/CHANGELOG.md
 
 
