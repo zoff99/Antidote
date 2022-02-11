@@ -1,6 +1,11 @@
 #! /bin/bash
 
-basdir="../"
+_HOME2_=$(dirname $0)
+export _HOME2_
+_HOME_=$(cd $_HOME2_;pwd)
+export _HOME_
+
+basdir="$_HOME_""/../"
 f1="Antidote.xcodeproj/project.pbxproj"
 f2="pushextension/Info.plist"
 
