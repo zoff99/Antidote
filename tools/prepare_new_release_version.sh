@@ -5,11 +5,19 @@ export _HOME2_
 _HOME_=$(cd $_HOME2_;pwd)
 export _HOME_
 
-basdir="$_HOME_""/../"
+basedir="$_HOME_""/../"
 f1="Antidote.xcodeproj/project.pbxproj"
 f2="pushextension/Info.plist"
 
-cd "$basdir"
+cd "$basedir"
+
+if [[ $(git status --porcelain --untracked-files=no) ]]; then
+	echo "ERROR: git repo has changes."
+	echo "please commit or cleanup the git repo."
+	exit 1
+else
+	echo "git repo clean."
+fi
 
 cur_p_version=$(cat "$f1" | grep 'CURRENT_PROJECT_VERSION' | head -1 | \
 	sed -e 's#^.*CURRENT_PROJECT_VERSION = ##' | \
@@ -37,5 +45,11 @@ echo $next_m_version
 sed -i -e 's#CURRENT_PROJECT_VERSION = .*;#CURRENT_PROJECT_VERSION = '"$next_p_version"';#g' "$f1"
 sed -i -e 's#MARKETING_VERSION = .*;#MARKETING_VERSION = '"$next_m_version"';#g' "$f1"
 
-sed -i -e 's#1.4.10#'"$next_m_version"'#g' "$f2"
-sed -i -e 's#141000#'"$next_p_version"'#g' "$f2"
+sed -i -e 's#'"$cur_m_version"'#'"$next_m_version"'#g' "$f2"
+sed -i -e 's#'"$cur_p_version"'#'"$next_p_version"'#g' "$f2"
+
+commit_message="v""$next_m_version"
+tag_name="$next_m_version"
+
+git commit -m "$commit_message" "$f1" "$f2"
+git tag -a "$next_m_version" -m "$next_m_version"
