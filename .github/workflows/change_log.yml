@@ -34,8 +34,8 @@ jobs:
             sudo $(which gem) install -N github_changelog_generator-1.15.2.gem
 
     - name: run github-changelog-generator
-      env:
-            CHANGELOG_GEN_TOKEN: ${{ secrets.CHANGELOG_GEN_TOKEN }}
+      #env:
+      #      CHANGELOG_GEN_TOKEN: ${{ secrets.CHANGELOG_GEN_TOKEN }}
       run:  |
             pwd
             set -x
