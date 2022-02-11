@@ -22,7 +22,8 @@ jobs:
 
     - name: install pkgs
       run:  |
-            export DEBIAN_FRONTEND=noninteractive ; apt update && apt install -y zip grep sudo ruby rubygems git ssh ruby-dev gcc make
+            export DEBIAN_FRONTEND=noninteractive
+            sudo apt update && sudo apt install -y zip grep sudo ruby rubygems git ssh ruby-dev gcc make
             sudo $(which gem) install specific_install
 
     - name: install github-changelog-generator
@@ -36,8 +37,10 @@ jobs:
       env:
             CHANGELOG_GEN_TOKEN: ${{ secrets.CHANGELOG_GEN_TOKEN }}
       run:  |
+            pwd
+            ls -al
             sudo $(which ruby) $(which github_changelog_generator) -u Zoxcore -p Antidote \
-               --exclude-tags "$(git tag -l '1.[0123].*'| tr '\n' ',')","$(git tag -l '0.*'| tr '\n' ',')" \
+               --exclude-tags "echo $(git tag -l '1.[0123].*'| tr '\n' ',')","$(git tag -l '0.*'| tr '\n' ',')" \
                --token "$CHANGELOG_GEN_TOKEN"
 
     - name: chmod
