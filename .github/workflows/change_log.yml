@@ -38,7 +38,6 @@ jobs:
             CHANGELOG_GEN_TOKEN: ${{ secrets.CHANGELOG_GEN_TOKEN }}
       run:  |
             pwd
-            set -x
             $(which ruby) $(which github_changelog_generator) -u Zoxcore -p Antidote \
                --exclude-tags "1.0.0,1.0.0-rc.1,1.0.0-rc.2,1.0.0-rc.3,1.0.0-rc.4,1.1.0,1.2.0,1.2.0-build-2,1.3.0,1.3.1,1.3.2,1.3.3,1.3.4,1.3.5,,0.1,0.10.0,0.10.1,0.10.2,0.10.3,0.10.4,0.10.4-2,0.2,0.2.1,0.2.2,0.2.3,0.2.4,0.2.5,0.3.0,0.4.0,0.5.0,0.6.0,0.6.1," \
                --token "$CHANGELOG_GEN_TOKEN"
