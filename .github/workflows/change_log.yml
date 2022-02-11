@@ -16,7 +16,7 @@ defaults:
 jobs:
   gen-changelog:
     runs-on: ubuntu-latest
-    #environment: genlog_gen_token
+    environment: genlog_gen_token
     steps:
     - uses: actions/checkout@v2
 
@@ -34,23 +34,13 @@ jobs:
             sudo $(which gem) install -N github_changelog_generator-1.15.2.gem
 
     - name: run github-changelog-generator
-      #env:
-      #      CHANGELOG_GEN_TOKEN: ${{ secrets.CHANGELOG_GEN_TOKEN }}
+      env:
+            CHANGELOG_GEN_TOKEN: ${{ secrets.CHANGELOG_GEN_TOKEN }}
       run:  |
             pwd
             set -x
-            echo bbb
-            git status
-            echo aaaaaaaaaa
-            git tag -l '1.[0123].*'| tr '\n' ','
-            tags1=$(git tag -l '1.[0123].*'| tr '\n' ',')
-            git tag -l '0.*'| tr '\n' ','
-            tags2=$(git tag -l '0.*'| tr '\n' ',')
-            git tag -l
-            echo $tags1
-            echo $tags2
             $(which ruby) $(which github_changelog_generator) -u Zoxcore -p Antidote \
-               --exclude-tags $tags1,$tags2 \
+               --exclude-tags "1.0.0,1.0.0-rc.1,1.0.0-rc.2,1.0.0-rc.3,1.0.0-rc.4,1.1.0,1.2.0,1.2.0-build-2,1.3.0,1.3.1,1.3.2,1.3.3,1.3.4,1.3.5,,0.1,0.10.0,0.10.1,0.10.2,0.10.3,0.10.4,0.10.4-2,0.2,0.2.1,0.2.2,0.2.3,0.2.4,0.2.5,0.3.0,0.4.0,0.5.0,0.6.0,0.6.1," \
                --token "$CHANGELOG_GEN_TOKEN"
 
     - name: chmod
