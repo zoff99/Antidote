@@ -38,7 +38,10 @@ jobs:
             CHANGELOG_GEN_TOKEN: ${{ secrets.CHANGELOG_GEN_TOKEN }}
       run:  |
             pwd
-            ls -al
+            set -x
+            echo bbb
+            git status
+            echo aaaaaaaaaa
             git tag -l '1.[0123].*'| tr '\n' ','
             tags1=$(git tag -l '1.[0123].*'| tr '\n' ',')
             git tag -l '0.*'| tr '\n' ','
