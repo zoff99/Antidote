@@ -39,11 +39,14 @@ jobs:
       run:  |
             pwd
             ls -al
+            git tag -l '1.[0123].*'| tr '\n' ','
             tags1=$(git tag -l '1.[0123].*'| tr '\n' ',')
+            git tag -l '0.*'| tr '\n' ','
             tags2=$(git tag -l '0.*'| tr '\n' ',')
+            git tag -l
             echo $tags1
             echo $tags2
-            sudo $(which ruby) $(which github_changelog_generator) -u Zoxcore -p Antidote \
+            $(which ruby) $(which github_changelog_generator) -u Zoxcore -p Antidote \
                --exclude-tags $tags1,$tags2 \
                --token "$CHANGELOG_GEN_TOKEN"
 
