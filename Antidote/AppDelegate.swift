@@ -63,6 +63,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func displayIncomingCall(
+      uuid: UUID,
+      handle: String,
+      hasVideo: Bool = false,
+      completion: ((Error?) -> Void)?
+    ) {
+        providerDelegate.reportIncomingCall(
+            uuid: uuid,
+            handle: handle,
+            hasVideo: hasVideo,
+            completion: completion)
+    }
+
     func applicationWillTerminate(_ application: UIApplication) {
         print("WillTerminate")
         os_log("AppDelegate:applicationWillTerminate")
