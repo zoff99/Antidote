@@ -4,6 +4,7 @@
 
 import UIKit
 import SnapKit
+import CallKit
 
 private struct Constants {
     static let AvatarSize: CGFloat = 140.0
@@ -29,6 +30,7 @@ class CallIncomingController: CallBaseController {
     fileprivate var declineButton: CallButton!
     fileprivate var audioButton: CallButton!
     fileprivate var videoButton: CallButton!
+    fileprivate var uuid_call: UUID!
 
     override func loadView() {
         super.loadView()
@@ -37,6 +39,34 @@ class CallIncomingController: CallBaseController {
         installConstraints()
 
         infoLabel.text = String(localized: "call_incoming")
+    }
+
+    override func viewDidLoad() {
+        let provider = CXProvider(configuration: CXProviderConfiguration(localizedName: "Antidote"))
+        provider.setDelegate(self, queue: nil)
+        let controller = CXCallController()
+        uuid_call = UUID()
+        let transaction = CXTransaction(action: CXStartCallAction(call: uuid_call, handle: CXHandle(type: .generic, value: "XYZ is calling")))
+        controller.request(transaction, completion: { error in })
+        print("cc:incoming_call")
+
+        super.viewDidLoad()
+        /*
+        let controller2 = CXCallController()
+        let transaction2 = CXTransaction(
+            action: CXEndCallAction(call: uuid_call))controller.request(
+                transaction,completion: { error in })
+        */
+
+        /*
+        let backgroundTaskIdentifier = 
+          UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
+
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+                provider.reportCall(with: self.uuid_call, endedAt: Date(), reason: .remoteEnded)
+                UIApplication.shared.endBackgroundTask(backgroundTaskIdentifier)
+        }
+        */
     }
 
     override func prepareForRemoval() {
@@ -51,6 +81,17 @@ class CallIncomingController: CallBaseController {
 // MARK: Actions
 extension CallIncomingController {
     @objc func declineButtonPressed() {
+
+        let backgroundTaskIdentifier = 
+          UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            let controller2 = CXCallController()
+            let transaction2 = CXTransaction(action: CXEndCallAction(call: self.uuid_call))
+            controller2.request(transaction2,completion: { error in })
+            UIApplication.shared.endBackgroundTask(backgroundTaskIdentifier)
+        }
+
         delegate?.callIncomingControllerDecline(self)
     }
 
@@ -61,6 +102,23 @@ extension CallIncomingController {
     @objc func videoButtonPressed() {
         delegate?.callIncomingControllerAnswerVideo(self)
     }
+}
+
+extension CallIncomingController: CXProviderDelegate {
+
+    func providerDidReset(_ provider: CXProvider) {
+            print("cc:reset")
+        }
+
+    func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
+            action.fulfill()
+            print("cc:CXAnswerCallAction")
+        }
+
+    func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
+            action.fulfill()
+            print("cc:CXEndCallAction")
+        }
 }
 
 private extension CallIncomingController {
