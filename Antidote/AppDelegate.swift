@@ -11,6 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
     var coordinator: AppCoordinator!
+    var providerDelegate: ProviderDelegate!
     var backgroundTask: UIBackgroundTaskIdentifier = UIBackgroundTaskInvalid
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -56,6 +57,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let bgfetchInterval: TimeInterval = 47 * 60
         application.setMinimumBackgroundFetchInterval(bgfetchInterval);
         os_log("AppDelegate:didFinishLaunchingWithOptions")
+
+        providerDelegate = ProviderDelegate()
 
         return true
     }

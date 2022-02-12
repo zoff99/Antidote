@@ -569,6 +569,7 @@
 		9CEE6B531C528AB600A1ECB5 /* SettingsAdvancedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEE6B511C528AB600A1ECB5 /* SettingsAdvancedController.swift */; };
 		AF2C929D279AB3F10094C08D /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C929C279AB3F10094C08D /* NotificationService.swift */; };
 		AF2C92A1279AB3F10094C08D /* pushextension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AF2C929A279AB3F10094C08D /* pushextension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AF39AA5327B7A0E000F68AAF /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF39AA5227B7A0E000F68AAF /* ProviderDelegate.swift */; };
 		AFA023F4274C069100FBFCC0 /* ConnectionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA023F3274C069100FBFCC0 /* ConnectionStatus.swift */; };
 		AFA024022753CC9000FBFCC0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFA024012753CC9000FBFCC0 /* GoogleService-Info.plist */; };
 		D4F896D05F7EAA7C321A2AA8 /* libPods-Antidote.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 034E57B3AE56E352BBAA0487 /* libPods-Antidote.a */; };
@@ -948,6 +949,7 @@
 		AF2C929A279AB3F10094C08D /* pushextension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = pushextension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF2C929C279AB3F10094C08D /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		AF2C929E279AB3F10094C08D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF39AA5227B7A0E000F68AAF /* ProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
 		AFA023F3274C069100FBFCC0 /* ConnectionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionStatus.swift; sourceTree = "<group>"; };
 		AFA024012753CC9000FBFCC0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B3C17AF8CE3B4AD1B68F2B5B /* Pods-Antidote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Antidote.release.xcconfig"; path = "Pods/Target Support Files/Pods-Antidote/Pods-Antidote.release.xcconfig"; sourceTree = "<group>"; };
@@ -1463,6 +1465,7 @@
 		F902D28D1ADED27A0070A3F5 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				AF39AA5227B7A0E000F68AAF /* ProviderDelegate.swift */,
 				11FA0ED21BC5842800F3DA5B /* Antidote-Bridging-Header.h */,
 				9CDC093D1C3415DE00DC0D63 /* Antidote-Prefix.pch */,
 				1164763A19794D3300DB20B8 /* Antidote-Info.plist */,
@@ -2090,6 +2093,7 @@
 				9CEE6B1F1C510A1E00A1ECB5 /* NotificationObject.swift in Sources */,
 				1156A4871C10D122005AC8C6 /* StaticTableAvatarCell.swift in Sources */,
 				11E640761C2DBAE200D24C6D /* AddFriendController.swift in Sources */,
+				AF39AA5327B7A0E000F68AAF /* ProviderDelegate.swift in Sources */,
 				9CDC092C1C34102F00DC0D63 /* ExceptionHandling.m in Sources */,
 				9CE0BDF31C4522C800DCE357 /* ChatListCellModel.swift in Sources */,
 				11CFCD111C2A02350046BD94 /* StaticBackgroundView.swift in Sources */,
