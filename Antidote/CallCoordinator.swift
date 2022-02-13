@@ -3,6 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import Foundation
+import CallKit
 
 protocol CallCoordinatorDelegate: class {
     func callCoordinator(_ coordinator: CallCoordinator, notifyAboutBackgroundCallFrom caller: String, userInfo: String)
@@ -63,10 +64,17 @@ class CallCoordinator: NSObject {
 
         super.init()
 
+        // CALL:
+        print("cc:controler:init:01")
+
         submanagerCalls.delegate = self
     }
 
     func callToChat(_ chat: OCTChat, enableVideo: Bool) {
+
+        // CALL:
+        print("cc:controler:callToChat:01")
+
         do {
             let call = try submanagerCalls.call(to: chat, enableAudio: true, enableVideo: enableVideo)
             var nickname = String(localized: "contact_deleted")
@@ -78,6 +86,9 @@ class CallCoordinator: NSObject {
             let controller = CallActiveController(theme: theme, callerName: nickname)
             controller.delegate = self
 
+            // CALL:
+            print("cc:controler:callToChat:02")
+
             startActiveCallWithCall(call, controller: controller)
         }
         catch let error as NSError {
@@ -86,6 +97,10 @@ class CallCoordinator: NSObject {
     }
 
     func answerIncomingCallWithUserInfo(_ userInfo: String) {
+
+        // CALL:
+        print("cc:controler:answerIncomingCallWithUserInfo:01")
+
         guard let activeCall = activeCall else { return }
         guard activeCall.call.uniqueIdentifier == userInfo else { return }
         guard activeCall.call.status == .ringing else { return }
@@ -109,27 +124,43 @@ extension CallCoordinator: OCTSubmanagerCallDelegate {
 
         let nickname = call.caller?.nickname ?? ""
 
+        // CALL: start incoming call
+        print("cc:controler:incoming_call:01")
+
         if !UIApplication.isActive {
             delegate?.callCoordinator(self, notifyAboutBackgroundCallFrom: nickname, userInfo: call.uniqueIdentifier)
+            // CALL: start incoming call
+            print("cc:controler:incoming_call:BG")
         }
 
         let controller = CallIncomingController(theme: theme, callerName: nickname)
         controller.delegate = self
 
         startActiveCallWithCall(call, controller: controller)
+
+        let appdelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appdelegate.displayIncomingCall(uuid: UUID(), handle: "dummy", hasVideo: false, completion: nil)
+
+        print("cc:controler:incoming_call:99")
     }
 }
 
 extension CallCoordinator: CallIncomingControllerDelegate {
     func callIncomingControllerDecline(_ controller: CallIncomingController) {
+        // CALL:
+        print("cc:controler:callIncomingControllerDecline:01")
         declineCall(callWasRemoved: false)
     }
 
     func callIncomingControllerAnswerAudio(_ controller: CallIncomingController) {
+        // CALL:
+        print("cc:controler:callIncomingControllerAnswerAudio:01")
         answerCall(enableVideo: false)
     }
 
     func callIncomingControllerAnswerVideo(_ controller: CallIncomingController) {
+        // CALL:
+        print("cc:controler:callIncomingControllerAnswerVideo:01")
         answerCall(enableVideo: true)
     }
 }
@@ -165,6 +196,8 @@ extension CallCoordinator: CallActiveControllerDelegate {
     }
 
     func callActiveControllerDecline(_ controller: CallActiveController) {
+        // CALL:
+        print("cc:controler:callActiveControllerDecline:02")
         declineCall(callWasRemoved: false)
     }
 
@@ -188,6 +221,9 @@ extension CallCoordinator: CallActiveControllerDelegate {
 
 private extension CallCoordinator {
     func declineCall(callWasRemoved wasRemoved: Bool) {
+        // CALL:
+        print("cc:controler:declineCall:01")
+
         guard let activeCall = activeCall else {
             assert(false, "This method should be called only if active call is non-nil")
             return
@@ -203,6 +239,9 @@ private extension CallCoordinator {
             controller.prepareForRemoval()
         }
 
+        let appdelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appdelegate.endIncomingCall()
+
         let delayTime = DispatchTime.now() + Double(Int64(Constants.DeclineAfterInterval * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
         DispatchQueue.main.asyncAfter(deadline: delayTime) { [weak self] in
             self?.presentingController.dismiss(animated: true, completion: nil)
@@ -215,6 +254,9 @@ private extension CallCoordinator {
             assert(false, "This method should be called only if there is no active call")
             return
         }
+
+        // CALL:
+        print("cc:controler:startActiveCallWithCall:01")
 
         let navigation = UINavigationController(rootViewController: controller)
         navigation.modalPresentationStyle = .overCurrentContext
@@ -246,6 +288,10 @@ private extension CallCoordinator {
     }
 
     func answerCall(enableVideo: Bool) {
+
+        // CALL:
+        print("cc:controler:answerCall:01")
+
         guard let activeCall = activeCall else {
             assert(false, "This method should be called only if active call is non-nil")
             return
@@ -267,6 +313,10 @@ private extension CallCoordinator {
     }
 
     func activeCallWasUpdated() {
+
+        // CALL:
+        print("cc:controler:activeCallWasUpdated:01")
+
         guard let activeCall = activeCall else {
             assert(false, "This method should be called only if active call is non-nil")
             return

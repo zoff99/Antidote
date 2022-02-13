@@ -63,6 +63,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func endIncomingCall() {
+        providerDelegate.endIncomingCall()
+    }
+
+    func endIncomingCallOther() {
+        providerDelegate.endIncomingCallOther()
+    }
+
     func displayIncomingCall(
       uuid: UUID,
       handle: String,

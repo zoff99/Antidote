@@ -3,59 +3,79 @@ import CallKit
 
 class ProviderDelegate: NSObject {
 
-  private let provider: CXProvider
-  
-  override init() {
-    provider = CXProvider(configuration: ProviderDelegate.providerConfiguration)
-    super.init()
-    provider.setDelegate(self, queue: nil)
-  }
-  
-  static var providerConfiguration: CXProviderConfiguration = {
-    let providerConfiguration = CXProviderConfiguration(localizedName: "Antidote")
-    
-    providerConfiguration.supportsVideo = true
-    providerConfiguration.maximumCallsPerCallGroup = 2
-    providerConfiguration.includesCallsInRecents = false
-    // providerConfiguration.supportedHandleTypes = [.phoneNumber]
-    
-    return providerConfiguration
-  }()
+    private let provider: CXProvider
+    fileprivate var uuid_call: UUID!
 
-  func reportIncomingCall(uuid: UUID, handle: String, hasVideo: Bool = false, completion: ((Error?) -> Void)?) {
-    let update = CXCallUpdate()
-    update.remoteHandle = CXHandle(type: .generic, value: handle)
-    update.hasVideo = hasVideo
-  
-    provider.reportNewIncomingCall(with: uuid, update: update) { error in
-        if error == nil {
-            print("cc:call-in")
-        }
-        completion?(error)
+    override init() {
+        provider = CXProvider(configuration: CXProviderConfiguration(localizedName: "Antidote"))
+        super.init()
+        self.uuid_call = nil
+        provider.setDelegate(self, queue: nil)
     }
-  }
+
+    func reportIncomingCall(uuid: UUID, handle: String, hasVideo: Bool = false, completion: ((Error?) -> Void)?) {
+        let controller = CXCallController()
+        self.uuid_call = UUID()
+        let transaction = CXTransaction(action: CXStartCallAction(call: self.uuid_call,
+                handle: CXHandle(type: .generic, value: "XYZ is calling")))
+        controller.request(transaction, completion: { error in })
+        print("cc:call-startincomingcall")
+    }
+
+    func endIncomingCall() {
+        print("cc:call-endincomingcall-start")
+        if (self.uuid_call == nil)
+        {
+            return
+        }
+
+        let backgroundTaskIdentifier = 
+          UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            let controller2 = CXCallController()
+            let transaction2 = CXTransaction(action: CXEndCallAction(call: self.uuid_call))
+            self.uuid_call = nil
+            controller2.request(transaction2,completion: { error in })
+            print("cc:call-endincomingcall-done")
+            UIApplication.shared.endBackgroundTask(backgroundTaskIdentifier)
+        }
+    }
+
+    func endIncomingCallOther() {
+        print("cc:call-endincomingcallother-start")
+        if (self.uuid_call == nil)
+        {
+            return
+        }
+
+        let backgroundTaskIdentifier = 
+          UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.provider.reportCall(with: self.uuid_call, endedAt: Date(), reason: .remoteEnded)
+            self.uuid_call = nil
+            print("cc:call-endincomingcallother-done")
+            UIApplication.shared.endBackgroundTask(backgroundTaskIdentifier)
+        }
+    }
 }
 
 // MARK: - CXProviderDelegate
 extension ProviderDelegate: CXProviderDelegate {
-  func providerDidReset(_ provider: CXProvider) {
-    print("cc:call-providerDidReset")
-  }
 
-  func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
-    print("cc:call-CXAnswerCallAction %@", action.callUUID)
-    action.fulfill()
-  }
+    func providerDidReset(_ provider: CXProvider) {
+        print("cc:call-providerDidReset")
+    }
 
-  func provider(_ provider: CXProvider, didActivate audioSession: AVAudioSession) {
-    print("cc:call-didActivate")
-  }
+    func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
+        action.fulfill()
+        print("cc:call-CXAnswerCallAction %@", action.callUUID)
+    }
 
-  func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
-    print("cc:call-CXEndCallAction %@", action.callUUID)
-    action.fulfill()
-  }
-
+    func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
+        action.fulfill()
+        print("cc:call-CXEndCallAction %@", action.callUUID)
+    }
 }
-
 

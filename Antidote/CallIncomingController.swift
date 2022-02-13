@@ -42,6 +42,7 @@ class CallIncomingController: CallBaseController {
     }
 
     override func viewDidLoad() {
+        /*
         let provider = CXProvider(configuration: CXProviderConfiguration(localizedName: "Antidote"))
         provider.setDelegate(self, queue: nil)
         let controller = CXCallController()
@@ -49,7 +50,7 @@ class CallIncomingController: CallBaseController {
         let transaction = CXTransaction(action: CXStartCallAction(call: uuid_call, handle: CXHandle(type: .generic, value: "XYZ is calling")))
         controller.request(transaction, completion: { error in })
         print("cc:incoming_call")
-
+        */
         super.viewDidLoad()
         /*
         let controller2 = CXCallController()
@@ -82,15 +83,7 @@ class CallIncomingController: CallBaseController {
 extension CallIncomingController {
     @objc func declineButtonPressed() {
 
-        let backgroundTaskIdentifier = 
-          UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            let controller2 = CXCallController()
-            let transaction2 = CXTransaction(action: CXEndCallAction(call: self.uuid_call))
-            controller2.request(transaction2,completion: { error in })
-            UIApplication.shared.endBackgroundTask(backgroundTaskIdentifier)
-        }
+        // CALL: end incoming call
 
         delegate?.callIncomingControllerDecline(self)
     }
