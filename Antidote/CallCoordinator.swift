@@ -40,6 +40,7 @@ class CallCoordinator: NSObject {
     fileprivate weak var presentingController: UIViewController!
     fileprivate weak var submanagerCalls: OCTSubmanagerCalls!
     fileprivate weak var submanagerObjects: OCTSubmanagerObjects!
+    fileprivate var providerdelegate: ProviderDelegate!
 
     fileprivate let audioPlayer = AudioPlayer()
 
@@ -61,6 +62,7 @@ class CallCoordinator: NSObject {
         self.presentingController = presentingController
         self.submanagerCalls = submanagerCalls
         self.submanagerObjects = submanagerObjects
+        self.providerdelegate = ProviderDelegate()
 
         super.init()
 
@@ -138,8 +140,7 @@ extension CallCoordinator: OCTSubmanagerCallDelegate {
 
         startActiveCallWithCall(call, controller: controller)
 
-        let appdelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        appdelegate.displayIncomingCall(uuid: UUID(), handle: "dummy", hasVideo: false, completion: nil)
+        self.providerdelegate.reportIncomingCall(uuid: UUID(), handle: "dummy", hasVideo: false, completion: nil)
 
         print("cc:controler:incoming_call:99")
     }
@@ -239,8 +240,7 @@ private extension CallCoordinator {
             controller.prepareForRemoval()
         }
 
-        let appdelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        appdelegate.endIncomingCall()
+        self.providerdelegate.endIncomingCall()
 
         let delayTime = DispatchTime.now() + Double(Int64(Constants.DeclineAfterInterval * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
         DispatchQueue.main.asyncAfter(deadline: delayTime) { [weak self] in

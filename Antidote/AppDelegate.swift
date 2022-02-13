@@ -11,7 +11,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
     var coordinator: AppCoordinator!
-    var providerDelegate: ProviderDelegate!
     var backgroundTask: UIBackgroundTaskIdentifier = UIBackgroundTaskInvalid
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -58,30 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.setMinimumBackgroundFetchInterval(bgfetchInterval);
         os_log("AppDelegate:didFinishLaunchingWithOptions")
 
-        providerDelegate = ProviderDelegate()
-
         return true
-    }
-
-    func endIncomingCall() {
-        providerDelegate.endIncomingCall()
-    }
-
-    func endIncomingCallOther() {
-        providerDelegate.endIncomingCallOther()
-    }
-
-    func displayIncomingCall(
-      uuid: UUID,
-      handle: String,
-      hasVideo: Bool = false,
-      completion: ((Error?) -> Void)?
-    ) {
-        providerDelegate.reportIncomingCall(
-            uuid: uuid,
-            handle: handle,
-            hasVideo: hasVideo,
-            completion: completion)
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

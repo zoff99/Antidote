@@ -29,13 +29,15 @@ class ProviderDelegate: NSObject {
             return
         }
 
+        let uuid_: UUID = self.uuid_call
+        self.uuid_call = nil
+
         let backgroundTaskIdentifier = 
           UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             let controller2 = CXCallController()
-            let transaction2 = CXTransaction(action: CXEndCallAction(call: self.uuid_call))
-            self.uuid_call = nil
+            let transaction2 = CXTransaction(action: CXEndCallAction(call: uuid_))
             controller2.request(transaction2,completion: { error in })
             print("cc:call-endincomingcall-done")
             UIApplication.shared.endBackgroundTask(backgroundTaskIdentifier)
