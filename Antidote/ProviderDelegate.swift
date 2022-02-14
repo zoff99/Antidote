@@ -17,7 +17,7 @@ class ProviderDelegate: NSObject {
         let controller = CXCallController()
         self.uuid_call = UUID()
         let transaction = CXTransaction(action: CXStartCallAction(call: self.uuid_call,
-                handle: CXHandle(type: .generic, value: "XYZ is calling")))
+                handle: CXHandle(type: .generic, value: handle)))
         controller.request(transaction, completion: { error in })
         print("cc:call-startincomingcall")
     }

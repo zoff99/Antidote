@@ -140,7 +140,7 @@ extension CallCoordinator: OCTSubmanagerCallDelegate {
 
         startActiveCallWithCall(call, controller: controller)
 
-        self.providerdelegate.reportIncomingCall(uuid: UUID(), handle: "dummy", hasVideo: false, completion: nil)
+        self.providerdelegate.reportIncomingCall(uuid: UUID(), handle: nickname, hasVideo: false, completion: nil)
 
         print("cc:controler:incoming_call:99")
     }
