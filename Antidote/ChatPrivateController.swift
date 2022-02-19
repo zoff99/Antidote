@@ -392,11 +392,16 @@ extension ChatPrivateController: UITableViewDataSource {
                 if (UserDefaultsManager().DebugMode == false) {
                     outgoingModel.message = messageText.text ?? ""
                 } else {
-                    outgoingModel.message = "" + (messageText.text ?? "") + "\n"
-                                               + "msgv3HashHex:\n" + (messageText.msgv3HashHex ?? "") + "\n"
-                                               + "senderUniqueIdentifier:\n" + (message.senderUniqueIdentifier ?? "") + "\n"
-                                               + "chatUniqueIdentifier:\n" + (message.chatUniqueIdentifier ?? "") + "\n"
-                                               + "isDelivered:\n" + String(messageText.isDelivered) + "\n"
+                    let s1 = (messageText.text ?? "")
+                    let s2 = (messageText.msgv3HashHex ?? "")
+                    let s3 = (message.senderUniqueIdentifier ?? "")
+                    let s4 = (message.chatUniqueIdentifier )
+                    let s5 = String(messageText.isDelivered)
+                    outgoingModel.message =  s1 + "\n"
+                                               + "msgv3HashHex:\n" + s2 + "\n"
+                                               + "senderUniqueIdentifier:\n" + s3 + "\n"
+                                               + "chatUniqueIdentifier:\n" + s4 + "\n"
+                                               + "isDelivered:\n" + s5 + "\n"
                 }
 
                 outgoingModel.delivered = messageText.isDelivered
@@ -424,11 +429,16 @@ extension ChatPrivateController: UITableViewDataSource {
                 if (UserDefaultsManager().DebugMode == false) {
                     incomingModel.message = messageText.text ?? ""
                 } else {
-                    incomingModel.message = "" + (messageText.text ?? "") + "\n"
-                                               + "msgv3HashHex:\n" + (messageText.msgv3HashHex ?? "") + "\n"
-                                               + "senderUniqueIdentifier:\n" + (message.senderUniqueIdentifier ?? "") + "\n"
-                                               + "chatUniqueIdentifier:\n" + (message.chatUniqueIdentifier ?? "") + "\n"
-                                               + "isDelivered:\n" + String(messageText.isDelivered) + "\n"
+                    let s1 = (messageText.text ?? "")
+                    let s2 = (messageText.msgv3HashHex ?? "")
+                    let s3 = (message.senderUniqueIdentifier ?? "")
+                    let s4 = (message.chatUniqueIdentifier)
+                    let s5 = String(messageText.isDelivered)
+                    incomingModel.message = "" + s1 + "\n"
+                                               + "msgv3HashHex:\n" + s2 + "\n"
+                                               + "senderUniqueIdentifier:\n" + s3 + "\n"
+                                               + "chatUniqueIdentifier:\n" + s4 + "\n"
+                                               + "isDelivered:\n" + s5 + "\n"
                 }
 
                 model = incomingModel
