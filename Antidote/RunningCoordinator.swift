@@ -19,7 +19,7 @@ class RunningCoordinator {
     fileprivate var toxManager: OCTManager
     fileprivate var options: CoordinatorOptions?
 
-    fileprivate var activeSessionCoordinator: ActiveSessionCoordinator?
+    var activeSessionCoordinator: ActiveSessionCoordinator?
     fileprivate var pinAuthorizationCoordinator: PinAuthorizationCoordinator
 
     init(theme: Theme, window: UIWindow, toxManager: OCTManager, skipAuthorizationChallenge: Bool) {

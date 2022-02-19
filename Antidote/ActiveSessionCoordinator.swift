@@ -66,7 +66,7 @@ class ActiveSessionCoordinator: NSObject {
 
     fileprivate let notificationCoordinator: NotificationCoordinator
     fileprivate let automationCoordinator: AutomationCoordinator
-    fileprivate var callCoordinator: CallCoordinator!
+    var callCoordinator: CallCoordinator!
 
     /**
         One of following properties will be non-empty, depending on running device.

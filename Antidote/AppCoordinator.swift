@@ -6,7 +6,7 @@ import UIKit
 
 class AppCoordinator {
     fileprivate let window: UIWindow
-    fileprivate var activeCoordinator: TopCoordinatorProtocol!
+    var activeCoordinator: TopCoordinatorProtocol!
     fileprivate var theme: Theme
 
     init(window: UIWindow) {

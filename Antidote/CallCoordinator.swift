@@ -62,7 +62,6 @@ class CallCoordinator: NSObject {
         self.presentingController = presentingController
         self.submanagerCalls = submanagerCalls
         self.submanagerObjects = submanagerObjects
-        self.providerdelegate = ProviderDelegate()
 
         super.init()
 
@@ -133,14 +132,19 @@ extension CallCoordinator: OCTSubmanagerCallDelegate {
             delegate?.callCoordinator(self, notifyAboutBackgroundCallFrom: nickname, userInfo: call.uniqueIdentifier)
             // CALL: start incoming call
             print("cc:controler:incoming_call:BG")
+
+            let backgroundTaskIdentifier = UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
+            DispatchQueue.main.asyncAfter(wallDeadline: DispatchWallTime.now() + 0.1) {
+                AppDelegate.shared.displayIncomingCall(uuid: UUID(), handle: nickname, hasVideo: false) { _ in
+                    UIApplication.shared.endBackgroundTask(backgroundTaskIdentifier)
+                }
+            }
         }
 
         let controller = CallIncomingController(theme: theme, callerName: nickname)
         controller.delegate = self
 
         startActiveCallWithCall(call, controller: controller)
-
-        self.providerdelegate.reportIncomingCall(uuid: UUID(), handle: nickname, hasVideo: false, completion: nil)
 
         print("cc:controler:incoming_call:99")
     }
@@ -220,7 +224,7 @@ extension CallCoordinator: CallActiveControllerDelegate {
     }
 }
 
-private extension CallCoordinator {
+extension CallCoordinator {
     func declineCall(callWasRemoved wasRemoved: Bool) {
         // CALL:
         print("cc:controler:declineCall:01")
@@ -240,7 +244,12 @@ private extension CallCoordinator {
             controller.prepareForRemoval()
         }
 
-        self.providerdelegate.endIncomingCall()
+        let backgroundTaskIdentifier = UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
+        DispatchQueue.main.asyncAfter(wallDeadline: DispatchWallTime.now() + 0.1) {
+            AppDelegate.shared.endIncomingCalls()
+            UIApplication.shared.endBackgroundTask(backgroundTaskIdentifier)
+        }
+        // self.providerdelegate.endIncomingCall()
 
         let delayTime = DispatchTime.now() + Double(Int64(Constants.DeclineAfterInterval * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
         DispatchQueue.main.asyncAfter(deadline: delayTime) { [weak self] in

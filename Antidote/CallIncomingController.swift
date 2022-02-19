@@ -4,7 +4,6 @@
 
 import UIKit
 import SnapKit
-import CallKit
 
 private struct Constants {
     static let AvatarSize: CGFloat = 140.0
@@ -84,7 +83,6 @@ extension CallIncomingController {
     @objc func declineButtonPressed() {
 
         // CALL: end incoming call
-
         delegate?.callIncomingControllerDecline(self)
     }
 
@@ -95,23 +93,6 @@ extension CallIncomingController {
     @objc func videoButtonPressed() {
         delegate?.callIncomingControllerAnswerVideo(self)
     }
-}
-
-extension CallIncomingController: CXProviderDelegate {
-
-    func providerDidReset(_ provider: CXProvider) {
-            print("cc:reset")
-        }
-
-    func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
-            action.fulfill()
-            print("cc:CXAnswerCallAction")
-        }
-
-    func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
-            action.fulfill()
-            print("cc:CXEndCallAction")
-        }
 }
 
 private extension CallIncomingController {
