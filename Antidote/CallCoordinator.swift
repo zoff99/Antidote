@@ -230,7 +230,7 @@ extension CallCoordinator {
         print("cc:controler:declineCall:01")
 
         guard let activeCall = activeCall else {
-            assert(false, "This method should be called only if active call is non-nil")
+            // assert(false, "This method should be called only if active call is non-nil")
             return
         }
 
@@ -302,12 +302,12 @@ extension CallCoordinator {
         print("cc:controler:answerCall:01")
 
         guard let activeCall = activeCall else {
-            assert(false, "This method should be called only if active call is non-nil")
+            // assert(false, "This method should be called only if active call is non-nil")
             return
         }
 
         guard activeCall.call.status == .ringing else {
-            assert(false, "Call status should be .Ringing")
+            // assert(false, "Call status should be .Ringing")
             return
         }
 
