@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.12](https://github.com/Zoxcore/Antidote/tree/1.4.12) (2022-02-22)
+
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.11...1.4.12)
+
+**Merged pull requests:**
+
+- revert some audio stuff that may disable audio in some setups [\#103](https://github.com/Zoxcore/Antidote/pull/103) ([zoff99](https://github.com/zoff99))
+- boost friend finding with the onion after being offline for a while [\#102](https://github.com/Zoxcore/Antidote/pull/102) ([zoff99](https://github.com/zoff99))
+- log also to system console. [\#101](https://github.com/Zoxcore/Antidote/pull/101) ([zoff99](https://github.com/zoff99))
+- use callkit for incoming calls. [\#99](https://github.com/Zoxcore/Antidote/pull/99) ([zoff99](https://github.com/zoff99))
+- fix code to make analyzer happy. [\#98](https://github.com/Zoxcore/Antidote/pull/98) ([zoff99](https://github.com/zoff99))
+
 ## [1.4.11](https://github.com/Zoxcore/Antidote/tree/1.4.11) (2022-02-11)
 
 [Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.10...1.4.11)
@@ -104,6 +116,7 @@
 - fix FCM background fetch [\#53](https://github.com/Zoxcore/Antidote/pull/53) ([zoff99](https://github.com/zoff99))
 - toxcore 0.2.13 [\#52](https://github.com/Zoxcore/Antidote/pull/52) ([zoff99](https://github.com/zoff99))
 - use screen better [\#51](https://github.com/Zoxcore/Antidote/pull/51) ([zoff99](https://github.com/zoff99))
+- Prepare 1.4.4, Remove support for iPad, Add new keys for appstore connect requirements [\#49](https://github.com/Zoxcore/Antidote/pull/49) ([Tha14](https://github.com/Tha14))
 
 ## [1.4.4](https://github.com/Zoxcore/Antidote/tree/1.4.4) (2021-12-08)
 
@@ -116,7 +129,6 @@
 **Merged pull requests:**
 
 - v1.4.4 [\#50](https://github.com/Zoxcore/Antidote/pull/50) ([zoff99](https://github.com/zoff99))
-- Prepare 1.4.4, Remove support for iPad, Add new keys for appstore connect requirements [\#49](https://github.com/Zoxcore/Antidote/pull/49) ([Tha14](https://github.com/Tha14))
 - add apn \(FCM\) push [\#47](https://github.com/Zoxcore/Antidote/pull/47) ([zoff99](https://github.com/zoff99))
 - remove userStatus setting until it works properly again [\#45](https://github.com/Zoxcore/Antidote/pull/45) ([zoff99](https://github.com/zoff99))
 - Do not Translate the status message and fix it to the new Message [\#44](https://github.com/Zoxcore/Antidote/pull/44) ([zoff99](https://github.com/zoff99))
