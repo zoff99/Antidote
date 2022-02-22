@@ -30,7 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame:UIScreen.main.bounds)
 
-        print("appdel:didFinishLaunchingWithOptions")
+        print("didFinishLaunchingWithOptions")
+        os_log("AppDelegate:didFinishLaunchingWithOptions")
         
         if ProcessInfo.processInfo.arguments.contains("UI_TESTING") {
             // Speeding up animations for UI tests.
