@@ -11,11 +11,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
     var coordinator: AppCoordinator!
+    let callManager = CallManager()
+    lazy var providerDelegate: ProviderDelegate = ProviderDelegate(callManager: self.callManager)
     var backgroundTask: UIBackgroundTaskIdentifier = UIBackgroundTaskInvalid
 
+    class var shared: AppDelegate {
+      return UIApplication.shared.delegate as! AppDelegate
+    }
+    
+    func displayIncomingCall(uuid: UUID, handle: String, hasVideo: Bool = false, completion: ((NSError?) -> Void)?) {
+      providerDelegate.reportIncomingCall(uuid: uuid, handle: handle, hasVideo: hasVideo, completion: completion)
+    }
+    
+    func endIncomingCalls() {
+        providerDelegate.endIncomingCalls()
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame:UIScreen.main.bounds)
 
+        print("didFinishLaunchingWithOptions")
+        os_log("AppDelegate:didFinishLaunchingWithOptions")
+        
         if ProcessInfo.processInfo.arguments.contains("UI_TESTING") {
             // Speeding up animations for UI tests.
             window!.layer.speed = 1000

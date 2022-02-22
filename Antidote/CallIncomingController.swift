@@ -29,6 +29,7 @@ class CallIncomingController: CallBaseController {
     fileprivate var declineButton: CallButton!
     fileprivate var audioButton: CallButton!
     fileprivate var videoButton: CallButton!
+    fileprivate var uuid_call: UUID!
 
     override func loadView() {
         super.loadView()
@@ -37,6 +38,35 @@ class CallIncomingController: CallBaseController {
         installConstraints()
 
         infoLabel.text = String(localized: "call_incoming")
+    }
+
+    override func viewDidLoad() {
+        /*
+        let provider = CXProvider(configuration: CXProviderConfiguration(localizedName: "Antidote"))
+        provider.setDelegate(self, queue: nil)
+        let controller = CXCallController()
+        uuid_call = UUID()
+        let transaction = CXTransaction(action: CXStartCallAction(call: uuid_call, handle: CXHandle(type: .generic, value: "XYZ is calling")))
+        controller.request(transaction, completion: { error in })
+        print("cc:incoming_call")
+        */
+        super.viewDidLoad()
+        /*
+        let controller2 = CXCallController()
+        let transaction2 = CXTransaction(
+            action: CXEndCallAction(call: uuid_call))controller.request(
+                transaction,completion: { error in })
+        */
+
+        /*
+        let backgroundTaskIdentifier = 
+          UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
+
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+                provider.reportCall(with: self.uuid_call, endedAt: Date(), reason: .remoteEnded)
+                UIApplication.shared.endBackgroundTask(backgroundTaskIdentifier)
+        }
+        */
     }
 
     override func prepareForRemoval() {
@@ -51,6 +81,8 @@ class CallIncomingController: CallBaseController {
 // MARK: Actions
 extension CallIncomingController {
     @objc func declineButtonPressed() {
+
+        // CALL: end incoming call
         delegate?.callIncomingControllerDecline(self)
     }
 
