@@ -90,11 +90,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         print("DidEnterBackground")
         os_log("AppDelegate:applicationDidEnterBackground:start")
-        backgroundTask = UIApplication.shared.beginBackgroundTask (expirationHandler: { [unowned self] in
+        backgroundTask = UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
+        DispatchQueue.main.asyncAfter(wallDeadline: DispatchWallTime.now() + 25) {
             UIApplication.shared.endBackgroundTask(self.backgroundTask)
             self.backgroundTask = UIBackgroundTaskInvalid
-            os_log("AppDelegate:applicationDidEnterBackground:end")
-        })
+            os_log("DidEnterBackground:END")
+        }
     }
 
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
