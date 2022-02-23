@@ -8,6 +8,7 @@
 
 import AVFoundation
 import CallKit
+import os
 
 class ProviderDelegate: NSObject {
 
@@ -15,6 +16,7 @@ class ProviderDelegate: NSObject {
     fileprivate let provider: CXProvider
 
     init(callManager: CallManager) {
+        os_log("ProviderDelegate:init")
         self.callManager = callManager
         provider = CXProvider(configuration: type(of: self).providerConfiguration)
 
@@ -39,10 +41,10 @@ class ProviderDelegate: NSObject {
     
     func endIncomingCalls() {
         
-        print("cc2:endIncomingCalls")
+        os_log("ProviderDelegate:endIncomingCalls")
         
         for call in callManager.calls {
-            print("cc2:endcall %@", call)
+            os_log("ProviderDelegate:endcall")
             provider.reportCall(with: call.uuid, endedAt: Date(), reason: .remoteEnded)
             call.end()
         }
@@ -51,6 +53,8 @@ class ProviderDelegate: NSObject {
     }
 
     func reportIncomingCall(uuid: UUID, handle: String, hasVideo: Bool = false, completion: ((NSError?) -> Void)?) {
+
+        os_log("ProviderDelegate:reportIncomingCall")
 
         // prepare update to send to system
         let update = CXCallUpdate()
@@ -79,6 +83,8 @@ class ProviderDelegate: NSObject {
 extension ProviderDelegate: CXProviderDelegate {
 
     func providerDidReset(_ provider: CXProvider) {
+        os_log("ProviderDelegate:providerDidReset")
+
         // stopAudio()
 
         for call in callManager.calls {
@@ -89,17 +95,10 @@ extension ProviderDelegate: CXProviderDelegate {
     }
 
     func provider(_ provider: CXProvider, didActivate audioSession: AVAudioSession) {
-        // startAudio()
-    }
+        os_log("cc:ProviderDelegate:didActivate")
+        print("cc:ProviderDelegate:didActivate %@", audioSession)
 
-    func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
-
-        print("cc2:call-answer %@", action)
-        
-        guard let call = callManager.callWithUUID(uuid: action.callUUID) else {
-            action.fail()
-            return
-        }
+        // HINT: audio session has to be started here!
 
         // also answer Tox Call -------------
         // -- HaXX0r --
@@ -113,15 +112,50 @@ extension ProviderDelegate: CXProviderDelegate {
         // -- HaXX0r --
         // also answer Tox Call -------------
 
-        // configureAudioSession()
+        // startAudio()
+    }
+
+    func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
+
+        os_log("cc:ProviderDelegate:call-answer %@", action)
+
+        guard let call = callManager.callWithUUID(uuid: action.callUUID) else {
+            action.fail()
+            return
+        }
+
+        // HINT: audio session has to be configured here!
+        configureAudioSession()
+        os_log("cc:ProviderDelegate:call-answer:answer()")
         call.answer()
         // when processing an action, app should fulfill it or fail
+        os_log("cc:ProviderDelegate:call-answer:fulfill()")
         action.fulfill()
+    }
+
+    func configureAudioSession()
+    {
+        os_log("cc:ProviderDelegate:configureAudioSession:start")
+
+        let session = AVAudioSession.sharedInstance()
+        do {
+            try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
+            os_log("cc:ProviderDelegate:configureAudioSession:try_001")
+            try session.setMode(AVAudioSessionModeVoiceChat)
+            os_log("cc:ProviderDelegate:configureAudioSession:try_002")
+            // try session.setActive(true)
+            // os_log("cc:ProviderDelegate:configureAudioSession:try_003")
+        } catch (let error) {
+            os_log("cc:ProviderDelegate:configureAudioSession:EE_01")
+            print("cc:ProviderDelegate:configureAudioSession:Error while configuring audio session: \(error)")
+        }
+
+        os_log("ProviderDelegate:configureAudioSession:end")
     }
 
     func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
 
-        print("cc2:call-end %@", action)
+        os_log("ProviderDelegate:call-end %@", action)
 
         guard let call = callManager.callWithUUID(uuid: action.callUUID) else {
             action.fail()
@@ -149,7 +183,7 @@ extension ProviderDelegate: CXProviderDelegate {
 
     func provider(_ provider: CXProvider, perform action: CXSetHeldCallAction) {
 
-        print("cc2:call-held %@", action)
+        os_log("ProviderDelegate:call-held %@", action)
 
         guard let call = callManager.callWithUUID(uuid: action.callUUID) else {
             action.fail()
@@ -170,9 +204,9 @@ extension ProviderDelegate: CXProviderDelegate {
     func provider(_ provider: CXProvider, perform action: CXStartCallAction) {
         let call = Call(uuid: action.callUUID, outgoing: true, handle: action.handle.value)
         // configure. provider(_:didActivate) will start audio
-        // configureAudioSession()
+        configureAudioSession()
         
-        print("cc2:call-start %s", action.handle.value)
+        os_log("cc:ProviderDelegate:call-start %s", action.handle.value)
 
         // set connectedStateChanged as a closure to monitor call lifecycle
         call.connectedStateChanged = { [weak self, weak call] in
