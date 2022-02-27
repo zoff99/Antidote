@@ -22,6 +22,7 @@ class SettingsMainController: StaticTableController {
     fileprivate let autodownloadImagesModel = StaticTableInfoCellModel()
     fileprivate let notificationsModel = StaticTableSwitchCellModel()
     fileprivate let debugmodeModel = StaticTableSwitchCellModel()
+    fileprivate let dateonmessagemodeModel = StaticTableSwitchCellModel()
     fileprivate let advancedSettingsModel = StaticTableDefaultCellModel()
 
     init(theme: Theme) {
@@ -35,6 +36,7 @@ class SettingsMainController: StaticTableController {
                 notificationsModel,
             ],
             [
+                dateonmessagemodeModel,
                 debugmodeModel,
             ],
             [
@@ -98,6 +100,10 @@ private extension SettingsMainController{
         debugmodeModel.on = userDefaults.DebugMode
         debugmodeModel.valueChangedHandler = debugmodeValueChanged
 
+        dateonmessagemodeModel.title = "Always show date on Messages"
+        dateonmessagemodeModel.on = userDefaults.DateonmessageMode
+        dateonmessagemodeModel.valueChangedHandler = dateonmessagemodeValueChanged
+
         advancedSettingsModel.value = String(localized: "settings_advanced_settings")
         advancedSettingsModel.didSelectHandler = showAdvancedSettings
         advancedSettingsModel.rightImageType = .arrow
@@ -117,6 +123,10 @@ private extension SettingsMainController{
 
     func debugmodeValueChanged(_ on: Bool) {
         userDefaults.DebugMode = on
+    }
+
+    func dateonmessagemodeValueChanged(_ on: Bool) {
+        userDefaults.DateonmessageMode = on
     }
 
     func changeAutodownloadImages(_: StaticTableBaseCell) {

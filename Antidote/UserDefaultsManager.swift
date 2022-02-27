@@ -39,6 +39,15 @@ class UserDefaultsManager {
         }
     }
 
+    var DateonmessageMode: Bool {
+        get {
+            return boolForKey(Keys.DateonmessageMode, defaultValue: true)
+        }
+        set {
+            setBool(newValue, forKey: Keys.DateonmessageMode)
+        }
+    }
+
     var showNotificationPreview: Bool {
         get {
             return boolForKey(Keys.ShowNotificationsPreview, defaultValue: true)
@@ -78,6 +87,7 @@ private extension UserDefaultsManager {
         static let LastActiveProfile = "user-info/last-active-profile"
         static let EchobotAdded = "user-info/echobot-added"
         static let DebugMode = "user-info/debug-mode"
+        static let DateonmessageMode = "user-info/dateonmessage-mode"
         static let UDPEnabled = "user-info/udp-enabled"
         static let ShowNotificationsPreview = "user-info/snow-notification-preview"
         static let AutodownloadImages = "user-info/autodownload-images"
