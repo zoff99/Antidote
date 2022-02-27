@@ -26,12 +26,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func endIncomingCalls() {
         providerDelegate.endIncomingCalls()
     }
-    
+
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        os_log("AppDelegate:applicationWillEnterForeground")
+        UIApplication.shared.endBackgroundTask(self.backgroundTask)
+        self.backgroundTask = UIBackgroundTaskInvalid
+        os_log("AppDelegate:applicationWillEnterForeground:DidEnterBackground:2:END")
+    }
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame:UIScreen.main.bounds)
 
         print("didFinishLaunchingWithOptions")
-        os_log("AppDelegate:didFinishLaunchingWithOptions")
+        os_log("AppDelegate:didFinishLaunchingWithOptions:start")
         
         if ProcessInfo.processInfo.arguments.contains("UI_TESTING") {
             // Speeding up animations for UI tests.
@@ -72,7 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // HINT: try to go online every 47 minutes
         let bgfetchInterval: TimeInterval = 47 * 60
         application.setMinimumBackgroundFetchInterval(bgfetchInterval);
-        os_log("AppDelegate:didFinishLaunchingWithOptions")
+        os_log("AppDelegate:didFinishLaunchingWithOptions:end")
 
         return true
     }
@@ -90,12 +97,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         print("DidEnterBackground")
         os_log("AppDelegate:applicationDidEnterBackground:start")
-        backgroundTask = UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
-        DispatchQueue.main.asyncAfter(wallDeadline: DispatchWallTime.now() + 25) {
+        backgroundTask = UIApplication.shared.beginBackgroundTask (expirationHandler: { [unowned self] in
             UIApplication.shared.endBackgroundTask(self.backgroundTask)
             self.backgroundTask = UIBackgroundTaskInvalid
-            os_log("AppDelegate:applicationDidEnterBackground:end")
-        }
+            os_log("AppDelegate:applicationDidEnterBackground:3:expirationHandler:END")
+        })
+
+         DispatchQueue.main.asyncAfter(wallDeadline: DispatchWallTime.now() + 25) {
+             UIApplication.shared.endBackgroundTask(self.backgroundTask)
+             self.backgroundTask = UIBackgroundTaskInvalid
+            os_log("AppDelegate:applicationDidEnterBackground:1:END")
     }
 
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
@@ -150,7 +161,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // HINT: we have 30 seconds here. use 25 of those 30 seconds to be on the safe side
     DispatchQueue.main.asyncAfter(deadline: .now() + 25) { [weak self] in
         completionHandler(UIBackgroundFetchResult.newData)
-        os_log("AppDelegate:didReceiveRemoteNotification:end")
+        os_log("AppDelegate:didReceiveRemoteNotification:start")
     }
   }
 
