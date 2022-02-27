@@ -16,7 +16,11 @@ class ChatOutgoingTextCell: ChatBaseTextCell {
 
         bubbleNormalBackground = theme.colorForType(.ChatOutgoingBubble)
         if !textModel.delivered {
-            bubbleNormalBackground = theme.colorForType(.ChatOutgoingUnreadBubble)
+            if !textModel.sentpush {
+                bubbleNormalBackground = theme.colorForType(.ChatOutgoingUnreadBubble)
+            } else {
+                bubbleNormalBackground = theme.colorForType(.ChatOutgoingSentPushBubble)
+            }
         }
 
         bubbleView.textColor = theme.colorForType(.ConnectingText)
