@@ -6,4 +6,5 @@ import Foundation
 
 class ChatOutgoingTextCellModel : ChatBaseTextCellModel {
     var delivered: Bool = false
+    var sentpush: Bool = false
 }

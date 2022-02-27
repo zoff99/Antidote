@@ -582,14 +582,17 @@ extension ChatPrivateController: UITableViewDataSource {
                     let s3 = (message.senderUniqueIdentifier ?? "")
                     let s4 = (message.chatUniqueIdentifier )
                     let s5 = String(messageText.isDelivered)
+                    let s6 = String(messageText.sentPush)
                     outgoingModel.message =  s1 + "\n"
                                                + "msgv3HashHex:\n" + s2 + "\n"
                                                + "senderUniqueIdentifier:\n" + s3 + "\n"
                                                + "chatUniqueIdentifier:\n" + s4 + "\n"
                                                + "isDelivered:\n" + s5 + "\n"
+                                               + "sentPush:\n" + s6 + "\n"
                 }
 
                 outgoingModel.delivered = messageText.isDelivered
+                outgoingModel.sentpush = messageText.sentPush
 
                 model = outgoingModel
 

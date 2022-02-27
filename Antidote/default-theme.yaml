@@ -18,6 +18,7 @@ colors:
   green: 85B452
   green_bright: 00D116
   yellow: FFF300
+  pushyellow: FFC533
   red: E94F42
   palered: C56258
   rust: B7410E
@@ -58,6 +59,7 @@ values:
   chat-incoming-bubble: lightgrayblue
   chat-outgoing-bubble: purple
   chat-outgoing-unread-bubble: rust
+  chat-outgoing-sentpush-bubble: pushyellow
   chat-information-text: darkgray2
   tab-badge-background: palered
   tab-badge-text: white
