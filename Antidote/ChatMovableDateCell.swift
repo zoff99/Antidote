@@ -33,6 +33,10 @@ class ChatMovableDateCell: BaseCell {
         didSet {
             var offset = movableOffset
 
+            if (UserDefaultsManager().DateonmessageMode == true) {
+                offset = 39
+            }
+
             if #available(iOS 9.0, *) {
                 if UIView.userInterfaceLayoutDirection(for: self.semanticContentAttribute) == .rightToLeft {
                     offset = -offset
@@ -71,6 +75,7 @@ class ChatMovableDateCell: BaseCell {
         _ = ChatMovableDateCell.__once
 
         dateLabel.text = movableModel.dateString
+        dateLabel.numberOfLines = 0 // --> multiline label
         dateLabel.textColor = theme.colorForType(.ChatListCellMessage)
     }
 
@@ -82,7 +87,7 @@ class ChatMovableDateCell: BaseCell {
         contentView.addSubview(movableContentView)
 
         dateLabel = UILabel()
-        dateLabel.font = UIFont.antidoteFontWithSize(12.0, weight: .light)
+        dateLabel.font = UIFont.antidoteFontWithSize(11.0, weight: .medium)
         movableContentView.addSubview(dateLabel)
 
         // Using empty view for multiple selection background.
@@ -94,7 +99,11 @@ class ChatMovableDateCell: BaseCell {
 
         movableContentView.snp.makeConstraints {
             $0.top.equalTo(contentView)
-            movableContentViewLeftConstraint = $0.leading.equalTo(contentView).constraint
+            if (UserDefaultsManager().DateonmessageMode == true) {
+                movableContentViewLeftConstraint = $0.leading.equalTo(contentView).constraint.update(offset: -39)
+            } else {
+                movableContentViewLeftConstraint = $0.leading.equalTo(contentView).constraint
+            }
             $0.size.equalTo(contentView)
         }
 

@@ -53,6 +53,7 @@ class ChatPrivateController: KeyboardNotificationController {
     fileprivate let imageCache = NSCache<AnyObject, AnyObject>()
 
     fileprivate let timeFormatter: DateFormatter
+    fileprivate let dateFormatter: DateFormatter
 
     fileprivate var audioButton: UIBarButtonItem!
     fileprivate var videoButton: UIBarButtonItem!
@@ -103,6 +104,8 @@ class ChatPrivateController: KeyboardNotificationController {
         self.visibleMessages = Constants.MessagesPortionSize
 
         self.timeFormatter = DateFormatter(type: .time)
+        self.dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMdd"
 
         super.init()
 
@@ -252,6 +255,10 @@ extension ChatPrivateController {
 
     @objc func panOnTableView(_ recognizer: UIPanGestureRecognizer) {
         guard let tableView = tableView else {
+            return
+        }
+
+        if (UserDefaultsManager().DateonmessageMode == true) {
             return
         }
 
@@ -646,7 +653,7 @@ extension ChatPrivateController: UITableViewDataSource {
             }
         }
 
-        model.dateString = timeFormatter.string(from: message.date())
+        model.dateString = timeFormatter.string(from: message.date()) + "\n" + dateFormatter.string(from: message.date())
 
         cell.delegate = self
         cell.setupWithTheme(theme, model: model)

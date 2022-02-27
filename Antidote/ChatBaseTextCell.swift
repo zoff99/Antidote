@@ -7,7 +7,7 @@ import UIKit
 class ChatBaseTextCell: ChatMovableDateCell {
     struct Constants {
         static let BubbleVerticalOffset = 1.0
-        static let BubbleHorizontalOffset = 20.0
+        static let BubbleHorizontalOffset = 10.0
     }
 
     var bubbleNormalBackground: UIColor?
