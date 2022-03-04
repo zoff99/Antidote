@@ -8,7 +8,11 @@ class OCTSubmanagerChatsMock: NSObject, OCTSubmanagerChats {
     func getOrCreateChat(with friend: OCTFriend!) -> OCTChat! {
         return OCTChat()
     }
-    
+
+    func sendOwnPush() {
+        // nop
+    }
+
     func removeMessages(_ messages: [OCTMessageAbstract]!) {
         // nop
     }
