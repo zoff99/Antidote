@@ -19,7 +19,7 @@ class OCTSubmanagerChatsMock: NSObject, OCTSubmanagerChats {
 
     public func sendMessagePush(to chat: OCTChat!)
     {
-        // nop
+       // nop
     }
 
     public func sendMessage(to chat: OCTChat!,
