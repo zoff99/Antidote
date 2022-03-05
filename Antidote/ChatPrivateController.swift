@@ -5,6 +5,7 @@
 import UIKit
 import SnapKit
 import MobileCoreServices
+import os
 
 private struct Constants {
     static let MessagesPortionSize = 50
@@ -428,7 +429,12 @@ extension ChatPrivateController {
 
                         DispatchQueue.main.async {
                             // send a text message to trigger PUSH notification, and make friend come online (hopefully)
+                            // HINT: call OCTSubmanagerChatsImpl.m -> sendMessageToChat()
                             self.submanagerChats.sendMessage(to: self.chat, text: "calling you", type: .normal, successBlock: nil, failureBlock: nil)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                                os_log("PUSH:10_seconds")
+                                self.submanagerChats.sendMessagePush(to: self.chat)
+                            }
 
                             self.linearBar.startAnimation(viewToAddto: self.CallWaitingView, viewToAlignToBottomOf: lb3, bottom_margin: 10)
                             self.CallWaitingView.bringSubview(toFront: self.linearBar)
