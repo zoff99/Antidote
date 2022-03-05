@@ -56,6 +56,10 @@ class ChatPrivateController: KeyboardNotificationController {
 
     fileprivate var audioButton: UIBarButtonItem!
     fileprivate var videoButton: UIBarButtonItem!
+    fileprivate var CallWaitingView: UIView!
+    fileprivate var callwaiting_running: Bool!
+    fileprivate var CallWaitingCancelButton: CallButton?
+    fileprivate let linearBar: LinearProgressBar = LinearProgressBar()
 
     fileprivate var titleView: ChatPrivateTitleView!
     fileprivate var tableView: UITableView?
@@ -92,6 +96,7 @@ class ChatPrivateController: KeyboardNotificationController {
         self.submanagerFiles = submanagerFiles
         self.delegate = delegate
         self.showKeyboardOnAppear = showKeyboardOnAppear
+        self.callwaiting_running = false
 
         let predicate = NSPredicate(format: "chatUniqueIdentifier == %@", chat.uniqueIdentifier)
         self.messages = submanagerObjects.messages(predicate: predicate).sortedResultsUsingProperty("dateInterval", ascending: false)
@@ -151,7 +156,15 @@ class ChatPrivateController: KeyboardNotificationController {
 
         createNavigationViews()
         addFriendNotification()
+
+        self.configureLinearProgressBar()
     }
+
+    fileprivate func configureLinearProgressBar(){
+            linearBar.backgroundColor = UIColor(red:0.68, green:0.81, blue:0.72, alpha:1.0)
+            linearBar.progressBarColor = UIColor(red:0.26, green:0.65, blue:0.45, alpha:1.0)
+            linearBar.heightForLinearBar = 5
+        }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -286,8 +299,180 @@ extension ChatPrivateController {
         }
     }
 
+    func messageBox(messageTitle: String, messageAlert: String, messageBoxStyle: UIAlertControllerStyle, alertActionStyle: UIAlertActionStyle, completionHandler: @escaping () -> Void)
+        {
+            let alert = UIAlertController(title: messageTitle, message: messageAlert, preferredStyle: messageBoxStyle)
+
+            let okAction = UIAlertAction(title: "Cancel", style: alertActionStyle) { _ in
+                completionHandler() // This will only get called after okay is tapped in the alert
+            }
+
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
+        }
+
+    @objc
+    func buttonCallWaitingCancel() {
+            callwaiting_running = false
+            CallWaitingView.removeFromSuperview()
+            self.linearBar.stopAnimation()
+    }
+
     @objc func audioCallButtonPressed() {
-        delegate?.chatPrivateControllerCallToChat(self, enableVideo: false)
+
+        if let friend = self.friend {
+            let connection_status = ConnectionStatus(connectionStatus: friend.connectionStatus)
+            if (connection_status != .none)
+            {
+                // HINT: friend is online, so start the call now
+                callwaiting_running = false
+                delegate?.chatPrivateControllerCallToChat(self, enableVideo: false)
+            }
+            else
+            {
+                // HINT: friend is not online, show call waiting screen
+                callwaiting_running = true
+                let window = UIApplication.shared.keyWindow!
+                CallWaitingView = UIView(frame: window.bounds)
+                window.addSubview(CallWaitingView)
+                CallWaitingView.backgroundColor = .black
+
+                CallWaitingCancelButton = CallButton(theme: theme, type: .decline, buttonSize: .big)
+                CallWaitingCancelButton!.addTarget(self,
+                                         action: #selector(buttonCallWaitingCancel),
+                                         for: .touchUpInside)
+                // CallWaitingCancelButton!.backgroundColor = .white
+
+                let lb1 = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 80))
+                lb1.text = "Call"
+                lb1.textAlignment = .center;
+                lb1.font = lb1.font.withSize(35)
+                lb1.textColor = .white
+                lb1.backgroundColor = .black
+                lb1.numberOfLines = 0;
+                lb1.sizeToFit()
+
+                let lb2 = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 80))
+                lb2.text = friend.nickname
+                lb2.textAlignment = .center;
+                lb2.font = lb1.font.withSize(30)
+                lb2.textColor = .white
+                lb2.backgroundColor = .black
+                lb2.numberOfLines = 0;
+                lb2.sizeToFit()
+
+                let lb3 = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 80))
+                lb3.text = "waiting for friend to come online ..."
+                lb3.textAlignment = .center;
+                lb3.font = lb1.font.withSize(20)
+                lb3.textColor = .white
+                lb3.backgroundColor = .black
+                lb3.numberOfLines = 0;
+                lb3.lineBreakMode = .byWordWrapping
+                lb3.sizeToFit()
+
+
+                CallWaitingView.addSubview(CallWaitingCancelButton!)
+                CallWaitingView.addSubview(lb1)
+                CallWaitingView.addSubview(lb2)
+                CallWaitingView.addSubview(lb3)
+                CallWaitingCancelButton!.center = CallWaitingView.center
+                CallWaitingView.bringSubview(toFront: lb1)
+                CallWaitingView.bringSubview(toFront: lb2)
+                CallWaitingView.bringSubview(toFront: lb3)
+                CallWaitingView.bringSubview(toFront: CallWaitingCancelButton!)
+
+                let BigButtonOffset = 30.0
+
+                CallWaitingView.snp.makeConstraints { make in
+                    make.leading.trailing.bottom.equalToSuperview()
+                    // make.top.equalTo(view.safeAreaLayoutGuide) // --> that leave too much see through space at the top. strange
+                    make.top.equalToSuperview()
+                }
+
+                CallWaitingCancelButton!.snp.makeConstraints { make in
+                    make.centerX.equalToSuperview()
+                    make.top.greaterThanOrEqualToSuperview().offset(BigButtonOffset)
+                    make.bottom.equalToSuperview().offset(-BigButtonOffset)
+                }
+
+                lb1.snp.makeConstraints { make in
+                    make.centerX.equalToSuperview()
+                    make.top.equalToSuperview().offset(60)
+                    make.leading.trailing.equalToSuperview()
+                }
+
+                lb2.snp.makeConstraints { make in
+                    make.centerX.equalToSuperview()
+                    make.top.equalTo(lb1.snp.bottom).offset(35)
+                    make.leading.trailing.equalToSuperview()
+                }
+
+                lb3.snp.makeConstraints { make in
+                    make.centerX.equalToSuperview()
+                    make.top.equalTo(lb2.snp.bottom).offset(35)
+                    make.leading.trailing.equalToSuperview()
+                }
+
+                DispatchQueue.global(qos: .userInitiated).async {
+
+                    print("cc:call_waiting_bg_queue")
+                    if self.friend != nil {
+
+                        DispatchQueue.main.async {
+                            // send a text message to trigger PUSH notification, and make friend come online (hopefully)
+                            self.submanagerChats.sendMessage(to: self.chat, text: "calling you", type: .normal, successBlock: nil, failureBlock: nil)
+
+                            self.linearBar.startAnimation(viewToAddto: self.CallWaitingView, viewToAlignToBottomOf: lb3, bottom_margin: 10)
+                            self.CallWaitingView.bringSubview(toFront: self.linearBar)
+                        }
+
+                        var connection_status2: ConnectionStatus = .none
+
+                        while true {
+
+                            DispatchQueue.main.async {
+                                connection_status2 = ConnectionStatus(connectionStatus: friend.connectionStatus)
+                            }
+
+                            print("cc:while_friend_not_online, %@", connection_status2)
+                            if (connection_status2 != .none)
+                            {
+                                DispatchQueue.main.async {
+                                    print("cc:main_queue")
+                                    if (self.callwaiting_running)
+                                    {
+                                        self.callwaiting_running = false
+                                        self.CallWaitingView.removeFromSuperview()
+                                        self.linearBar.stopAnimation()
+                                        self.delegate?.chatPrivateControllerCallToChat(self, enableVideo: false)
+                                    }
+                                }
+                                break
+                            }
+
+                            // HINT: sleep for 1 second
+                            if (self.callwaiting_running)
+                            {
+                                sleep(1)
+                            }
+                            else
+                            {
+                                DispatchQueue.main.async {
+                                    self.CallWaitingView.removeFromSuperview()
+                                    self.linearBar.stopAnimation()
+                                }
+                                break
+                            }
+                        }
+                        print("cc:while_loop_end")
+                    }
+                }
+
+            }
+        } else {
+            print("Call_ERROR:no friend?")
+        }
     }
 
     @objc func videoCallButtonPressed() {
@@ -840,7 +1025,7 @@ private extension ChatPrivateController {
             titleView.name = String(localized: "contact_deleted")
             titleView.userStatus = UserStatus(connectionStatus: .none, userStatus: .none)
             titleView.connectionStatus = ConnectionStatus(connectionStatus: .none)
-            audioButton.isEnabled = false
+            audioButton.isEnabled = true
             videoButton.isEnabled = false
             chatInputView.cameraButtonEnabled = false
             return
@@ -868,7 +1053,7 @@ private extension ChatPrivateController {
 
                     let isConnected = friend.isConnected
 
-                    self.audioButton.isEnabled = isConnected
+                    self.audioButton.isEnabled = true
                     self.videoButton.isEnabled = isConnected
                     self.chatInputView.cameraButtonEnabled = isConnected
 

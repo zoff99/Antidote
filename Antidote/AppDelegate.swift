@@ -90,11 +90,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         print("DidEnterBackground")
         os_log("AppDelegate:applicationDidEnterBackground:start")
-        backgroundTask = UIApplication.shared.beginBackgroundTask (expirationHandler: { [unowned self] in
+        backgroundTask = UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
+        DispatchQueue.main.asyncAfter(wallDeadline: DispatchWallTime.now() + 25) {
             UIApplication.shared.endBackgroundTask(self.backgroundTask)
             self.backgroundTask = UIBackgroundTaskInvalid
             os_log("AppDelegate:applicationDidEnterBackground:end")
-        })
+        }
     }
 
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
@@ -149,7 +150,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // HINT: we have 30 seconds here. use 25 of those 30 seconds to be on the safe side
     DispatchQueue.main.asyncAfter(deadline: .now() + 25) { [weak self] in
         completionHandler(UIBackgroundFetchResult.newData)
-        os_log("AppDelegate:didReceiveRemoteNotification:start")
+        os_log("AppDelegate:didReceiveRemoteNotification:end")
     }
   }
 
