@@ -5,6 +5,7 @@
 import Foundation
 import MobileCoreServices
 import Photos
+import os
 
 fileprivate struct Constants {
     static let inactivityTimeout = 4.0
@@ -78,7 +79,12 @@ extension ChatInputViewManager: ChatInputViewDelegate {
     }
 
     func chatInputViewSendButtonPressed(_ view: ChatInputView) {
+        // HINT: call OCTSubmanagerChatsImpl.m -> sendMessageToChat()
         submanagerChats.sendMessage(to: chat, text: view.text, type: .normal, successBlock: nil, failureBlock: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+            os_log("PUSH:10_seconds")
+            self.submanagerChats.sendMessagePush(to: self.chat)
+        }
 
         view.text = ""
         endUserInteraction()

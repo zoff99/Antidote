@@ -16,7 +16,12 @@ class OCTSubmanagerChatsMock: NSObject, OCTSubmanagerChats {
     func removeAllMessages(in chat: OCTChat!, removeChat: Bool) {
         // nop
     }
-    
+
+    public func sendMessagePush(to chat: OCTChat!)
+    {
+        // nop
+    }
+
     public func sendMessage(to chat: OCTChat!,
             text: String!,
             type: OCTToxMessageType,
