@@ -16,16 +16,17 @@ class NotificationService: UNNotificationServiceExtension {
 
         var change: Bool = false
 
-        var diffTime = Date().millisecondsSince1970 - NotificationService.lastRemoteNotifictionTS
+        // var diffTime = Date().millisecondsSince1970 - NotificationService.lastRemoteNotifictionTS
         // print("noti:Tlast=\(NotificationService.lastRemoteNotifictionTS)")
         // print("noti:Tnow=\(Date().millisecondsSince1970)")
         // print("noti:Tdiff=\(diffTime)")
 
+        // HINT: now always change message text to "connecting ..."
         // check if last notification was received less than 24 seconds ago
-        if (diffTime < (25 * 1000)) {
+        // if (diffTime < (25 * 1000)) {
             // print("noti:change=true")
             change = true
-        }
+        // }
 
         NotificationService.lastRemoteNotifictionTS = Date().millisecondsSince1970
 

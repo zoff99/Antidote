@@ -58,7 +58,7 @@ class ActiveSessionCoordinator: NSObject {
     fileprivate let window: UIWindow
 
     // Tox manager is stored here
-    fileprivate var toxManager: OCTManager!
+    var toxManager: OCTManager!
 
     fileprivate let friendsCoordinator: FriendsTabCoordinator
     fileprivate let settingsCoordinator: SettingsTabCoordinator

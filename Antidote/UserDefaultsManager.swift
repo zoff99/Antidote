@@ -48,6 +48,15 @@ class UserDefaultsManager {
         }
     }
 
+    var LongerbgMode: Bool {
+        get {
+            return boolForKey(Keys.LongerbgMode, defaultValue: false)
+        }
+        set {
+            setBool(newValue, forKey: Keys.LongerbgMode)
+        }
+    }
+
     var showNotificationPreview: Bool {
         get {
             return boolForKey(Keys.ShowNotificationsPreview, defaultValue: true)
@@ -90,6 +99,7 @@ private extension UserDefaultsManager {
         static let DateonmessageMode = "user-info/dateonmessage-mode"
         static let UDPEnabled = "user-info/udp-enabled"
         static let ShowNotificationsPreview = "user-info/snow-notification-preview"
+        static let LongerbgMode = "user-info/longerbg-mode"
         static let AutodownloadImages = "user-info/autodownload-images"
     }
 

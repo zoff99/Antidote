@@ -71,12 +71,17 @@
 
 - (void)sendOwnPush
 {
+    NSLog(@"PUSH:sendOwnPush");
     NSString *token = [FIRMessaging messaging].FCMToken;
     if (token.length > 0)
     {
         NSString *my_pushToken = [NSString stringWithFormat:@"https://tox.zoff.xyz/toxfcm/fcm.php?id=%@&type=1", token];
         // NSLog(@"token push url=%@", my_pushToken);
         triggerPush(my_pushToken, nil, nil, nil);
+    }
+    else
+    {
+        NSLog(@"PUSH:sendOwnPush:no token");
     }
 }
 
@@ -125,15 +130,26 @@ triggerPush(NSString *used_pushToken,
             ([used_pushToken hasPrefix:@"https://gotify1.unifiedpush.org/UP?token="])
         ) {
 
-            __weak NSString *weak_pushToken = used_pushToken;
+            NSString *strong_pushToken = used_pushToken;
 
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                NSString *strong_pushToken = weak_pushToken;
+                // NSString *strong_pushToken = weak_pushToken;
                 int PUSH_URL_TRIGGER_AGAIN_MAX_COUNT = 8;
                 int PUSH_URL_TRIGGER_AGAIN_SECONDS = 21;
 
                 for (int i=0; i<(PUSH_URL_TRIGGER_AGAIN_MAX_COUNT + 1); i++)
                 {
+                    if (chat == nil) {
+                        __block UIApplicationState as = UIApplicationStateBackground;
+                        dispatch_sync(dispatch_get_main_queue(), ^{
+                            as =[[UIApplication sharedApplication] applicationState];
+                        });
+
+                        if (as == UIApplicationStateActive) {
+                            NSLog(@"PUSH:fg->break:1");
+                            break;
+                        }
+                    }
                     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:strong_pushToken]];
                     NSString *userUpdate = [NSString stringWithFormat:@"&text=1", nil];
                     [urlRequest setHTTPMethod:@"POST"];
@@ -169,6 +185,18 @@ triggerPush(NSString *used_pushToken,
                         NSLog(@"calling PUSH URL:WAIT:start");
                         [NSThread sleepForTimeInterval:PUSH_URL_TRIGGER_AGAIN_SECONDS];
                         NSLog(@"calling PUSH URL:WAIT:done");
+                    }
+
+                    if (chat == nil) {
+                        __block UIApplicationState as = UIApplicationStateBackground;
+                        dispatch_sync(dispatch_get_main_queue(), ^{
+                            as =[[UIApplication sharedApplication] applicationState];
+                        });
+
+                        if (as == UIApplicationStateActive) {
+                            NSLog(@"PUSH:fg->break:2");
+                            break;
+                        }
                     }
 
                     if (msgv3HashHex != nil)
