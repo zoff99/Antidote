@@ -104,6 +104,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             os_log("AppDelegate:applicationDidEnterBackground:3:expirationHandler:END")
         })
 
+        DispatchQueue.main.asyncAfter(wallDeadline: DispatchWallTime.now() + 15) {
+            if (UserDefaultsManager().LongerbgMode == true) {
+                os_log("AppDelegate:applicationDidEnterBackground:PushSelf:start")
+                let coord = self.coordinator.activeCoordinator
+                let runcoord = coord as! RunningCoordinator
+                runcoord.activeSessionCoordinator?.toxManager.chats.sendOwnPush()
+            } else {
+                os_log("AppDelegate:applicationDidEnterBackground:PushSelf:longer-bg-mode not active in settings")
+            }
+        }
+
         DispatchQueue.main.asyncAfter(wallDeadline: DispatchWallTime.now() + 25) {
             UIApplication.shared.endBackgroundTask(self.backgroundTask)
             self.backgroundTask = UIBackgroundTaskInvalid

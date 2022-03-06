@@ -21,6 +21,7 @@ class SettingsMainController: StaticTableController {
     fileprivate let faqModel = StaticTableDefaultCellModel()
     fileprivate let autodownloadImagesModel = StaticTableInfoCellModel()
     fileprivate let notificationsModel = StaticTableSwitchCellModel()
+    fileprivate let longerbgModel = StaticTableSwitchCellModel()
     fileprivate let debugmodeModel = StaticTableSwitchCellModel()
     fileprivate let dateonmessagemodeModel = StaticTableSwitchCellModel()
     fileprivate let advancedSettingsModel = StaticTableDefaultCellModel()
@@ -33,9 +34,10 @@ class SettingsMainController: StaticTableController {
                 autodownloadImagesModel,
             ],
             [
-                notificationsModel,
+                longerbgModel,
             ],
             [
+                notificationsModel,
                 dateonmessagemodeModel,
                 debugmodeModel,
             ],
@@ -48,7 +50,7 @@ class SettingsMainController: StaticTableController {
             ],
         ], footers: [
             String(localized: "settings_autodownload_images_description"),
-            String(localized: "settings_notifications_description"),
+            "This will keep the Application running for longer in the background to finish sending messages, but this will also reveal more meta data about you. It will link your IP address and your PUSH token. It's a tradeoff between convenience and metadata privacy.",
             nil,
             nil,
             nil,
@@ -96,6 +98,10 @@ private extension SettingsMainController{
         notificationsModel.on = userDefaults.showNotificationPreview
         notificationsModel.valueChangedHandler = notificationsValueChanged
 
+        longerbgModel.title = "longer Background Mode"
+        longerbgModel.on = userDefaults.LongerbgMode
+        longerbgModel.valueChangedHandler = longerbgValueChanged
+
         debugmodeModel.title = "Debug Mode"
         debugmodeModel.on = userDefaults.DebugMode
         debugmodeModel.valueChangedHandler = debugmodeValueChanged
@@ -119,6 +125,10 @@ private extension SettingsMainController{
 
     func notificationsValueChanged(_ on: Bool) {
         userDefaults.showNotificationPreview = on
+    }
+
+    func longerbgValueChanged(_ on: Bool) {
+        userDefaults.LongerbgMode = on
     }
 
     func debugmodeValueChanged(_ on: Bool) {
