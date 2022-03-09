@@ -94,6 +94,8 @@
                                     sender:(OCTFriend *)sender
                                  messageId:(OCTToxMessageId)messageId
                               msgv3HashHex:(NSString *)msgv3HashHex
+                                    tssent:(UInt32)tssent
+                                    tsrcvd:(UInt32)tsrcvd
                                   sentPush:(BOOL)sentPush;
 
 - (OCTMessageAbstract *)addMessageWithFileNumber:(OCTToxFileNumber)fileNumber

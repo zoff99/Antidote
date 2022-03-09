@@ -286,6 +286,7 @@
  * @param type Type of the message.
  * @param message Message that would be send.
  * @param msgv3HashHex the messagev3 Hash Hexstring or nil.
+ * @param msgv3tssec the messagev3 sendtimestamp in unixtimestamp or "0" if not used.
  * @param error If an error occurs, this pointer is set to an actual error object containing the error information.
  * See OCTToxErrorFriendSendMessage for all error codes.
  *
@@ -299,6 +300,7 @@
                                           type:(OCTToxMessageType)type
                                        message:(NSString *)message
                                   msgv3HashHex:(NSString *)msgv3HashHex
+                                    msgv3tssec:(UInt32)msgv3tssec
                                          error:(NSError **)error;
 
 /**

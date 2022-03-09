@@ -24,6 +24,16 @@
 @property NSTimeInterval dateInterval;
 
 /**
+ * Unixtimestamp when messageV3 was sent or 0.
+ */
+@property NSTimeInterval tssent;
+
+/**
+ * Unixtimestamp when messageV3 was received or 0.
+ */
+@property NSTimeInterval tsrcvd;
+
+/**
  * Unique identifier of friend that have send message.
  * If the message if outgoing senderUniqueIdentifier is nil.
  */
