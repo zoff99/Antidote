@@ -381,6 +381,25 @@ size_t xnet_pack_u32(uint8_t *bytes, uint32_t v)
     return p - bytes;
 }
 
+size_t xnet_unpack_u16(const uint8_t *bytes, uint16_t *v)
+{
+    uint8_t hi = bytes[0];
+    uint8_t lo = bytes[1];
+    *v = ((uint16_t)hi << 8) | lo;
+    return sizeof(*v);
+}
+
+size_t xnet_unpack_u32(const uint8_t *bytes, uint32_t *v)
+{
+    const uint8_t *p = bytes;
+    uint16_t hi;
+    uint16_t lo;
+    p += xnet_unpack_u16(p, &hi);
+    p += xnet_unpack_u16(p, &lo);
+    *v = ((uint32_t)hi << 16) | lo;
+    return p - bytes;
+}
+
 - (BOOL)bootstrapFromHost:(NSString *)host port:(OCTToxPort)port publicKey:(NSString *)publicKey error:(NSError **)error
 {
     NSParameterAssert(host);
@@ -647,7 +666,9 @@ size_t xnet_pack_u32(uint8_t *bytes, uint32_t v)
             {
                 uint32_t timestamp_unix = (uint32_t)msgv3tssec;
                 uint32_t timestamp_unix_buf = 0;
+                // NSLog(@"mmm:timestamp_unix %d", timestamp_unix);
                 xnet_pack_u32((uint8_t *)&timestamp_unix_buf, timestamp_unix);
+                // NSLog(@"mmm:timestamp_unix_buf %d", timestamp_unix_buf);
 
                 uint8_t* position = cMessage2_alloc;
                 memcpy(position, cMessage, (size_t)(length_orig_corrected));
@@ -655,7 +676,7 @@ size_t xnet_pack_u32(uint8_t *bytes, uint32_t v)
                 position = position + TOX_MSGV3_GUARD;
                 memcpy(position, hash_buffer_c, (size_t)(TOX_MSGV3_MSGID_LENGTH));
                 position = position + TOX_MSGV3_MSGID_LENGTH;
-                memcpy(position, &timestamp_unix, (size_t)(TOX_MSGV3_TIMESTAMP_LENGTH));
+                memcpy(position, &timestamp_unix_buf, (size_t)(TOX_MSGV3_TIMESTAMP_LENGTH));
 
                 length2 = length_orig_corrected + TOX_MSGV3_GUARD + TOX_MSGV3_MSGID_LENGTH + TOX_MSGV3_TIMESTAMP_LENGTH;
                 cMessage2 = cMessage2_alloc;
@@ -1982,8 +2003,9 @@ void friendMessageCallback(
             if (message_v3_hash_hexstr)
             {
                 bin_to_hex((const char *)message_v3_hash_bin, (size_t)TOX_MSGV3_MSGID_LENGTH, message_v3_hash_hexstr);
-                msgv3_timstamp_int = *((uint32_t *)message_v3_timestamp_bin);
-                OCTLogCInfo(@"friendMessageCallback:friend_message_cb:hash=%s ts=%d", tox, message_v3_hash_hexstr, msgv3_timstamp_int);
+                const uint8_t *p = (uint8_t *)(message_v3_timestamp_bin);
+                p += xnet_unpack_u32(p, &msgv3_timstamp_int);
+                // OCTLogCInfo(@"mmm:friendMessageCallback:friend_message_cb:hash=%s ts=%d", tox, message_v3_hash_hexstr, msgv3_timstamp_int);
             }
             //
             // ---------- do work here ----------

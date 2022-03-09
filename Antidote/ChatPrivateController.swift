@@ -596,12 +596,18 @@ extension ChatPrivateController: UITableViewDataSource {
                     let s4 = (message.chatUniqueIdentifier )
                     let s5 = String(messageText.isDelivered)
                     let s6 = String(messageText.sentPush)
+                    let s7 = String(Int(message.tssent))
+                    let s8 = String(Int(message.tsrcvd))
+                    let s9 = String(message.dateInterval)
                     outgoingModel.message =  s1 + "\n"
                                                + "msgv3HashHex:\n" + s2 + "\n"
                                                + "senderUniqueIdentifier:\n" + s3 + "\n"
                                                + "chatUniqueIdentifier:\n" + s4 + "\n"
                                                + "isDelivered:\n" + s5 + "\n"
                                                + "sentPush:\n" + s6 + "\n"
+                                               + "tssent:\n" + s7 + "\n"
+                                               + "tsrcvd:\n" + s8 + "\n"
+                                               + "dateInterval:\n" + s9 + "\n"
                 }
 
                 outgoingModel.delivered = messageText.isDelivered
@@ -635,11 +641,17 @@ extension ChatPrivateController: UITableViewDataSource {
                     let s3 = (message.senderUniqueIdentifier ?? "")
                     let s4 = (message.chatUniqueIdentifier)
                     let s5 = String(messageText.isDelivered)
+                    let s6 = String(Int(message.tssent))
+                    let s7 = String(Int(message.tsrcvd))
+                    let s8 = String(message.dateInterval)
                     incomingModel.message = "" + s1 + "\n"
                                                + "msgv3HashHex:\n" + s2 + "\n"
                                                + "senderUniqueIdentifier:\n" + s3 + "\n"
                                                + "chatUniqueIdentifier:\n" + s4 + "\n"
                                                + "isDelivered:\n" + s5 + "\n"
+                                               + "tssent:\n" + s6 + "\n"
+                                               + "tsrcvd:\n" + s7 + "\n"
+                                               + "dateInterval:\n" + s8 + "\n"
                 }
 
                 model = incomingModel
@@ -659,7 +671,24 @@ extension ChatPrivateController: UITableViewDataSource {
             }
         }
 
-        model.dateString = timeFormatter.string(from: message.date()) + "\n" + dateFormatter.string(from: message.date())
+        var incoming_text_message: Bool = false
+        if (!message.isOutgoing()) {
+            if let messageText = message.messageText {
+                incoming_text_message = true
+            }
+        }
+
+        if (incoming_text_message) {
+            if (message.tssent == 0) {
+                model.dateString = timeFormatter.string(from: message.date()) + "\n" + dateFormatter.string(from: message.date())
+            } else {
+               let real_datetime = Date(timeIntervalSince1970: TimeInterval(message.tssent))
+                model.dateString = timeFormatter.string(from: real_datetime) + "\n" + dateFormatter.string(from: real_datetime)
+                // os_log("mmm:%s", timeFormatter.string(from: real_datetime))
+            }
+        } else {
+            model.dateString = timeFormatter.string(from: message.date()) + "\n" + dateFormatter.string(from: message.date())
+        }
 
         cell.delegate = self
         cell.setupWithTheme(theme, model: model)

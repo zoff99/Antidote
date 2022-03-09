@@ -30,6 +30,7 @@ typedef void (^OCTSendMessageOperationFailureBlock)(NSError *error);
                 messageType:(OCTToxMessageType)messageType
                     message:(NSString *)message
                msgv3HashHex:(NSString *)msgv3HashHex
+                 msgv3tssec:(UInt32)msgv3tssec
                successBlock:(nullable OCTSendMessageOperationSuccessBlock)successBlock
                failureBlock:(nullable OCTSendMessageOperationFailureBlock)failureBlock;
 

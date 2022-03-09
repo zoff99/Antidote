@@ -97,17 +97,24 @@
         OCTFriend *friend = [chat.friends firstObject];
         __block NSString *friend_pushToken = friend.pushToken;
 
-        // HINT: only select outgoing messages (senderUniqueIdentifier == NULL)
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"chatUniqueIdentifier == %@ AND messageText.isDelivered == 0 AND messageText.sentPush == 0 AND senderUniqueIdentifier == nil", chat.uniqueIdentifier];
+        if (friend_pushToken == nil)
+        {
+            NSLog(@"sendMessagePushToChat:Friend has No Pushtoken");
+        }
+        else
+        {
+            // HINT: only select outgoing messages (senderUniqueIdentifier == NULL)
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"chatUniqueIdentifier == %@ AND messageText.isDelivered == 0 AND messageText.sentPush == 0 AND senderUniqueIdentifier == nil", chat.uniqueIdentifier];
 
-        RLMResults *results = [realmManager objectsWithClass:[OCTMessageAbstract class] predicate:predicate];
-        OCTMessageAbstract *message_found = [results firstObject];
-        if (message_found) {
+            RLMResults *results = [realmManager objectsWithClass:[OCTMessageAbstract class] predicate:predicate];
+            OCTMessageAbstract *message_found = [results firstObject];
+            if (message_found) {
 
-            [realmManager updateObject:message_found withBlock:^(OCTMessageAbstract *theMessage) {
-                theMessage.messageText.sentPush = YES;
-            }];
-            triggerPush(friend_pushToken, message_found.messageText.msgv3HashHex, strongSelf, chat);
+                [realmManager updateObject:message_found withBlock:^(OCTMessageAbstract *theMessage) {
+                    theMessage.messageText.sentPush = YES;
+                }];
+                triggerPush(friend_pushToken, message_found.messageText.msgv3HashHex, strongSelf, chat);
+            }
         }
     });
 }
@@ -407,6 +414,7 @@ triggerPush(NSString *used_pushToken,
                                                                           messageType:OCTToxMessageTypeHighlevelack
                                                                               message:message
                                                                          msgv3HashHex:msgv3HashHex
+                                                                           msgv3tssec:sendTimestamp
                                                                          successBlock:nil
                                                                          failureBlock:nil];
     [self.sendMessageQueue addOperation:operation];

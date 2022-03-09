@@ -50,7 +50,7 @@ class SettingsMainController: StaticTableController {
             ],
         ], footers: [
             String(localized: "settings_autodownload_images_description"),
-            "This will keep the Application running for longer in the background to finish sending messages, but this will also reveal more meta data about you. It will link your IP address and your PUSH token. It's a tradeoff between convenience and metadata privacy.\nYou can use ProtonVPN to prevent that.\nSee https://protonvpn.com/free-vpn/\nand\nhttps://apps.apple.com/app/apple-store/id1437005085",
+            "This will keep the Application running for longer in the background to finish sending messages, but this will also reveal more meta data about you. It will link your IP address and your PUSH token. It's a tradeoff between convenience and metadata privacy.\n\nYou can use ProtonVPN to prevent that.\n\nSee https://protonvpn.com/free-vpn/\n\nand\n\nhttps://apps.apple.com/app/apple-store/id1437005085",
             nil,
             nil,
             nil,
