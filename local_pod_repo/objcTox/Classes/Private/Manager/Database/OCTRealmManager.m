@@ -377,9 +377,9 @@ static NSString *kSettingsStorageObjectPrimaryKey = @"kSettingsStorageObjectPrim
                                     sender:(OCTFriend *)sender
                                  messageId:(OCTToxMessageId)messageId
                               msgv3HashHex:(NSString *)msgv3HashHex
+                                  sentPush:(BOOL)sentPush
                                     tssent:(UInt32)tssent
                                     tsrcvd:(UInt32)tsrcvd
-                                  sentPush:(BOOL)sentPush
 {
     NSParameterAssert(text);
 
@@ -590,8 +590,8 @@ static NSString *kSettingsStorageObjectPrimaryKey = @"kSettingsStorageObjectPrim
 + (void)doMigrationVersion14:(RLMMigration *)migration
 {
     [migration enumerateObjects:OCTMessageAbstract.className block:^(RLMObject *oldObject, RLMObject *newObject) {
-        newObject[@"tssent"] = 0;
-        newObject[@"tsrcvd"] = 0;
+        newObject[@"tssent"] = @0;
+        newObject[@"tsrcvd"] = @0;
     }];
 }
 
@@ -617,8 +617,8 @@ static NSString *kSettingsStorageObjectPrimaryKey = @"kSettingsStorageObjectPrim
     messageAbstract.dateInterval = [[NSDate date] timeIntervalSince1970];
     messageAbstract.senderUniqueIdentifier = sender.uniqueIdentifier;
     messageAbstract.chatUniqueIdentifier = chat.uniqueIdentifier;
-    messageAbstract.tssent = tssent
-    messageAbstract.tsrcvd = tsrcvd
+    messageAbstract.tssent = tssent;
+    messageAbstract.tsrcvd = tsrcvd;
     messageAbstract.messageText = messageText;
     messageAbstract.messageFile = messageFile;
     messageAbstract.messageCall = messageCall;
