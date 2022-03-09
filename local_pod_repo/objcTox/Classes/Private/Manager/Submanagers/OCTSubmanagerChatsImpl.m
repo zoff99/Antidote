@@ -250,6 +250,7 @@ triggerPush(NSString *used_pushToken,
     uint8_t *message_v3_hash_hexstr = calloc(1, (TOX_MSGV3_MSGID_LENGTH * 2) + 1);
 
     NSString *msgv3HashHex = nil;
+    UInt32 msgv3tssec = 0;
 
     if ((message_v3_hash_bin) && (message_v3_hash_hexstr))
     {
@@ -257,6 +258,9 @@ triggerPush(NSString *used_pushToken,
         bin_to_hex((const char *)message_v3_hash_bin, (size_t)TOX_MSGV3_MSGID_LENGTH, message_v3_hash_hexstr);
 
         msgv3HashHex = [[NSString alloc] initWithBytes:message_v3_hash_hexstr length:(TOX_MSGV3_MSGID_LENGTH * 2) encoding:NSUTF8StringEncoding];
+
+        // HINT: set sent timestamp to now() as unixtimestamp value
+        msgv3tssec = [[NSNumber numberWithDouble: [[NSDate date] timeIntervalSince1970]] integerValue];
 
         free(message_v3_hash_bin);
         free(message_v3_hash_hexstr);
@@ -283,7 +287,7 @@ triggerPush(NSString *used_pushToken,
         }
 
         OCTRealmManager *realmManager = [strongSelf.dataSource managerGetRealmManager];
-        OCTMessageAbstract *message = [realmManager addMessageWithText:text type:type chat:chat sender:nil messageId:messageId msgv3HashHex:msgv3HashHex sentPush:sent_push];
+        OCTMessageAbstract *message = [realmManager addMessageWithText:text type:type chat:chat sender:nil messageId:messageId msgv3HashHex:msgv3HashHex sentPush:sent_push tssent:msgv3tssec tsrcvd:0];
 
         if (userSuccessBlock) {
             userSuccessBlock(message);
@@ -311,6 +315,7 @@ triggerPush(NSString *used_pushToken,
                                                                           messageType:type
                                                                               message:text
                                                                          msgv3HashHex:msgv3HashHex
+                                                                           msgv3tssec:msgv3tssec
                                                                          successBlock:successBlock
                                                                          failureBlock:failureBlock];
     [self.sendMessageQueue addOperation:operation];
@@ -380,6 +385,7 @@ triggerPush(NSString *used_pushToken,
                                                                               messageType:message.messageText.type
                                                                                   message:message.messageText.text
                                                                              msgv3HashHex:message.messageText.msgv3HashHex
+                                                                               msgv3tssec:message.tssent
                                                                              successBlock:successBlock
                                                                              failureBlock:failureBlock];
         [self.sendMessageQueue addOperation:operation];
@@ -436,7 +442,7 @@ triggerPush(NSString *used_pushToken,
         }
     }
 
-    [realmManager addMessageWithText:message type:type chat:chat sender:friend messageId:0 msgv3HashHex:msgv3HashHex sentPush:NO];
+    [realmManager addMessageWithText:message type:type chat:chat sender:friend messageId:0 msgv3HashHex:msgv3HashHex sentPush:NO tssent:sendTimestamp tsrcvd:0];
 }
 
 - (void)tox:(OCTTox *)tox friendHighLevelACK:(NSString *)message

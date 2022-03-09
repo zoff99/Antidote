@@ -13,6 +13,7 @@
 @property (assign, nonatomic, readonly) OCTToxMessageType messageType;
 @property (copy, nonatomic, readonly) NSString *message;
 @property (copy, nonatomic, readonly) NSString *msgv3HashHex;
+@property (copy, nonatomic, readonly) UInt32 msgv3tssec;
 @property (copy, nonatomic, readonly) OCTSendMessageOperationSuccessBlock successBlock;
 @property (copy, nonatomic, readonly) OCTSendMessageOperationFailureBlock failureBlock;
 
@@ -25,6 +26,7 @@
                 messageType:(OCTToxMessageType)messageType
                     message:(NSString *)message
                msgv3HashHex:(NSString *)msgv3HashHex
+                 msgv3tssec:(UInt32)msgv3tssec
                successBlock:(nullable OCTSendMessageOperationSuccessBlock)successBlock
                failureBlock:(nullable OCTSendMessageOperationFailureBlock)failureBlock
 {
@@ -39,6 +41,7 @@
     _messageType = messageType;
     _message = [message copy];
     _msgv3HashHex = [msgv3HashHex copy];
+    _msgv3tssec = [msgv3tssec copy];
     _successBlock = [successBlock copy];
     _failureBlock = [failureBlock copy];
 
@@ -57,6 +60,7 @@
                                                                  type:self.messageType
                                                               message:self.message
                                                          msgv3HashHex:self.msgv3HashHex
+                                                           msgv3tssec:self.msgv3tssec
                                                                 error:&error];
 
     dispatch_async(dispatch_get_main_queue(), ^{

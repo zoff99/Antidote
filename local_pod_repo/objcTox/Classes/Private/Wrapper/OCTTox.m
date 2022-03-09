@@ -366,6 +366,21 @@ int bin_to_hex(const char *bin_id, size_t bin_id_size, char *output)
     return 0;
 }
 
+size_t xnet_pack_u16(uint8_t *bytes, uint16_t v)
+{
+    bytes[0] = (v >> 8) & 0xff;
+    bytes[1] = v & 0xff;
+    return sizeof(v);
+}
+
+size_t xnet_pack_u32(uint8_t *bytes, uint32_t v)
+{
+    uint8_t *p = bytes;
+    p += xnet_pack_u16(p, (v >> 16) & 0xffff);
+    p += xnet_pack_u16(p, v & 0xffff);
+    return p - bytes;
+}
+
 - (BOOL)bootstrapFromHost:(NSString *)host port:(OCTToxPort)port publicKey:(NSString *)publicKey error:(NSError **)error
 {
     NSParameterAssert(host);
@@ -583,6 +598,7 @@ int bin_to_hex(const char *bin_id, size_t bin_id_size, char *output)
                                           type:(OCTToxMessageType)type
                                        message:(NSString *)message
                                   msgv3HashHex:(NSString *)msgv3HashHex
+                                    msgv3tssec:(UInt32)msgv3tssec
                                          error:(NSError **)error
 {
     NSParameterAssert(message);
@@ -629,13 +645,17 @@ int bin_to_hex(const char *bin_id, size_t bin_id_size, char *output)
 
             if ((cMessage2_alloc) && (hash_buffer_c))
             {
+                uint32_t timestamp_unix = (uint32_t)msgv3tssec;
+                uint32_t timestamp_unix_buf = 0;
+                xnet_pack_u32((uint8_t *)&timestamp_unix_buf, timestamp_unix);
+
                 uint8_t* position = cMessage2_alloc;
                 memcpy(position, cMessage, (size_t)(length_orig_corrected));
                 position = position + length_orig_corrected;
                 position = position + TOX_MSGV3_GUARD;
                 memcpy(position, hash_buffer_c, (size_t)(TOX_MSGV3_MSGID_LENGTH));
                 position = position + TOX_MSGV3_MSGID_LENGTH;
-                // TODO: implement timstamp later // memcpy(position, &timestamp_unix, (size_t)(TOX_MSGV3_TIMESTAMP_LENGTH));
+                memcpy(position, &timestamp_unix, (size_t)(TOX_MSGV3_TIMESTAMP_LENGTH));
 
                 length2 = length_orig_corrected + TOX_MSGV3_GUARD + TOX_MSGV3_MSGID_LENGTH + TOX_MSGV3_TIMESTAMP_LENGTH;
                 cMessage2 = cMessage2_alloc;

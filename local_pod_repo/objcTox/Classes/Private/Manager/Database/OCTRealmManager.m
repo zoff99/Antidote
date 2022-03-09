@@ -16,7 +16,7 @@
 #import "OCTSettingsStorageObject.h"
 #import "OCTLogging.h"
 
-static const uint64_t kCurrentSchemeVersion = 13;
+static const uint64_t kCurrentSchemeVersion = 14;
 static NSString *kSettingsStorageObjectPrimaryKey = @"kSettingsStorageObjectPrimaryKey";
 
 @interface OCTRealmManager ()
@@ -377,6 +377,8 @@ static NSString *kSettingsStorageObjectPrimaryKey = @"kSettingsStorageObjectPrim
                                     sender:(OCTFriend *)sender
                                  messageId:(OCTToxMessageId)messageId
                               msgv3HashHex:(NSString *)msgv3HashHex
+                                    tssent:(UInt32)tssent
+                                    tsrcvd:(UInt32)tsrcvd
                                   sentPush:(BOOL)sentPush
 {
     NSParameterAssert(text);
@@ -391,7 +393,7 @@ static NSString *kSettingsStorageObjectPrimaryKey = @"kSettingsStorageObjectPrim
     messageText.msgv3HashHex = msgv3HashHex;
     messageText.sentPush = sentPush;
 
-    return [self addMessageAbstractWithChat:chat sender:sender messageText:messageText messageFile:nil messageCall:nil];
+    return [self addMessageAbstractWithChat:chat sender:sender messageText:messageText messageFile:nil messageCall:nil tssent:tssent tsrcvd:tsrcvd];
 }
 
 - (OCTMessageAbstract *)addMessageWithFileNumber:(OCTToxFileNumber)fileNumber
@@ -413,7 +415,7 @@ static NSString *kSettingsStorageObjectPrimaryKey = @"kSettingsStorageObjectPrim
     [messageFile internalSetFilePath:filePath];
     messageFile.fileUTI = fileUTI;
 
-    return [self addMessageAbstractWithChat:chat sender:sender messageText:nil messageFile:messageFile messageCall:nil];
+    return [self addMessageAbstractWithChat:chat sender:sender messageText:nil messageFile:messageFile messageCall:nil tssent:0 tsrcvd:0];
 }
 
 - (OCTMessageAbstract *)addMessageCall:(OCTCall *)call
@@ -435,7 +437,7 @@ static NSString *kSettingsStorageObjectPrimaryKey = @"kSettingsStorageObjectPrim
     messageCall.callDuration = call.callDuration;
     messageCall.callEvent = event;
 
-    return [self addMessageAbstractWithChat:call.chat sender:call.caller messageText:nil messageFile:nil messageCall:messageCall];
+    return [self addMessageAbstractWithChat:call.chat sender:call.caller messageText:nil messageFile:nil messageCall:messageCall tssent:0 tsrcvd:0];
 }
 
 #pragma mark -  Private
@@ -491,6 +493,10 @@ static NSString *kSettingsStorageObjectPrimaryKey = @"kSettingsStorageObjectPrim
 
                if (oldSchemaVersion < 13) {
                    [self doMigrationVersion13:migration];
+               }
+
+               if (oldSchemaVersion < 14) {
+                   [self doMigrationVersion14:migration];
                }
     };
 }
@@ -581,6 +587,14 @@ static NSString *kSettingsStorageObjectPrimaryKey = @"kSettingsStorageObjectPrim
     }];
 }
 
++ (void)doMigrationVersion14:(RLMMigration *)migration
+{
+    [migration enumerateObjects:OCTMessageAbstract.className block:^(RLMObject *oldObject, RLMObject *newObject) {
+        newObject[@"tssent"] = 0;
+        newObject[@"tsrcvd"] = 0;
+    }];
+}
+
 /**
  * Only one of messageText, messageFile or messageCall can be non-nil.
  */
@@ -589,6 +603,8 @@ static NSString *kSettingsStorageObjectPrimaryKey = @"kSettingsStorageObjectPrim
                                        messageText:(OCTMessageText *)messageText
                                        messageFile:(OCTMessageFile *)messageFile
                                        messageCall:(OCTMessageCall *)messageCall
+                                            tssent:(UInt32)tssent
+                                            tsrcvd:(UInt32)tsrcvd
 {
     NSParameterAssert(chat);
 
@@ -601,6 +617,8 @@ static NSString *kSettingsStorageObjectPrimaryKey = @"kSettingsStorageObjectPrim
     messageAbstract.dateInterval = [[NSDate date] timeIntervalSince1970];
     messageAbstract.senderUniqueIdentifier = sender.uniqueIdentifier;
     messageAbstract.chatUniqueIdentifier = chat.uniqueIdentifier;
+    messageAbstract.tssent = tssent
+    messageAbstract.tsrcvd = tsrcvd
     messageAbstract.messageText = messageText;
     messageAbstract.messageFile = messageFile;
     messageAbstract.messageCall = messageCall;
