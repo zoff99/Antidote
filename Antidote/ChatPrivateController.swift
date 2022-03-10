@@ -596,8 +596,8 @@ extension ChatPrivateController: UITableViewDataSource {
                     let s4 = (message.chatUniqueIdentifier )
                     let s5 = String(messageText.isDelivered)
                     let s6 = String(messageText.sentPush)
-                    let s7 = String(Int(message.tssent))
-                    let s8 = String(Int(message.tsrcvd))
+                    let s7 = String(message.tssent)
+                    let s8 = String(message.tsrcvd)
                     let s9 = String(message.dateInterval)
                     outgoingModel.message =  s1 + "\n"
                                                + "msgv3HashHex:\n" + s2 + "\n"
@@ -641,8 +641,8 @@ extension ChatPrivateController: UITableViewDataSource {
                     let s3 = (message.senderUniqueIdentifier ?? "")
                     let s4 = (message.chatUniqueIdentifier)
                     let s5 = String(messageText.isDelivered)
-                    let s6 = String(Int(message.tssent))
-                    let s7 = String(Int(message.tsrcvd))
+                    let s6 = String(message.tssent)
+                    let s7 = String(message.tsrcvd)
                     let s8 = String(message.dateInterval)
                     incomingModel.message = "" + s1 + "\n"
                                                + "msgv3HashHex:\n" + s2 + "\n"
