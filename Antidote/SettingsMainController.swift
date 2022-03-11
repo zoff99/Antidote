@@ -98,7 +98,7 @@ private extension SettingsMainController{
         notificationsModel.on = userDefaults.showNotificationPreview
         notificationsModel.valueChangedHandler = notificationsValueChanged
 
-        longerbgModel.title = "longer Background Mode"
+        longerbgModel.title = "Longer Background Mode"
         longerbgModel.on = userDefaults.LongerbgMode
         longerbgModel.valueChangedHandler = longerbgValueChanged
 
