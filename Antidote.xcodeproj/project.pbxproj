@@ -444,6 +444,8 @@
 		4E4B267F27C0DCAE00E07A66 /* Call.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4B267E27C0DCAE00E07A66 /* Call.swift */; };
 		4E4B268527C0DCB500E07A66 /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4B268427C0DCB500E07A66 /* CallManager.swift */; };
 		4E4B268B27C0DCBC00E07A66 /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4B268A27C0DCBC00E07A66 /* ProviderDelegate.swift */; };
+		4E4EEA1927DCEC67008B0E77 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4EEA1827DCEC67008B0E77 /* LocationManager.swift */; };
+		4E4EEA1F27DCECD3008B0E77 /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4EEA1E27DCECD3008B0E77 /* Bus.swift */; };
 		8B8E9C45924FB18EB2C8044E /* libPods-ScreenshotsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A1B3D525D11BDD4F3E9B831 /* libPods-ScreenshotsUITests.a */; };
 		96166DAAD67996D5A6819984 /* libPods-AntidoteTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72586F4D098584EF43024224 /* libPods-AntidoteTests.a */; };
 		9C04BB6D1C17389200F58488 /* StaticTableBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C04BB6C1C17389200F58488 /* StaticTableBaseCell.swift */; };
@@ -920,6 +922,8 @@
 		4E4B267E27C0DCAE00E07A66 /* Call.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Call.swift; sourceTree = "<group>"; };
 		4E4B268427C0DCB500E07A66 /* CallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
 		4E4B268A27C0DCBC00E07A66 /* ProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
+		4E4EEA1827DCEC67008B0E77 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		4E4EEA1E27DCECD3008B0E77 /* Bus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bus.swift; sourceTree = "<group>"; };
 		6A1B3D525D11BDD4F3E9B831 /* libPods-ScreenshotsUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScreenshotsUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72586F4D098584EF43024224 /* libPods-AntidoteTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AntidoteTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C04BB6C1C17389200F58488 /* StaticTableBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticTableBaseCell.swift; sourceTree = "<group>"; };
@@ -1483,6 +1487,8 @@
 		F902D28D1ADED27A0070A3F5 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				4E4EEA1E27DCECD3008B0E77 /* Bus.swift */,
+				4E4EEA1827DCEC67008B0E77 /* LocationManager.swift */,
 				11FA0ED21BC5842800F3DA5B /* Antidote-Bridging-Header.h */,
 				9CDC093D1C3415DE00DC0D63 /* Antidote-Prefix.pch */,
 				1164763A19794D3300DB20B8 /* Antidote-Info.plist */,
@@ -2123,6 +2129,7 @@
 				11CFCD0D1C27488E0046BD94 /* ImageViewWithStatus.swift in Sources */,
 				11B2535D1C4BACDB0068F47C /* TabBarController.swift in Sources */,
 				9CB1F9511D58CA4000105858 /* RunningCoordinator.swift in Sources */,
+				4E4EEA1927DCEC67008B0E77 /* LocationManager.swift in Sources */,
 				11628E6C1CA57B19008C097E /* ChatOutgoingFileCellModel.swift in Sources */,
 				9CBBC7C11BDFC62700099A5E /* LoginCreateAccountController.swift in Sources */,
 				116DCE3B1CAAF85300B693EC /* NSURLExtension.swift in Sources */,
@@ -2161,6 +2168,7 @@
 				11FA0EF31BC5A6AF00F3DA5B /* ChatsTabCoordinator.swift in Sources */,
 				11B253561C4AEA400068F47C /* ChatPrivateTitleView.swift in Sources */,
 				1173F06E1BC5D9BA00B88B7B /* Theme.swift in Sources */,
+				4E4EEA1F27DCECD3008B0E77 /* Bus.swift in Sources */,
 				1193AB481C1F4164006AA9E5 /* FriendListController.swift in Sources */,
 				11CFCD0F1C27499D0046BD94 /* UserStatusView.swift in Sources */,
 				9CEE6B4F1C528AAA00A1ECB5 /* SettingsAboutController.swift in Sources */,

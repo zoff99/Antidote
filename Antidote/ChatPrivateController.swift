@@ -161,6 +161,9 @@ class ChatPrivateController: KeyboardNotificationController {
         createNavigationViews()
         addFriendNotification()
 
+        // HINT: request Location updates here
+        LocationManager.shared.requestAccess()
+
         self.configureLinearProgressBar()
     }
 
