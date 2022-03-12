@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let callManager = CallManager()
     lazy var providerDelegate: ProviderDelegate = ProviderDelegate(callManager: self.callManager)
     var backgroundTask: UIBackgroundTaskIdentifier = UIBackgroundTaskInvalid
+    var gps_was_stopped_by_forground: Bool = false
+    static var lastStartGpsTS: Int64 = 0
 
     class var shared: AppDelegate {
       return UIApplication.shared.delegate as! AppDelegate
@@ -31,6 +33,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         os_log("AppDelegate:applicationWillEnterForeground")
         UIApplication.shared.endBackgroundTask(self.backgroundTask)
         self.backgroundTask = UIBackgroundTaskInvalid
+
+        gps_was_stopped_by_forground = true
+        let gps = LocationManager.shared
+        if !gps.isHasAccess() {
+            os_log("AppDelegate:applicationWillEnterForeground:gps:no_access")
+        } else if gps.state == .Monitoring {
+            os_log("AppDelegate:applicationWillEnterForeground:gps:STOP")
+            gps.stopMonitoring()
+        }
+
         os_log("AppDelegate:applicationWillEnterForeground:DidEnterBackground:2:END")
     }
 
@@ -113,6 +125,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             } else {
                 os_log("AppDelegate:applicationDidEnterBackground:PushSelf:longer-bg-mode not active in settings")
             }
+        }
+
+        gps_was_stopped_by_forground = false
+        let gps = LocationManager.shared
+        if gps.isHasAccess() {
+            AppDelegate.lastStartGpsTS = Date().millisecondsSince1970
+            gps.startMonitoring()
+            os_log("AppDelegate:applicationDidEnterBackground:gps:START")
+            DispatchQueue.main.asyncAfter(wallDeadline: DispatchWallTime.now() + (3 * 60)) {
+                os_log("AppDelegate:applicationDidEnterBackground:4:gps:finishing")
+                let gps = LocationManager.shared
+                if !gps.isHasAccess() {
+                    os_log("AppDelegate:applicationDidEnterBackground:4:gps:no_access")
+                } else if gps.state == .Monitoring {
+                    if (self.gps_was_stopped_by_forground == false) {
+
+                        let diffTime = Date().millisecondsSince1970 - AppDelegate.lastStartGpsTS
+                        os_log("AppDelegate:applicationDidEnterBackground:4:gps:Tlast=%ld", AppDelegate.lastStartGpsTS)
+                        os_log("AppDelegate:applicationDidEnterBackground:4:gps:Tnow=%ld", Date().millisecondsSince1970)
+                        os_log("AppDelegate:applicationDidEnterBackground:4:gps:Tdiff=%ld", diffTime)
+
+                        if (diffTime > (((3 * 60) - 4) * 1000))
+                        {
+                            os_log("AppDelegate:applicationDidEnterBackground:4:gps:STOP")
+                            gps.stopMonitoring()
+                        } else {
+                            os_log("AppDelegate:applicationDidEnterBackground:4:gps:STOP skipped, must be an old timer")
+                        }
+                    } else {
+                        os_log("AppDelegate:applicationDidEnterBackground:4:gps:was stopped by forground, skipping")
+                    }
+                } else {
+                    os_log("AppDelegate:applicationDidEnterBackground:4:gps:STOP skipped, gps was stopped already")
+                }
+            }
+        } else {
+            os_log("AppDelegate:applicationDidEnterBackground:gps:no_access")
         }
 
         DispatchQueue.main.asyncAfter(wallDeadline: DispatchWallTime.now() + 25) {
@@ -244,4 +293,28 @@ extension AppDelegate: MessagingDelegate {
       userInfo: dataDict
     )
   }
+}
+
+// Convenience AppWide Simple Alert
+extension AppDelegate {
+    func alert(_ title: String, _ msg: String? = nil) {
+        os_log("AppDelegate:alert")
+        let cnt = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        cnt.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [weak cnt] act in
+            cnt?.dismiss(animated: true, completion: nil)
+        }))
+
+        // guard let vc = AppDelegate.topViewController() else { return }
+        // vc.present(cnt, animated: true, completion: nil)
+    }
+}
+
+extension Date {
+    var millisecondsSince1970: Int64 {
+        Int64((self.timeIntervalSince1970 * 1000.0).rounded())
+    }
+
+    init(milliseconds: Int64) {
+        self = Date(timeIntervalSince1970: TimeInterval(milliseconds) / 1000)
+    }
 }
