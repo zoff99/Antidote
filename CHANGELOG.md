@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.14](https://github.com/Zoxcore/Antidote/tree/1.4.14) (2022-03-15)
+
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.13...1.4.14)
+
+**Merged pull requests:**
+
+- use location to send messages in the background [\#108](https://github.com/Zoxcore/Antidote/pull/108) ([zoff99](https://github.com/zoff99))
+
 ## [1.4.13](https://github.com/Zoxcore/Antidote/tree/1.4.13) (2022-03-11)
 
 [Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.12...1.4.13)
