@@ -12,8 +12,8 @@
 #  define _NO_CRT_STDIO_INLINE
 #endif
 
-#include "msgpack/object.h"
-#include "msgpack/pack.h"
+#include "object.h"
+#include "pack.h"
 #include <ctype.h>
 
 #include <stdio.h>

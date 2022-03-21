@@ -544,7 +544,7 @@ void callIncomingCallback(ToxAV *cToxAV,
 
 void callStateCallback(ToxAV *cToxAV,
                        uint32_t friendNumber,
-                       enum TOXAV_FRIEND_CALL_STATE cState,
+                       TOXAV_FRIEND_CALL_STATE cState,
                        void *userData)
 {
     OCTToxAV *toxAV = (__bridge OCTToxAV *)userData;
