@@ -1,0 +1,8 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+# ignore all warnings from all pods
+inhibit_all_warnings!
+
+def common_pods
+    pod "msgpack-c", :git => 'https://github.com/Zoxcore/msgpack-c.git', :commit => '04072baf9eaf05ed56c6423084564d3257d91fcc'
+end
