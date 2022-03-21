@@ -7,9 +7,9 @@
  *    (See accompanying file LICENSE_1_0.txt or copy at
  *    http://www.boost.org/LICENSE_1_0.txt)
  */
-#include "msgpack/unpack.h"
-#include "msgpack/unpack_define.h"
-#include "msgpack/util.h"
+#include "unpack.h"
+#include "unpack_define.h"
+#include "util.h"
 #include <stdlib.h>
 
 #ifdef _msgpack_atomic_counter_header
@@ -327,7 +327,7 @@ static inline int template_callback_ext(unpack_user* u, const char* b, const cha
     return 0;
 }
 
-#include "msgpack/unpack_template.h"
+#include "unpack_template.h"
 
 
 #define CTX_CAST(m) ((template_context*)(m))

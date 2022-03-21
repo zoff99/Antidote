@@ -983,7 +983,7 @@ size_t xnet_unpack_u32(const uint8_t *bytes, uint32_t *v)
                                        error:(NSError **)error
 {
     TOX_ERR_FILE_SEND cError;
-    enum TOX_FILE_KIND cKind;
+    TOX_FILE_KIND cKind;
     const uint8_t *cFileId = NULL;
     const uint8_t *cFileName = NULL;
 
@@ -2178,7 +2178,7 @@ void fileReceiveCallback(
     Tox *cTox,
     uint32_t friendNumber,
     OCTToxFileNumber fileNumber,
-    enum TOX_FILE_KIND cKind,
+    TOX_FILE_KIND cKind,
     uint64_t fileSize,
     const uint8_t *cFileName,
     size_t fileNameLength,
