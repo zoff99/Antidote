@@ -77,6 +77,8 @@ See [CHANGELOG](CHANGELOG.md) for list of notable changes (unreleased, current a
 https://developer.apple.com/documentation/xcode/acquiring-crash-reports-and-diagnostic-logs
 <br><b>please first check that the crashreport does NOT contain any private data!</b>
 
+<img src="https://raw.githubusercontent.com/Zoxcore/Antidote/develop/docs/iphone_send_crashreports.png" height="350px">
+
 ## License
 
 Antidote is available under Mozilla Public License Version 2.0. See the [LICENSE](LICENSE) file for more info.
