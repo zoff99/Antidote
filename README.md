@@ -72,6 +72,11 @@ See [CHANGELOG](CHANGELOG.md) for list of notable changes (unreleased, current a
 -  audio calls
 -  video calls
 
+## Send Crashreports
+
+https://developer.apple.com/documentation/xcode/acquiring-crash-reports-and-diagnostic-logs
+<b>please first check that the crashreport does NOT contain any private data!</b>
+
 ## License
 
 Antidote is available under Mozilla Public License Version 2.0. See the [LICENSE](LICENSE) file for more info.
