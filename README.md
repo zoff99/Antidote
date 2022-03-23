@@ -75,7 +75,7 @@ See [CHANGELOG](CHANGELOG.md) for list of notable changes (unreleased, current a
 ## Send Crashreports
 
 https://developer.apple.com/documentation/xcode/acquiring-crash-reports-and-diagnostic-logs
-<b>please first check that the crashreport does NOT contain any private data!</b>
+<br><b>please first check that the crashreport does NOT contain any private data!</b>
 
 ## License
 
