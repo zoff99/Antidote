@@ -1,6 +1,6 @@
 # toxcore
 
-CocoaPods wrapper for [c-toxcore](https://github.com/toktok/c-toxcore).
+CocoaPods wrapper for [c-toxcore](https://github.com/TokTok/c-toxcore).
 
 #### Note
 
