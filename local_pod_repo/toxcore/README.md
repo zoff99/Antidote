@@ -8,5 +8,5 @@ Pod has same version number as toxcore.
 
 ## Authors
 
-Dmytro Vorobiov, d@dvor.me
+Dmytro Vorobiov, d@dvor.me<br>
 https://github.com/Zoxcore
