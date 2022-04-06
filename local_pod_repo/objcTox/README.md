@@ -9,4 +9,4 @@ https://github.com/Zoxcore
 
 ## License
 
-objcTox is available under Mozilla Public License Version 2.0. See the [LICENSE](LICENSE) file for more info.
+objcTox is available under Mozilla Public License Version 2.0. See the [LICENSE](https://github.com/Zoxcore/Antidote/blob/develop/LICENSE) file for more info.
