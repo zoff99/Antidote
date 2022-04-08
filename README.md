@@ -74,7 +74,7 @@ See [CHANGELOG](CHANGELOG.md) for list of notable changes (unreleased, current a
 
 ## Send Crashreports
 
-https://developer.apple.com/documentation/xcode/acquiring-crash-reports-and-diagnostic-logs<br><b>please first check that the crashreport does NOT contain any private data!</b><br>send to tox@zoff.cc
+https://developer.apple.com/documentation/xcode/acquiring-crash-reports-and-diagnostic-logs<br><b>please first check that the crashreport does NOT contain any private data!</b><br>send to zoff@zoxcore.org
 
 <img src="https://raw.githubusercontent.com/Zoxcore/Antidote/develop/docs/iphone_send_crashreports.png" height="350px">
 
