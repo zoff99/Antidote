@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.4.15](https://github.com/Zoxcore/Antidote/tree/1.4.15) (2022-04-16)
+
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.14...1.4.15)
+
+**Merged pull requests:**
+
+- adjust font size in textchatbubbles accoring to system settings for accessability. [\#112](https://github.com/Zoxcore/Antidote/pull/112) ([zoff99](https://github.com/zoff99))
+- update to toxcore 0.2.17 and consolidate pods [\#110](https://github.com/Zoxcore/Antidote/pull/110) ([zoff99](https://github.com/zoff99))
+
 ## [1.4.14](https://github.com/Zoxcore/Antidote/tree/1.4.14) (2022-03-15)
 
 [Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.13...1.4.14)
