@@ -12,6 +12,7 @@ class ChatIncomingTextCell: ChatBaseTextCell {
         bubbleNormalBackground = theme.colorForType(.ChatIncomingBubble)
         bubbleView.backgroundColor = bubbleNormalBackground
         bubbleView.tintColor = theme.colorForType(.LinkText)
+        bubbleView.font = UIFont.preferredFont(forTextStyle: .body)
     }
 
     override func installConstraints() {
