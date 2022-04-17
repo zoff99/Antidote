@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>App Uses Location Services to allow background operations while performing long running tasks, this offers a better user experience</string>
+	<string>App Uses Location Services to allow background operations while performing long running tasks, this offers a better user experience. The Location Services will be turned off after running for 3 Minutes each run.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
