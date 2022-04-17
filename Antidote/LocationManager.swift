@@ -89,7 +89,8 @@ extension LocationManager {
     }
     
     func requestAccess() {
-        manager?.requestAlwaysAuthorization()
+        // manager?.requestAlwaysAuthorization()
+        manager?.requestWhenInUseAuthorization()
     }
     
     func startMonitoring() {
