@@ -176,8 +176,9 @@ class ChatPrivateController: KeyboardNotificationController, CLLocationManagerDe
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            let location_string = String(format: "%.5f", location.coordinate.latitude) + " " + String(format: "%.5f", location.coordinate.longitude)
+            let location_string = String(format: "%.5f", location.coordinate.latitude) + ", " + String(format: "%.5f", location.coordinate.longitude)
             print("location: \(location_string)")
+            chatInputView.text = "my Location: " + location_string
         }
     }
 
