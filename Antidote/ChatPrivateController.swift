@@ -176,9 +176,15 @@ class ChatPrivateController: KeyboardNotificationController, CLLocationManagerDe
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            let location_string = String(format: "%.5f", location.coordinate.latitude) + ", " + String(format: "%.5f", location.coordinate.longitude)
+            let lat_str = String(format: "%.5f", location.coordinate.latitude)
+            let lon_str = String(format: "%.5f", location.coordinate.longitude)
+            let location_string = lat_str + ", " + lon_str
+            let zoom_level = "14"
             print("location: \(location_string)")
-            chatInputView.text = "my Location: " + location_string
+            // let location_url = "https://www.openstreetmap.org/search?query=" + lat_str + "%2C%20" + lon_str + "#map=" + zoom_level + "/" + lat_str + "/" + lon_str
+            let location_url = "https://www.openstreetmap.org/?mlat=" + lat_str + "&mlon=" + lon_str + "#map=" + zoom_level + "/" + lat_str + "/" + lon_str
+
+            chatInputView.text = "my Location: " + location_string + "\n" + location_url
         }
     }
 
