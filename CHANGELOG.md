@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.4.17](https://github.com/Zoxcore/Antidote/tree/1.4.17) (2022-04-18)
+
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.16...1.4.17)
+
+**Merged pull requests:**
+
+- location share [\#117](https://github.com/Zoxcore/Antidote/pull/117) ([zoff99](https://github.com/zoff99))
+
+## [1.4.16](https://github.com/Zoxcore/Antidote/tree/1.4.16) (2022-04-17)
+
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.15...1.4.16)
+
+**Merged pull requests:**
+
+- location tweaks [\#115](https://github.com/Zoxcore/Antidote/pull/115) ([zoff99](https://github.com/zoff99))
+
 ## [1.4.15](https://github.com/Zoxcore/Antidote/tree/1.4.15) (2022-04-16)
 
 [Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.14...1.4.15)
@@ -73,7 +89,6 @@
 **Implemented enhancements:**
 
 - The "my Push URL:" part should be on it's own tile [\#74](https://github.com/Zoxcore/Antidote/issues/74)
-- enable multiline textfield to show more lines and limit to 1000 characters maximum input. [\#69](https://github.com/Zoxcore/Antidote/pull/69) ([zoff99](https://github.com/zoff99))
 
 **Merged pull requests:**
 
@@ -101,6 +116,7 @@
 - tweak APN push notification processing [\#67](https://github.com/Zoxcore/Antidote/pull/67) ([zoff99](https://github.com/zoff99))
 - increase the BackgroundFetch time to 27 seconds. [\#66](https://github.com/Zoxcore/Antidote/pull/66) ([zoff99](https://github.com/zoff99))
 - Translations update from Hosted Weblate [\#65](https://github.com/Zoxcore/Antidote/pull/65) ([weblate](https://github.com/weblate))
+- new release 147 [\#63](https://github.com/Zoxcore/Antidote/pull/63) ([zoff99](https://github.com/zoff99))
 
 ## [1.4.7](https://github.com/Zoxcore/Antidote/tree/1.4.7) (2021-12-26)
 
@@ -109,6 +125,7 @@
 **Implemented enhancements:**
 
 - red background for arrow on Chatlist looks weired on unread messages [\#55](https://github.com/Zoxcore/Antidote/issues/55)
+- enable multiline textfield to show more lines and limit to 1000 characters maximum input. [\#69](https://github.com/Zoxcore/Antidote/pull/69) ([zoff99](https://github.com/zoff99))
 
 **Fixed bugs:**
 
@@ -117,7 +134,6 @@
 **Merged pull requests:**
 
 - Translations update from Hosted Weblate [\#64](https://github.com/Zoxcore/Antidote/pull/64) ([weblate](https://github.com/weblate))
-- new release 147 [\#63](https://github.com/Zoxcore/Antidote/pull/63) ([zoff99](https://github.com/zoff99))
 - update objcTox to msgV3 and useragent fix [\#62](https://github.com/Zoxcore/Antidote/pull/62) ([zoff99](https://github.com/zoff99))
 - update FAQ with new features [\#61](https://github.com/Zoxcore/Antidote/pull/61) ([zoff99](https://github.com/zoff99))
 - fix: text input field at bottom too low and make the arrow image view a nice circle shape [\#60](https://github.com/Zoxcore/Antidote/pull/60) ([zoff99](https://github.com/zoff99))
@@ -194,7 +210,6 @@
 - typing notifications, faux offline messages, push url [\#23](https://github.com/Zoxcore/Antidote/pull/23) ([zoff99](https://github.com/zoff99))
 - fix crash on videocalls [\#22](https://github.com/Zoxcore/Antidote/pull/22) ([zoff99](https://github.com/zoff99))
 - CI updates [\#20](https://github.com/Zoxcore/Antidote/pull/20) ([zoff99](https://github.com/zoff99))
-- notification icon update [\#19](https://github.com/Zoxcore/Antidote/pull/19) ([zoff99](https://github.com/zoff99))
 - Translations update from Weblate [\#18](https://github.com/Zoxcore/Antidote/pull/18) ([weblate](https://github.com/weblate))
 - Translations update from Weblate [\#12](https://github.com/Zoxcore/Antidote/pull/12) ([weblate](https://github.com/weblate))
 - add matrix \(irc\) room [\#11](https://github.com/Zoxcore/Antidote/pull/11) ([zoff99](https://github.com/zoff99))
@@ -205,6 +220,7 @@
 
 **Merged pull requests:**
 
+- notification icon update [\#19](https://github.com/Zoxcore/Antidote/pull/19) ([zoff99](https://github.com/zoff99))
 - Remove labels causing crash [\#10](https://github.com/Zoxcore/Antidote/pull/10) ([Tha14](https://github.com/Tha14))
 - Translations update from Weblate [\#8](https://github.com/Zoxcore/Antidote/pull/8) ([weblate](https://github.com/weblate))
 - Translations update from Weblate [\#7](https://github.com/Zoxcore/Antidote/pull/7) ([weblate](https://github.com/weblate))
