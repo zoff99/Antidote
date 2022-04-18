@@ -34,11 +34,12 @@ protocol ChatPrivateControllerDelegate: class {
             selectedIndex: Int)
 }
 
-class ChatPrivateController: KeyboardNotificationController {
+class ChatPrivateController: KeyboardNotificationController, CLLocationManagerDelegate {
     let chat: OCTChat
 
     fileprivate weak var delegate: ChatPrivateControllerDelegate?
 
+    let location_manager = CLLocationManager()
     fileprivate let theme: Theme
     fileprivate weak var submanagerChats: OCTSubmanagerChats!
     fileprivate weak var submanagerObjects: OCTSubmanagerObjects!
@@ -164,7 +165,20 @@ class ChatPrivateController: KeyboardNotificationController {
         // HINT: request Location updates here
         LocationManager.shared.requestAccess()
 
+        // HINT: location manager to get location on button pressed
+        location_manager.delegate = self
+
         self.configureLinearProgressBar()
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            print("Found user's location: \(location)")
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Failed to find user's location: \(error.localizedDescription)")
     }
 
     fileprivate func configureLinearProgressBar(){
