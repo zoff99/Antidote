@@ -1,8 +1,10 @@
+
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import UIKit
+import CoreLocation
 import SnapKit
 import MobileCoreServices
 import os
@@ -59,6 +61,7 @@ class ChatPrivateController: KeyboardNotificationController, CLLocationManagerDe
 
     fileprivate var audioButton: UIBarButtonItem!
     fileprivate var videoButton: UIBarButtonItem!
+    fileprivate var locationButton: UIBarButtonItem!
     fileprivate var CallWaitingView: UIView!
     fileprivate var callwaiting_running: Bool!
     fileprivate var CallWaitingCancelButton: CallButton?
@@ -173,12 +176,13 @@ class ChatPrivateController: KeyboardNotificationController, CLLocationManagerDe
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            print("Found user's location: \(location)")
+            let location_string = String(format: "%.5f", location.coordinate.latitude) + " " + String(format: "%.5f", location.coordinate.longitude)
+            print("location: \(location_string)")
         }
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Failed to find user's location: \(error.localizedDescription)")
+        // print("Failed to find user's location: \(error.localizedDescription)")
     }
 
     fileprivate func configureLinearProgressBar(){
@@ -507,6 +511,10 @@ extension ChatPrivateController {
 
     @objc func videoCallButtonPressed() {
         delegate?.chatPrivateControllerCallToChat(self, enableVideo: true)
+    }
+
+    @objc func locationButtonPressed() {
+        location_manager.requestLocation()
     }
 
     @objc func editMessagesDeleteButtonPressed(_ barButtonItem: UIBarButtonItem) {
@@ -1089,6 +1097,7 @@ private extension ChatPrivateController {
             titleView.connectionStatus = ConnectionStatus(connectionStatus: .none)
             audioButton.isEnabled = true
             videoButton.isEnabled = false
+            locationButton.isEnabled = true
             chatInputView.cameraButtonEnabled = false
             return
         }
@@ -1117,6 +1126,7 @@ private extension ChatPrivateController {
 
                     self.audioButton.isEnabled = true
                     self.videoButton.isEnabled = isConnected
+                    self.locationButton.isEnabled = true
                     self.chatInputView.cameraButtonEnabled = isConnected
 
                     self.updateTableHeaderView()
@@ -1399,14 +1409,16 @@ private extension ChatPrivateController {
         else {
             let audioImage = UIImage(named: "start-call-medium")!
             let videoImage = UIImage(named: "video-call-medium")!
+            let locationImage = UIImage(named: "location-call-medium")!
 
             audioButton = UIBarButtonItem(image: audioImage, style: .plain, target: self, action: #selector(ChatPrivateController.audioCallButtonPressed))
             videoButton = UIBarButtonItem(image: videoImage, style: .plain, target: self, action: #selector(ChatPrivateController.videoCallButtonPressed))
-
+            locationButton = UIBarButtonItem(image: locationImage, style: .plain, target: self, action: #selector(ChatPrivateController.locationButtonPressed))
             navigationItem.leftBarButtonItems = nil
             navigationItem.rightBarButtonItems = [
                 videoButton,
                 audioButton,
+                locationButton
             ]
         }
     }
