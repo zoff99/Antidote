@@ -15,7 +15,7 @@ def common_pods
     pod 'JGProgressHUD', '~> 1.4.0'
     pod 'SnapKit', '~> 5.0.1'
     pod 'Yaml', '~> 3.4.4'
-    pod 'Firebase/Messaging'
+    pod 'Firebase/Messaging', '~> 8.15.0'
 end
 
 target :Antidote do
