@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.19](https://github.com/Zoxcore/Antidote/tree/1.4.19) (2022-06-04)
+
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.18...1.4.19)
+
+**Merged pull requests:**
+
+- location icon change when bg location sharing is activated [\#120](https://github.com/Zoxcore/Antidote/pull/120) ([zoff99](https://github.com/zoff99))
+
 ## [1.4.18](https://github.com/Zoxcore/Antidote/tree/1.4.18) (2022-05-20)
 
 [Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.17...1.4.18)
@@ -40,10 +48,6 @@
 
 [Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.13...1.4.14)
 
-**Merged pull requests:**
-
-- use location to send messages in the background [\#108](https://github.com/Zoxcore/Antidote/pull/108) ([zoff99](https://github.com/zoff99))
-
 ## [1.4.13](https://github.com/Zoxcore/Antidote/tree/1.4.13) (2022-03-11)
 
 [Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.12...1.4.13)
@@ -58,6 +62,7 @@
 
 **Merged pull requests:**
 
+- use location to send messages in the background [\#108](https://github.com/Zoxcore/Antidote/pull/108) ([zoff99](https://github.com/zoff99))
 - revert some audio stuff that may disable audio in some setups [\#103](https://github.com/Zoxcore/Antidote/pull/103) ([zoff99](https://github.com/zoff99))
 - boost friend finding with the onion after being offline for a while [\#102](https://github.com/Zoxcore/Antidote/pull/102) ([zoff99](https://github.com/zoff99))
 - log also to system console. [\#101](https://github.com/Zoxcore/Antidote/pull/101) ([zoff99](https://github.com/zoff99))
@@ -110,6 +115,7 @@
 - specify that we are using version 3.4.4 of Yaml [\#77](https://github.com/Zoxcore/Antidote/pull/77) ([zoff99](https://github.com/zoff99))
 - upgrade to SnapKit 5.0.1 [\#76](https://github.com/Zoxcore/Antidote/pull/76) ([zoff99](https://github.com/zoff99))
 - Translations update from Hosted Weblate [\#75](https://github.com/Zoxcore/Antidote/pull/75) ([weblate](https://github.com/weblate))
+- tweak APN push notification processing [\#67](https://github.com/Zoxcore/Antidote/pull/67) ([zoff99](https://github.com/zoff99))
 
 ## [1.4.8](https://github.com/Zoxcore/Antidote/tree/1.4.8) (2022-01-11)
 
@@ -125,7 +131,6 @@
 - fix tabview at bottom overlapping virtual home button. [\#72](https://github.com/Zoxcore/Antidote/pull/72) ([zoff99](https://github.com/zoff99))
 - Translations update from Hosted Weblate [\#71](https://github.com/Zoxcore/Antidote/pull/71) ([weblate](https://github.com/weblate))
 - v1.4.8 [\#70](https://github.com/Zoxcore/Antidote/pull/70) ([zoff99](https://github.com/zoff99))
-- tweak APN push notification processing [\#67](https://github.com/Zoxcore/Antidote/pull/67) ([zoff99](https://github.com/zoff99))
 - increase the BackgroundFetch time to 27 seconds. [\#66](https://github.com/Zoxcore/Antidote/pull/66) ([zoff99](https://github.com/zoff99))
 - Translations update from Hosted Weblate [\#65](https://github.com/Zoxcore/Antidote/pull/65) ([weblate](https://github.com/weblate))
 
@@ -148,6 +153,7 @@
 - update objcTox to msgV3 and useragent fix [\#62](https://github.com/Zoxcore/Antidote/pull/62) ([zoff99](https://github.com/zoff99))
 - update FAQ with new features [\#61](https://github.com/Zoxcore/Antidote/pull/61) ([zoff99](https://github.com/zoff99))
 - fix: text input field at bottom too low and make the arrow image view a nice circle shape [\#60](https://github.com/Zoxcore/Antidote/pull/60) ([zoff99](https://github.com/zoff99))
+- fastlane [\#57](https://github.com/Zoxcore/Antidote/pull/57) ([zoff99](https://github.com/zoff99))
 
 ## [1.4.6](https://github.com/Zoxcore/Antidote/tree/1.4.6) (2021-12-19)
 
@@ -164,7 +170,6 @@
 
 **Merged pull requests:**
 
-- fastlane [\#57](https://github.com/Zoxcore/Antidote/pull/57) ([zoff99](https://github.com/zoff99))
 - fix FCM background fetch [\#53](https://github.com/Zoxcore/Antidote/pull/53) ([zoff99](https://github.com/zoff99))
 - toxcore 0.2.13 [\#52](https://github.com/Zoxcore/Antidote/pull/52) ([zoff99](https://github.com/zoff99))
 - use screen better [\#51](https://github.com/Zoxcore/Antidote/pull/51) ([zoff99](https://github.com/zoff99))
