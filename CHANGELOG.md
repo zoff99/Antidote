@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.21](https://github.com/Zoxcore/Antidote/tree/1.4.21) (2022-07-01)
+
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.20...1.4.21)
+
+**Fixed bugs:**
+
+- Can't export/import profile: Cannot decrypt tox save file [\#122](https://github.com/Zoxcore/Antidote/issues/122)
+
+**Merged pull requests:**
+
+- update toxcore 0.2.18 [\#124](https://github.com/Zoxcore/Antidote/pull/124) ([zoff99](https://github.com/zoff99))
+
 ## [1.4.20](https://github.com/Zoxcore/Antidote/tree/1.4.20) (2022-06-14)
 
 [Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.19...1.4.20)
