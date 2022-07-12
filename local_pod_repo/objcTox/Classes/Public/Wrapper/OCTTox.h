@@ -42,6 +42,11 @@
 @property (assign, nonatomic) OCTToxNoSpam nospam;
 
 /**
+ * Client's capabilites. A 64 bit unsigned integer.
+ */
+@property (strong, nonatomic, readonly) OCTToxCapabilites capabilites;
+
+/**
  * Client's user status.
  */
 @property (assign, nonatomic) OCTToxUserStatus userStatus;

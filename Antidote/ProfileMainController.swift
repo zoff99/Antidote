@@ -27,6 +27,7 @@ class ProfileMainController: StaticTableController {
     // fileprivate let userStatusModel = StaticTableDefaultCellModel()
     fileprivate let toxIdModel = StaticTableDefaultCellModel()
     fileprivate let pushurlModel = StaticTableDefaultCellModel()
+    fileprivate let capabilitesModel = StaticTableDefaultCellModel()
     fileprivate let profileDetailsModel = StaticTableDefaultCellModel()
     fileprivate let logoutModel = StaticTableButtonCellModel()
 
@@ -51,6 +52,9 @@ class ProfileMainController: StaticTableController {
             ],
             [
                 pushurlModel,
+            ],
+            [
+                capabilitesModel,
             ],
             [
                 profileDetailsModel,
@@ -173,6 +177,10 @@ private extension ProfileMainController {
             pushurlModel.value = ""
         }
         pushurlModel.userInteractionEnabled = false
+
+        capabilitesModel.title = "Tox Capabilites"
+        capabilitesModel.value = submanagerUser.capabilites
+        capabilitesModel.userInteractionEnabled = false
 
         profileDetailsModel.value = String(localized: "profile_details")
         profileDetailsModel.didSelectHandler = showProfileDetails

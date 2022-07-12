@@ -10,6 +10,7 @@ typedef int OCTToxFriendNumber;
 typedef int OCTToxMessageId;
 typedef uint32_t OCTToxFileNumber;
 typedef long long OCTToxFileSize;
+typedef uint64_t OCTToxCapabilites;
 
 extern const OCTToxFriendNumber kOCTToxFriendNumberFailure;
 extern const OCTToxFileNumber kOCTToxFileNumberFailure;
