@@ -11,6 +11,7 @@ class OCTSubmanagerUserMock: NSObject, OCTSubmanagerUser {
     var publicKey: String = "123"
     var nospam: OCTToxNoSpam = 123
     var userStatus: OCTToxUserStatus = .none
+    var capabilities: OCTToxCapabilities = 0
 
     override init() {
         super.init()
