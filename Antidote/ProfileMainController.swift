@@ -27,7 +27,7 @@ class ProfileMainController: StaticTableController {
     // fileprivate let userStatusModel = StaticTableDefaultCellModel()
     fileprivate let toxIdModel = StaticTableDefaultCellModel()
     fileprivate let pushurlModel = StaticTableDefaultCellModel()
-    fileprivate let capabilitesModel = StaticTableDefaultCellModel()
+    fileprivate let capabilitiesModel = StaticTableDefaultCellModel()
     fileprivate let profileDetailsModel = StaticTableDefaultCellModel()
     fileprivate let logoutModel = StaticTableButtonCellModel()
 
@@ -54,7 +54,7 @@ class ProfileMainController: StaticTableController {
                 pushurlModel,
             ],
             [
-                capabilitesModel,
+                capabilitiesModel,
             ],
             [
                 profileDetailsModel,
@@ -178,9 +178,9 @@ private extension ProfileMainController {
         }
         pushurlModel.userInteractionEnabled = false
 
-        capabilitesModel.title = "Tox Capabilites"
-        capabilitesModel.value = submanagerUser.capabilites
-        capabilitesModel.userInteractionEnabled = false
+        capabilitiesModel.title = "Tox Capabilities"
+        capabilitiesModel.value = capabilitiesToString(submanagerUser.capabilities as NSNumber)
+        capabilitiesModel.userInteractionEnabled = false
 
         profileDetailsModel.value = String(localized: "profile_details")
         profileDetailsModel.didSelectHandler = showProfileDetails
@@ -188,6 +188,26 @@ private extension ProfileMainController {
 
         logoutModel.title = String(localized: "logout_button")
         logoutModel.didSelectHandler = logout
+    }
+
+    func capabilitiesToString(_ cap: NSNumber) -> String {
+        var ret: String = "BASIC"
+        if ((UInt(cap) & 1) > 0) {
+            ret = ret + " CAPABILITIES"
+        }
+        if ((UInt(cap) & 2) > 0) {
+            ret = ret + " MSGV2"
+        }
+        if ((UInt(cap) & 4) > 0) {
+            ret = ret + " H264"
+        }
+        if ((UInt(cap) & 8) > 0) {
+            ret = ret + " MSGV3"
+        }
+        if ((UInt(cap) & 16) > 0) {
+            ret = ret + " FTV2"
+        }
+        return ret;
     }
 
     func logout(_: StaticTableBaseCell) {

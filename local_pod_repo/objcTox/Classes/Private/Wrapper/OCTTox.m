@@ -199,9 +199,9 @@ static long long TWO_MIN_IN_MILLIS = (2 * 60 * 1000); // 2 minutes in millisecon
     return [self userConnectionStatusFromCUserStatus:tox_self_get_connection_status(self.tox)];
 }
 
-- (OCTToxCapabilites)userCapabilites
+- (OCTToxCapabilities)capabilities
 {
-    OCTLogVerbose(@"get userCapabilites");
+    OCTLogVerbose(@"get capabilities");
 
     return tox_self_get_capabilities();
 }
