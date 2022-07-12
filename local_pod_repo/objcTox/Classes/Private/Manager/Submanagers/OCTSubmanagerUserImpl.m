@@ -24,6 +24,11 @@
     return [self.dataSource managerGetTox].userAddress;
 }
 
+- (OCTToxCapabilites)userCapabilites
+{
+    return [self.dataSource managerGetTox].userCapabilites;
+}
+
 - (NSString *)publicKey
 {
     return [self.dataSource managerGetTox].publicKey;
