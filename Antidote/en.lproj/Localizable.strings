@@ -211,9 +211,9 @@
 /* About screen menu */
 "settings_acknowledgements" = "Acknowledgements";
 /* Settings screen menu */
-"settings_autodownload_images" = "Autodownload images";
+"settings_autodownload_images" = "Autodownload files";
 /* Settings screen menu */
-"settings_autodownload_images_description" = "Automatically download incoming images.";
+"settings_autodownload_images_description" = "Automatically download incoming files.";
 /* Settings screen menu */
 "settings_notifications_message_preview" = "Notification Preview";
 /* Settings screen menu */
