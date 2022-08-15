@@ -74,7 +74,7 @@ class UserDefaultsManager {
 
     var autodownloadImages: AutodownloadImages {
         get {
-            let defaultValue = AutodownloadImages.Never
+            let defaultValue = AutodownloadImages.Always
 
             guard let string = stringForKey(Keys.AutodownloadImages) else {
                 return defaultValue

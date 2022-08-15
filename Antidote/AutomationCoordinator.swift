@@ -4,10 +4,11 @@
 
 import Foundation
 import MobileCoreServices
+import os
 
 private struct Constants {
-    static let MaxFileSizeWiFi: OCTToxFileSize = 20 * 1024 * 1024
-    static let MaxFileSizeWWAN: OCTToxFileSize = 5 * 1024 * 1024
+    static let MaxFileSizeWiFi: OCTToxFileSize = 100 * 1024 * 1024
+    static let MaxFileSizeWWAN: OCTToxFileSize = 20 * 1024 * 1024
 }
 
 class AutomationCoordinator: NSObject {
@@ -53,6 +54,7 @@ extension AutomationCoordinator: CoordinatorProtocol {
 private extension AutomationCoordinator {
     func proceedNewFileMessage(_ message: OCTMessageAbstract) {
         let usingWiFi = self.usingWiFi()
+        os_log("AutomationCoordinator:usingWiFi=%d", usingWiFi)
         switch userDefaults.autodownloadImages {
             case .Never:
                 return
@@ -64,12 +66,13 @@ private extension AutomationCoordinator {
                 break
         }
 
-        if !UTTypeConformsTo(message.messageFile!.fileUTI as CFString? ?? "" as CFString, kUTTypeImage) {
-            // download images only
-            return
-        }
+        // HINT: now we apply autodownload to all files, not only images
+        // if !UTTypeConformsTo(message.messageFile!.fileUTI as CFString? ?? "" as CFString, kUTTypeImage) {
+        //    // download images only
+        //    return
+        // }
 
-        // skip too large images
+        // skip too large files
         if usingWiFi {
             if message.messageFile!.fileSize > Constants.MaxFileSizeWiFi {
                 return
