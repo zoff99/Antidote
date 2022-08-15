@@ -574,6 +574,12 @@ size_t xnet_unpack_u32(const uint8_t *bytes, uint32_t *v)
     return [NSDate dateWithTimeIntervalSince1970:timestamp];
 }
 
+
+- (OCTToxCapabilities)friendGetCapabilitiesWithFriendNumber:(OCTToxFriendNumber)friendNumber
+{
+    return tox_friend_get_capabilities(self.tox, friendNumber);
+}
+
 - (OCTToxUserStatus)friendStatusWithFriendNumber:(OCTToxFriendNumber)friendNumber error:(NSError **)error
 {
     TOX_ERR_FRIEND_QUERY cError;

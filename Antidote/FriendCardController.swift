@@ -27,6 +27,7 @@ class FriendCardController: StaticTableController {
     fileprivate let nameModel: StaticTableDefaultCellModel
     fileprivate let statusMessageModel: StaticTableDefaultCellModel
     fileprivate let publicKeyModel: StaticTableDefaultCellModel
+    fileprivate let capabilitiesModel: StaticTableDefaultCellModel
     fileprivate let pushurlModel: StaticTableDefaultCellModel
 
     init(theme: Theme, friend: OCTFriend, submanagerObjects: OCTSubmanagerObjects) {
@@ -41,6 +42,7 @@ class FriendCardController: StaticTableController {
         nameModel = StaticTableDefaultCellModel()
         statusMessageModel = StaticTableDefaultCellModel()
         publicKeyModel = StaticTableDefaultCellModel()
+        capabilitiesModel = StaticTableDefaultCellModel()
         pushurlModel = StaticTableDefaultCellModel()
 
         super.init(theme: theme, style: .plain, model: [
@@ -55,6 +57,9 @@ class FriendCardController: StaticTableController {
             ],
             [
                 publicKeyModel,
+            ],
+            [
+                capabilitiesModel,
             ],
             [
                 pushurlModel,
@@ -138,6 +143,16 @@ private extension FriendCardController {
         publicKeyModel.userInteractionEnabled = false
         publicKeyModel.canCopyValue = true
 
+        capabilitiesModel.title = "Tox Capabilities"
+        let capabilities = friend.capabilities2 ?? ""
+        if (capabilities.count > 0) {
+            let caps = NSNumber(value: UInt64(capabilities) ?? 0)
+            capabilitiesModel.value = capabilitiesToString(caps)
+        } else {
+            capabilitiesModel.value = "BASIC"
+        }
+        capabilitiesModel.userInteractionEnabled = false
+
         pushurlModel.title = "Push URL"
         let pushtoken = friend.pushToken ?? ""
         if (pushtoken.count > 0) {
@@ -147,4 +162,25 @@ private extension FriendCardController {
         }
         pushurlModel.userInteractionEnabled = false
     }
+
+    func capabilitiesToString(_ cap: NSNumber) -> String {
+        var ret: String = "BASIC"
+        if ((UInt(cap) & 1) > 0) {
+            ret = ret + " CAPABILITIES"
+        }
+        if ((UInt(cap) & 2) > 0) {
+            ret = ret + " MSGV2"
+        }
+        if ((UInt(cap) & 4) > 0) {
+            ret = ret + " H264"
+        }
+        if ((UInt(cap) & 8) > 0) {
+            ret = ret + " MSGV3"
+        }
+        if ((UInt(cap) & 16) > 0) {
+            ret = ret + " FTV2"
+        }
+        return ret;
+    }
+
 }

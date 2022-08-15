@@ -3,6 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 #import "OCTSubmanagerFriendsImpl.h"
+#import "OCTLogging.h"
 #import "OCTTox.h"
 #import "OCTFriend.h"
 #import "OCTFriendRequest.h"
@@ -252,6 +253,13 @@
         if ((status != OCTToxConnectionStatusNone)
             && (theFriend.connectionStatus == OCTToxConnectionStatusNone))
         {
+            // Friend is coming online now
+
+            OCTToxCapabilities f_caps = [tox friendGetCapabilitiesWithFriendNumber:friendNumber];
+            OCTLogVerbose(@"f_caps=%lu", f_caps);
+            NSString* cap_string = [NSString stringWithFormat:@"%lu", f_caps];
+            theFriend.capabilities2 = cap_string;
+
             NSString *token = [FIRMessaging messaging].FCMToken;
             if (token.length > 0)
             {
@@ -272,6 +280,7 @@
         theFriend.connectionStatus = status;
 
         if (! theFriend.isConnected) {
+            // Friend is offline now
             NSDate *dateOffline = [tox friendGetLastOnlineWithFriendNumber:friendNumber error:nil];
             NSTimeInterval timeSince = [dateOffline timeIntervalSince1970];
             theFriend.lastSeenOnlineInterval = timeSince;

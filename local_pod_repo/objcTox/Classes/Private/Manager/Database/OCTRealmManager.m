@@ -16,7 +16,7 @@
 #import "OCTSettingsStorageObject.h"
 #import "OCTLogging.h"
 
-static const uint64_t kCurrentSchemeVersion = 14;
+static const uint64_t kCurrentSchemeVersion = 16;
 static NSString *kSettingsStorageObjectPrimaryKey = @"kSettingsStorageObjectPrimaryKey";
 
 @interface OCTRealmManager ()
@@ -498,6 +498,10 @@ static NSString *kSettingsStorageObjectPrimaryKey = @"kSettingsStorageObjectPrim
                if (oldSchemaVersion < 14) {
                    [self doMigrationVersion14:migration];
                }
+
+               if (oldSchemaVersion < 16) {
+                   [self doMigrationVersion16:migration];
+               }
     };
 }
 
@@ -592,6 +596,13 @@ static NSString *kSettingsStorageObjectPrimaryKey = @"kSettingsStorageObjectPrim
     [migration enumerateObjects:OCTMessageAbstract.className block:^(RLMObject *oldObject, RLMObject *newObject) {
         newObject[@"tssent"] = @0;
         newObject[@"tsrcvd"] = @0;
+    }];
+}
+
++ (void)doMigrationVersion16:(RLMMigration *)migration
+{
+    [migration enumerateObjects:OCTFriend.className block:^(RLMObject *oldObject, RLMObject *newObject) {
+        newObject[@"capabilities2"] = nil;
     }];
 }
 
