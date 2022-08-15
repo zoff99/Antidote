@@ -248,6 +248,11 @@
 - (NSDate *)friendGetLastOnlineWithFriendNumber:(OCTToxFriendNumber)friendNumber error:(NSError **)error;
 
 /**
+ * Return Friend's capabilities. A 64 bit unsigned integer.
+ */
+- (OCTToxCapabilities)friendGetCapabilitiesWithFriendNumber:(OCTToxFriendNumber)friendNumber;
+
+/**
  * Return the friend's user status (away/busy/...). If the friend number is
  * invalid, the return value is unspecified.
  *

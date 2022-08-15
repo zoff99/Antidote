@@ -100,6 +100,11 @@
  */
 @property BOOL msgv3Capability;
 
+/**
+ * Friend's capabilities. A 64 bit unsigned integer.
+ */
+@property (nonnull) NSString *capabilities2;
+
 @end
 
 RLM_ARRAY_TYPE(OCTFriend)
