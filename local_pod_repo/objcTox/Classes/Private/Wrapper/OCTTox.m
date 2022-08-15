@@ -14,6 +14,7 @@ void (*_tox_self_get_public_key)(const Tox *tox, uint8_t *public_key);
 
 @property (strong, nonatomic) dispatch_source_t timer;
 @property (assign, nonatomic) uint64_t previousIterate;
+@property (assign, nonatomic) uint64_t lastActiveFT;
 
 @end
 
@@ -204,6 +205,13 @@ static long long TWO_MIN_IN_MILLIS = (2 * 60 * 1000); // 2 minutes in millisecon
     OCTLogVerbose(@"get capabilities");
 
     return tox_self_get_capabilities();
+}
+
+- (uint64_t)getLastActiveFT
+{
+    OCTLogVerbose(@"getLastActiveFT");
+
+    return _lastActiveFT;
 }
 
 - (NSString *)userAddress
@@ -1026,6 +1034,9 @@ size_t xnet_unpack_u32(const uint8_t *bytes, uint32_t *v)
 {
     TOX_ERR_FILE_SEND_CHUNK cError;
     const uint8_t *cData = [data bytes];
+
+    _lastActiveFT = ([[NSDate date] timeIntervalSince1970] * 1000);
+    // NSLog(@"fileChunkRequestCallback:002:lastActiveFT=%lu", _lastActiveFT);
 
     bool result = tox_file_send_chunk(self.tox, friendNumber, fileNumber, position, cData, (uint32_t)data.length, &cError);
 
@@ -2171,6 +2182,9 @@ void fileChunkRequestCallback(Tox *cTox, uint32_t friendNumber, OCTToxFileNumber
 {
     OCTTox *tox = (__bridge OCTTox *)(userData);
 
+    tox.lastActiveFT = ([[NSDate date] timeIntervalSince1970] * 1000);
+    // NSLog(@"fileChunkRequestCallback:001:lastActiveFT=%lu", tox.lastActiveFT);
+
     dispatch_async(dispatch_get_main_queue(), ^{
         if ([tox.delegate respondsToSelector:@selector(tox:fileChunkRequestForFileNumber:friendNumber:position:length:)]) {
             [tox.delegate tox:tox fileChunkRequestForFileNumber:fileNumber
@@ -2236,6 +2250,9 @@ void fileReceiveChunkCallback(
     if (length) {
         chunk = [NSData dataWithBytes:cData length:length];
     }
+
+    tox.lastActiveFT = ([[NSDate date] timeIntervalSince1970] * 1000);
+    // NSLog(@"fileChunkRequestCallback:003:lastActiveFT=%lu", tox.lastActiveFT);
 
     dispatch_async(dispatch_get_main_queue(), ^{
         if ([tox.delegate respondsToSelector:@selector(tox:fileReceiveChunk:fileNumber:friendNumber:position:)]) {

@@ -47,6 +47,11 @@
 @property (nonatomic, readonly) OCTToxCapabilities capabilities;
 
 /**
+ * when was a FT last active. A 64 bit unsigned integer.
+ */
+@property (nonatomic, readonly) uint64_t getLastActiveFT;
+
+/**
  * Client's user status.
  */
 @property (assign, nonatomic) OCTToxUserStatus userStatus;

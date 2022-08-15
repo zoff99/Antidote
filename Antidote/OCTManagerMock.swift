@@ -38,7 +38,12 @@ class OCTManagerMock: NSObject, OCTManager {
 
         populateRealm()
     }
-    
+
+    func getLastActiveFT() -> UInt64
+    {
+        return 124;
+    }
+
     func configuration() -> OCTManagerConfiguration {
         return OCTManagerConfiguration()
     }

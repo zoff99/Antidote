@@ -87,6 +87,11 @@
     return [self.currentConfiguration copy];
 }
 
+- (uint64_t)getLastActiveFT
+{
+    return _tox.getLastActiveFT;
+}
+
 - (NSString *)exportToxSaveFileAndReturnError:(NSError **)error
 {
     @synchronized(self.toxSaveFileLock) {

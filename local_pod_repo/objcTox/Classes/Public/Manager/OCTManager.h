@@ -62,6 +62,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (OCTManagerConfiguration *)configuration;
 
+- (uint64_t)getLastActiveFT;
+
 /**
  * Copies tox save file to temporary directory and return path to it.
  *
