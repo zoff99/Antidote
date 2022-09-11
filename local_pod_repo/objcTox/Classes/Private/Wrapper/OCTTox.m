@@ -2004,9 +2004,6 @@ void friendMessageCallback(
             memcpy(message_v3_hash_bin, (cMessage + pos + TOX_MSGV3_GUARD), TOX_MSGV3_MSGID_LENGTH);
             memcpy(message_v3_timestamp_bin, (cMessage + pos + TOX_MSGV3_GUARD + TOX_MSGV3_MSGID_LENGTH), TOX_MSGV3_TIMESTAMP_LENGTH);
 
-            // process and save msgV3 hash, but do it asychron and do not hold up the tox iterate thread
-            // ---------- do work here ----------
-            //
             message_v3_hash_hexstr = calloc(1, (TOX_MSGV3_MSGID_LENGTH * 2) + 1);
             if (message_v3_hash_hexstr)
             {
@@ -2015,9 +2012,6 @@ void friendMessageCallback(
                 p += xnet_unpack_u32(p, &msgv3_timstamp_int);
                 // OCTLogCInfo(@"mmm:friendMessageCallback:friend_message_cb:hash=%s ts=%d", tox, message_v3_hash_hexstr, msgv3_timstamp_int);
             }
-            //
-            // ---------- do work here ----------
-            // process and save msgV3 hash, but do it asychron and do not hold up the tox iterate thread
 
             if (need_free == 1)
             {
