@@ -1996,12 +1996,13 @@ void friendMessageCallback(
             if (!message_v3_timestamp_bin)
             {
                 OCTLogCInfo(@"friendMessageCallback:friend_message_cb:could not allocate buffer for timestamp: incoming message discarded", tox);
+                free(message_v3_hash_bin);
                 return;
             }
 
+            need_free = 1;
             memcpy(message_v3_hash_bin, (cMessage + pos + TOX_MSGV3_GUARD), TOX_MSGV3_MSGID_LENGTH);
             memcpy(message_v3_timestamp_bin, (cMessage + pos + TOX_MSGV3_GUARD + TOX_MSGV3_MSGID_LENGTH), TOX_MSGV3_TIMESTAMP_LENGTH);
-            need_free = 1;
 
             // process and save msgV3 hash, but do it asychron and do not hold up the tox iterate thread
             // ---------- do work here ----------
