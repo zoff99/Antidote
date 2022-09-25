@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.4.22](https://github.com/Zoxcore/Antidote/tree/1.4.22) (2022-09-25)
+
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.21...1.4.22)
+
+**Merged pull requests:**
+
+- Revert autodownload change [\#135](https://github.com/Zoxcore/Antidote/pull/135) ([Tha14](https://github.com/Tha14))
+- Translations update from Hosted Weblate [\#134](https://github.com/Zoxcore/Antidote/pull/134) ([weblate](https://github.com/weblate))
+- some small fixes [\#133](https://github.com/Zoxcore/Antidote/pull/133) ([zoff99](https://github.com/zoff99))
+- Translations update from Hosted Weblate [\#132](https://github.com/Zoxcore/Antidote/pull/132) ([weblate](https://github.com/weblate))
+- Translations update from Hosted Weblate [\#131](https://github.com/Zoxcore/Antidote/pull/131) ([weblate](https://github.com/weblate))
+- increase size for autodownload, change autodownload from images to all files, change default to "always". [\#130](https://github.com/Zoxcore/Antidote/pull/130) ([zoff99](https://github.com/zoff99))
+- get and show friend capabilities. [\#129](https://github.com/Zoxcore/Antidote/pull/129) ([zoff99](https://github.com/zoff99))
+- Translations update from Hosted Weblate [\#128](https://github.com/Zoxcore/Antidote/pull/128) ([weblate](https://github.com/weblate))
+- show own capabilites on profile [\#127](https://github.com/Zoxcore/Antidote/pull/127) ([zoff99](https://github.com/zoff99))
+- upgrade to Realm 10.29.0 [\#126](https://github.com/Zoxcore/Antidote/pull/126) ([zoff99](https://github.com/zoff99))
+- capabilites addon [\#125](https://github.com/Zoxcore/Antidote/pull/125) ([zoff99](https://github.com/zoff99))
+
 ## [1.4.21](https://github.com/Zoxcore/Antidote/tree/1.4.21) (2022-07-01)
 
 [Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.20...1.4.21)
