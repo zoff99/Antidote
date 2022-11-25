@@ -1,410 +1,398 @@
-/* 
-  Localizable.strings
-  Antidote
 
-  Created by Dmytro Vorobiov on 08/10/15.
-  Copyright © 2015 dvor. All rights reserved.
-*/
 
-/* Login screen text */
-"login_or_label" = "or";
-/* Login screen text */
-"create_account" = "Create Account";
-/* Login screen text */
-"import_profile" = "Import Profile";
-/* Password field */
-"password" = "Password";
-/* Login button */
-"log_in" = "Log In";
-/* Login screen text */
-"create_profile" = "Create profile";
-/* Login screen text */
-"import_to_antidote" = "Import to Antidote";
-/* Login screen text */
-"create_account_username_title" = "How contacts will see you?";
-/* Login screen text */
-"create_account_username_placeholder" = "Username";
-/* Login screen text */
-"create_account_profile_title" = "How to call this profile?";
-/* Login screen text */
-"create_account_profile_placeholder" = "Profile name";
-/* Login screen text */
-"create_account_profile_hint" = "e.g. Home, iPhone";
-/* Login screen text */
-"set_password_title" = "Set Password";
-/* Login screen text */
-"set_password_hint" = "Password is required to protect your data. Keep it safe - once lost it cannot be restored.";
-/* Login button */
-"create_account_next_button" = "Next";
-/* Login button */
-"create_account_go_button" = "Go";
-/* Default status message */
-"default_user_status_message" = "Toxing on Antidote";
-
-/* PIN screen text */
-"pin_enter_to_unlock" = "Enter your PIN to unlock";
-/* PIN screen text */
-"pin_set" = "Set PIN";
-/* PIN screen text */
-"pin_confirm" = "Confirm PIN";
-/* PIN screen error */
-"pin_do_not_match" = "PINs did not match. Try again";
-/* PIN screen error */
-"pin_incorrect" = "Incorrect PIN";
-/* PIN screen error details */
-"pin_failed_attempts" = "Failed attempts: %@";
-/* PIN screen message shown on log out */
-"pin_logout_message" = "Too many failed attempts. You have been logged out.";
 /* PIN screen screen */
-"pin_enabled" = "Enable PIN";
+"pin_lock_1_minute" = "1 minutt";
 /* PIN screen screen */
-"pin_touch_id_enabled" = "Enable Touch ID";
-/* PIN screen screen */
-"pin_description" = "Prevent unauthorized access to Antidote with a PIN.";
-/* PIN screen screen */
-"pin_touch_id_description" = "Use your fingerprint as an alternative to entering a PIN.";
-/* PIN screen screen */
-"pin_lock_timeout" = "Lock Timeout";
-/* PIN screen screen */
-"pin_lock_immediately" = "Immediately";
-/* PIN screen screen */
-"pin_lock_30_seconds" = "30 Seconds";
-/* PIN screen screen */
-"pin_lock_1_minute" = "1 Minute";
-/* PIN screen screen */
-"pin_lock_2_minutes" = "2 Minutes";
-/* PIN screen screen */
-"pin_lock_5_minutes" = "5 Minutes";
-
-/* Label shown when connecting to Tox network */
-"connecting_label" = "Connecting...";
-
+"pin_lock_2_minutes" = "2 minutter";
 /* Tab name and screen name */
-"contacts_title" = "Contacts";
-/* Tab name and screen name */
-"chats_title" = "Chats";
-/* Tab name and screen name */
-"settings_title" = "Settings";
-/* Tab name and screen name */
-"profile_title" = "Profile";
-
+"chats_title" = "Sludringer";
 /* No contacts placeholder text */
-"contact_no_contacts" = "No contacts";
-/* No contacts placeholder text */
-"contact_no_contacts_add_contact" = "Add a contact\nor\n";
-/* No contacts placeholder text */
-"contact_no_contacts_share_tox_id" = "share your Tox ID";
+"contact_no_contacts_share_tox_id" = "del din Tox-ID";
 /* Contact request section title */
-"contact_requests_section" = "Contact Requests";
-/* Contact last seen status */
-"contact_last_seen" = "Last seen: %@";
+"contact_requests_section" = "Kontaktforespørsler";
 /* Screen name */
-"contact_request" = "Contact Request";
+"contact_request" = "Kontaktforespørsel";
+/* Status message */
+"status_busy" = "Opptatt";
+/* Incoming message label */
+"accessibility_incoming_message_label" = "Melding";
+/* Deleting contat request confirmation */
+"delete_contact_request_title" = "Slett denne kontaktforespørselen?";
+/* Call button label in contact screen */
+"accessibility_call_button_label" = "Taleanrop";
+/* Call button hint in contact screen */
+"accessibility_call_button_hint" = "Utfører et taleanrop.";
 /* Contact request button */
-"contact_request_decline" = "Decline";
+"contact_request_accept" = "Godta";
+/* Add contat placeholder text */
+"add_contact_default_message_title" = "Melding";
+/* User public key text */
+"public_key" = "Offentlig nøkkel";
+
+/* Chat screen placeholder */
+"chat_no_chats" = "Ingen sludringer";
 /* Contact request button */
-"contact_request_accept" = "Accept";
-/* Contact request confirmation */
-"contact_request_delete_title" = "Delete contact request?";
-/* Text shown when contact was deleted */
-"contact_deleted" = "Deleted contact";
+"contact_request_decline" = "Avslå";
 
 /* Share Tox ID text */
-"show_qr_code" = "Show QR Code";
-/* Share Tox ID text */
-"copy" = "Copy";
+"show_qr_code" = "Vis QR-kode";
+/* Login screen text */
+"create_profile" = "Opprett profil";
 
-/* Add contat screen name */
-"add_contact_title" = "Add Contact";
+/* PIN screen text */
+"pin_enter_to_unlock" = "Skriv inn din PIN for å låse opp";
 /* Add contat button */
 "add_contact_send" = "Send";
 /* Add contat placeholder text */
-"add_contact_tox_id_placeholder" = "Enter Tox ID";
+"add_contact_tox_id_placeholder" = "Skriv inn Tox-ID";
 /* Add contat placeholder text */
-"add_contact_or_label" = "or";
+"add_contact_or_label" = "eller";
 /* Add contat button */
-"add_contact_use_qr" = "Use QR code";
-/* Add contat placeholder text */
-"add_contact_default_message_title" = "Message";
-/* Add contat default text sended to contact */
-"add_contact_default_message_text" = "Hello! Could you please add me to your contact list?";
-/* Add contat error */
-"add_contact_wrong_qr" = "Wrong QR code. It should contain Tox ID";
-
-/* User name text */
-"name" = "Name";
+"add_contact_use_qr" = "Bruk QR-kode";
 /* User nickname text */
-"nickname" = "Nickname";
+"nickname" = "Kallenavn";
 /* User status message text */
-"status_message" = "Status Message";
-/* User status text */
-"status_title" = "Status";
+"status_message" = "Statusmelding";
 /* User Tox ID text */
-"my_tox_id" = "My Tox ID";
-/* User public key text */
-"public_key" = "Public Key";
-/* Share Tox ID text */
-"show_qr" = "Show QR";
-/* Profile menu item / screen name */
-"profile_details" = "Profile Details";
-/* Profile button */
-"logout_button" = "Log Out";
-
-/* QR code screen button */
-"qr_close_button" = "Close";
-
-/* Chat screen placeholder */
-"chat_no_chats" = "No chats";
+"my_tox_id" = "Min Tox-ID.";
 /* Chats screen message text */
-"chat_outgoing_file" = "Outgoing file:";
+"chat_outgoing_file" = "Utgående fil:";
 /* Chats screen message text */
-"chat_incoming_file" = "Incoming file:";
+"chat_incoming_file" = "Innkommende fil:";
 /* Chats screen message text */
-"chat_call_finished" = "Call finished";
-/* Chats screen message text */
-"chat_unanwered_call" = "Unanswered call";
-/* Chat button */
-"chat_send_button" = "Send";
-/* Chat notification toast */
-"chat_new_messages" = "↓ New messages";
-/* Chat call information */
-"chat_call_message" = "Call, ";
-/* Chat call information */
-"chat_missed_call_message" = "Missed call";
-/* Item present in the menu on long press on message */
-"chat_more_menu_item" = "More";
-/* Message shown on chat list when contact is typing */
-"chat_is_typing_text" = "is typing...";
-/* Text shown in chat when there are undelivered faux offline messages */
-"chat_pending_faux_offline_messages" = "Undelivered messages will be send when both you and friend are online.";
-
-/* Status message */
-"status_offline" = "Offline";
-/* Status message */
-"status_online" = "Online";
-/* Status message */
-"status_away" = "Away";
-/* Status message */
-"status_busy" = "Busy";
-
-/* Notification text */
-"notification_new_message" = "New message";
-/* Notification text */
-"notification_incoming_contact_request" = "Incoming contact request";
-/* Notification text */
-"notification_is_calling" = "is calling";
-/* Notification text */
-"notification_incoming_file" = "Incoming file";
-
-/* Settings menu / screen name */
-"settings_about" = "About";
-/* Settings menu / screen name */
-"settings_faq" = "FAQ";
-/* Settings menu / screen name */
-"settings_advanced_settings" = "Advanced Settings";
-/* About screen menu */
-"settings_antidote_version" = "Antidote Version";
-/* About screen menu */
-"settings_antidote_build" = "Antidote Build";
-/* About screen menu */
-"settings_toxcore_version" = "Toxcore Version";
-/* About screen menu */
-"settings_acknowledgements" = "Acknowledgements";
-/* Settings screen menu */
-"settings_autodownload_images" = "Autodownload files";
-/* Settings screen menu */
-"settings_autodownload_images_description" = "Automatically download incoming files.";
-/* Settings screen menu */
-"settings_notifications_message_preview" = "Notification Preview";
-/* Settings screen menu */
-"settings_notifications_description" = "When application goes to background, you will still receive notifications up to 10 minutes.";
-/* Settings screen menu */
-"settings_udp_enabled" = "Enable UDP";
-/* Settings screen menu */
-"settings_restore_default" = "Restore Default Settings";
-/* Settings screen autodownload images option */
-"settings_never" = "Never";
-/* Settings screen autodownload images option */
-"settings_wifi" = "Wi-Fi";
-/* Settings screen autodownload images option */
-"settings_using_wifi" = "Using Wi-Fi";
-/* Settings screen autodownload images option */
-"settings_always" = "Always";
-
-/* Profile settings menu */
-"change_password" = "Change Password";
-/* Profile settings menu */
-"delete_password" = "Delete Password";
-/* Profile settings menu */
-"old_password" = "Old Password";
-/* Change password text */
-"new_password" = "New Password";
-/* Change password text */
-"repeat_password" = "Repeat Password";
-/* Change password button */
-"change_password_done" = "Done";
-/* Change password error */
-"password_is_empty_error" = "Password should be non-empty";
-/* Change password error */
-"wrong_old_password" = "Wrong password";
-/* Change password error */
-"passwords_do_not_match" = "Passwords do not match";
-
-/* Source of photo to take */
-"photo_from_camera" = "Camera";
-/* Source of photo to take */
-"photo_from_photo_library" = "Photo Library";
-/* Error while converting avatar image */
-"change_avatar_error_convert_image" = "Cannot convert image";
-
-/* Alert text when sending file to contacts */
-"file_send_to_contact" = "Send to contact";
-
-/* Profile menu item */
-"export_profile" = "Export Profile";
-/* Profile menu item */
-"delete_profile" = "Delete Profile";
+"chat_call_finished" = "Samtale avsluttet";
 /* Delete profile confirmation */
-"delete_profile_confirmation_title_1" = "Delete this profile?";
-/* Delete profile confirmation */
-"delete_profile_confirmation_title_2" = "Are you sure?";
-/* Delete profile confirmation */
-"delete_profile_confirmation_message" = "This operation cannot be undone";
-
-/* Call screen text */
-"call_incoming" = "Incoming call";
-/* Call screen text */
-"call_ended" = "Call ended";
-/* Call screen text */
-"call_reaching" = "Reaching...";
-
-/* File message text */
-"chat_file_cancelled" = "Cancelled";
-/* File message text */
-"chat_waiting" = "Waiting...";
-/* File message text */
-"chat_paused" = "Paused";
-
-/* Deleting chat confirmation */
-"delete_chat_title" = "Delete this chat and message history?";
-/* Deleting contat confirmation */
-"delete_contact_title" = "Delete this contact?\nYour chat history will be lost.";
-/* Deleting contat request confirmation */
-"delete_contact_request_title" = "Delete this contact request?";
-/* Deleting single message in chat */
-"delete_single_message" = "Delete Message";
-/* Deleting multiple messages in chat. */
-"delete_multiple_messages" = "Delete Messages";
+"delete_profile_confirmation_title_2" = "Er du sikker?";
 /* Deleting all messages in chat. */
-"delete_all_messages" = "Delete All";
-/* Delete button */
-"alert_delete" = "Delete";
-/* Delete button */
-"alert_cancel" = "Cancel";
-
-/* Error while creating new profile */
-"login_enter_username_and_profile" = "Please enter both username and profile name.";
-/* Error while creating new profile */
-"login_profile_already_exists" = "Profile with given name already exists";
+"delete_all_messages" = "Slett alle";
 
 /* General error title */
-"error_title" = "Error";
+"error_title" = "Feil";
+/* Login screen text */
+"login_or_label" = "eller";
+/* Login screen text */
+"create_account" = "Opprett konto";
+/* Login screen text */
+"import_profile" = "Importer profil";
+/* Password field */
+"password" = "Passord";
+/* Login screen text */
+"create_account_username_placeholder" = "Brukernavn";
+/* Chats screen message text */
+"chat_unanwered_call" = "Ubesvart samtale";
+
+/* Notification text */
+"notification_new_message" = "Ny melding";
+
+/* Settings menu / screen name */
+"settings_about" = "Om";
+/* Settings menu / screen name */
+"settings_faq" = "O-S-S";
+/* Settings menu / screen name */
+"settings_advanced_settings" = "Avanserte innstillinger";
+/* About screen menu */
+"settings_antidote_version" = "Antidote-versjon";
+/* About screen menu */
+"settings_toxcore_version" = "Toxcore-versjon";
+/* Login screen text */
+"create_account_username_title" = "Hvordan kontakter vil se deg.";
+/* Login screen text */
+"create_account_profile_title" = "Hvordan skal denne profilen ringes?";
+/* Login screen text */
+"set_password_hint" = "Passord krever for å beskytte dataen din. Ta vare på det siden det ikke kan gjenopprettes.";
+/* Default status message */
+"default_user_status_message" = "Toksikalerer på Antidote";
+/* PIN screen message shown on log out */
+"pin_logout_message" = "For mange mislykkede forsøk. Du har blitt utlogget.";
+/* PIN screen screen */
+"pin_description" = "Forhindre uautorisert tilgang til Antidote med en PIN.";
+/* Contact last seen status */
+"contact_last_seen" = "Sist sett: %@";
+/* Add contat default text sended to contact */
+"add_contact_default_message_text" = "Hei. Kan du legge meg til på kontaktlisten din?";
+/* Add contat error */
+"add_contact_wrong_qr" = "Feil QR-kode. Den skal inneholde en Tox-ID.";
+/* Chat notification toast */
+"chat_new_messages" = "↓ Nye meldinger";
+/* Chat call information */
+"chat_call_message" = "Anrop, ";
+/* Chat call information */
+"chat_missed_call_message" = "Tapt anrop";
+/* Status message */
+"status_online" = "Pålogget";
+/* Status message */
+"status_away" = "Borte";
+/* About screen menu */
+"settings_acknowledgements" = "Bidragsytere";
+/* Profile settings menu */
+"old_password" = "Gammelt passord";
+/* Change password text */
+"new_password" = "Nytt passord";
+/* Error while converting avatar image */
+"change_avatar_error_convert_image" = "Kan ikke konvertere bilde";
+/* Settings screen menu */
+"settings_autodownload_images_description" = "Last ned innkommende bilder automatisk";
+/* Settings screen menu */
+"settings_notifications_message_preview" = "Merknadsforhåndsvisning";
+/* Settings screen menu */
+"settings_notifications_description" = "Når programmer blir relegert til bakgrunnen vil du fremdeles få merknader i 10 minutter.";
+/* Settings screen menu */
+"settings_udp_enabled" = "Skru på UDP";
+/* Settings screen autodownload images option */
+"settings_using_wifi" = "Ved bruk av Wi-Fi";
+/* Change password error */
+"password_is_empty_error" = "Passordet kan ikke være tomt";
+/* Change password error */
+"passwords_do_not_match" = "Passordene samsvarer ikke";
+/* Source of photo to take */
+"photo_from_photo_library" = "Bildebibliotek";
+/* Delete profile confirmation */
+"delete_profile_confirmation_message" = "Denne handlingen kan ikke angres";
+/* Error */
+"error_too_many_files" = "For mange aktive filoverføringer";
+/* Error */
+"error_internal_message" = "Intern feil";
+/* Error */
+"error_wrong_password_title" = "Feil passord";
+
+/* Error while creating new profile */
+"login_enter_username_and_profile" = "Skriv inn både brukernavn og profilnavn.";
+/* Error */
+"error_contact_not_connected" = "Kontakten er ikke pålogget";
+/* Error while creating new profile */
+"login_profile_already_exists" = "Profil med angitt navn finnes allerede.";
+/* Error */
+"error_wrong_password_message" = "Passord inneholder ulovlige symboler.";
+/* Error */
+"error_general_unknown_message" = "Ukjent feil oppstod.";
+/* Error */
+"error_contact_request_new_nospam" = "Feil NoSpam-verdi. Sjekk innskrevet Tox-ID.";
+
+/* Call error */
+"call_error_already_in_call" = "Allerede i en samtale";
+/* Chat button label in contact screen */
+"accessibility_chat_button_label" = "Sludring";
+/* Chat button hint in contact screen */
+"accessibility_chat_button_hint" = "Åpner sludringsdialogen.";
+/* Video button label in contact screen */
+"accessibility_video_button_label" = "Videosamtale";
+/* Video button hint in contact screen */
+"accessibility_video_button_hint" = "Utfører en videosamtale.";
+/* Tap to copy hint */
+"accessibility_show_copy_hint" = "Viser kopieringsmenyen.";
+/* Tap to edit value hint */
+"accessibility_edit_value_hint" = "Redigerer verdi.";
+/* Outgoing message label */
+"accessibility_outgoing_message_label" = "Din melding";
+/* Settings screen menu */
+"settings_autodownload_images" = "Auto-nedlastede bilder";
+
+/* Call screen text */
+"call_incoming" = "Innkommende anrop";
+/* Contact request confirmation */
+"contact_request_delete_title" = "Slett kontaktforespørsel?";
+/* PIN screen error */
+"pin_incorrect" = "Feil PIN";
+/* Tab name and screen name */
+"settings_title" = "Innstillinger";
+
+/* Deleting chat confirmation */
+"delete_chat_title" = "Slett denne sludringen og meldingshistorikken fra den?";
+/* Settings screen menu */
+"settings_restore_default" = "Gjenopprett forvalgsinnstillinger";
+/* Settings screen autodownload images option */
+"settings_wifi" = "Wi-Fi";
+
+/* Profile settings menu */
+"change_password" = "Endre passord";
+/* Profile settings menu */
+"delete_password" = "Slett passord";
+/* Change password text */
+"repeat_password" = "Gjenta passord";
+/* Change password button */
+"change_password_done" = "Ferdig";
+/* Change password error */
+"wrong_old_password" = "Feil passord";
+
+/* Alert text when sending file to contacts */
+"file_send_to_contact" = "Send til kontakt";
+
+/* Profile menu item */
+"export_profile" = "Eksporter profil";
+/* Profile menu item */
+"delete_profile" = "Slett profil";
+/* Delete profile confirmation */
+"delete_profile_confirmation_title_1" = "Slett denne profilen?";
+
+/* File message text */
+"chat_file_cancelled" = "Avbrutt";
+/* File message text */
+"chat_waiting" = "Venter …";
+/* Deleting multiple messages in chat. */
+"delete_multiple_messages" = "Slett meldinger";
+/* Delete button */
+"alert_delete" = "Slett";
+/* Error */
+"error_import_not_exist_message" = "Filen finnes ikke.";
+/* Error */
+"error_general_no_memory_message" = "Ikke nok minne.";
+/* Login screen text */
+"create_account_profile_placeholder" = "Profilnavn";
+/* Login screen text */
+"set_password_title" = "Sett passord";
+/* Login button */
+"log_in" = "Logg inn";
+/* Login screen text */
+"import_to_antidote" = "Importer til Antidote";
+/* Login screen text */
+"create_account_profile_hint" = "f.eks. Hjemme, iPhone";
+/* Login button */
+"create_account_next_button" = "Neste";
+/* Login button */
+"create_account_go_button" = "Start";
+/* PIN screen text */
+"pin_confirm" = "Bekreft PIN";
+/* PIN screen error */
+"pin_do_not_match" = "PIN stemte ikke overens. Prøv igjen.";
+/* PIN screen screen */
+"pin_lock_5_minutes" = "5 minutter";
+/* No contacts placeholder text */
+"contact_no_contacts_add_contact" = "Legg til kontakt\neller\n";
+/* PIN screen text */
+"pin_set" = "Sett PIN";
+/* PIN screen screen */
+"pin_lock_timeout" = "Låsingstidsavbrudd";
+/* PIN screen screen */
+"pin_lock_immediately" = "Umiddelbart";
+
+/* Label shown when connecting to Tox network */
+"connecting_label" = "Kobler til …";
+
+/* Tab name and screen name */
+"contacts_title" = "Kontakter";
+/* Tab name and screen name */
+"profile_title" = "Profil";
+
+/* No contacts placeholder text */
+"contact_no_contacts" = "Ingen kontakter";
+/* Text shown when contact was deleted */
+"contact_deleted" = "Slettet kontakt";
+/* Share Tox ID text */
+"copy" = "Kopier";
+
+/* Add contat screen name */
+"add_contact_title" = "Legg til kontakt";
+
+/* User name text */
+"name" = "Navn";
+/* User status text */
+"status_title" = "Status";
+/* Share Tox ID text */
+"show_qr" = "Vis QR";
+/* Profile menu item / screen name */
+"profile_details" = "Profildetaljer";
+/* Profile button */
+"logout_button" = "Logg ut";
+
+/* QR code screen button */
+"qr_close_button" = "Lukk";
+/* Chat button */
+"chat_send_button" = "Send";
+/* Item present in the menu on long press on message */
+"chat_more_menu_item" = "Mer";
+
+/* Status message */
+"status_offline" = "Frakoblet";
+/* About screen menu */
+"settings_antidote_build" = "Antidote-bygg";
+/* Settings screen autodownload images option */
+"settings_never" = "Aldri";
+/* Settings screen autodownload images option */
+"settings_always" = "Alltid";
+
+/* Source of photo to take */
+"photo_from_camera" = "Kamera";
+/* Deleting single message in chat */
+"delete_single_message" = "Slett melding";
+/* Delete button */
+"alert_cancel" = "Avbryt";
 /* General error button */
 "error_ok_button" = "OK";
 /* General error button */
-"error_retry_button" = "Retry";
+"error_retry_button" = "Gjenta";
+/* PIN screen screen */
+"pin_lock_30_seconds" = "30 sekunder";
+/* PIN screen screen */
+"pin_enabled" = "Skru på PIN";
+/* PIN screen screen */
+"pin_touch_id_enabled" = "Aktiver Touch-ID";
+/* PIN screen error details */
+"pin_failed_attempts" = "Mislykket forsøk: %@";
 /* Error */
-"error_contact_not_connected" = "Contact isn't online";
+"error_general_bad_format_message" = "Filen har feil format eller er skadet.";
+/* Avatar button hint in settings */
+"accessibility_avatar_button_hint" = "Setter eller fjerner avataren.";
 /* Error */
-"error_too_many_files" = "Too many active file transfers";
+"error_import_not_exist_title" = "Kan ikke importere Tox-lagringsfil.";
 /* Error */
-"error_internal_message" = "Internal error";
+"error_decrypt_title" = "Kan ikke dekryptere Tox-lagringsfil";
 /* Error */
-"error_wrong_password_title" = "Wrong password";
+"error_decrypt_empty_data_message" = "Noe av inndataen var tom.";
 /* Error */
-"error_wrong_password_message" = "Password contains wrong symbols.";
+"error_decrypt_bad_format_message" = "Filen har feilaktig eller skadet format.";
 /* Error */
-"error_import_not_exist_title" = "Cannot import tox save file";
+"error_general_bind_port_message" = "Kunne ikke opprette binding til en port.";
 /* Error */
-"error_import_not_exist_message" = "File does not exist.";
+"error_proxy_invalid_port_message" = "Mellomtjenerporten er ugyldig.";
 /* Error */
-"error_decrypt_title" = "Cannot decrypt tox save file";
-/* Error */
-"error_decrypt_empty_data_message" = "Some input data was empty.";
-/* Error */
-"error_decrypt_bad_format_message" = "File has bad format or is corrupted.";
-/* Error */
-"error_decrypt_wrong_password_message" = "Password is wrong or file is corrupted.";
-/* Error */
-"error_general_unknown_message" = "Unknown error occurred.";
-/* Error */
-"error_general_no_memory_message" = "Not enough memory.";
-/* Error */
-"error_general_bind_port_message" = "Was unable to bind to a port.";
-/* Error */
-"error_general_profile_encrypted_message" = "Profile is encrypted.";
-/* Error */
-"error_general_bad_format_message" = "File has bad format or is corrupted.";
-/* Error */
-"error_proxy_title" = "Proxy error";
-/* Error */
-"error_proxy_invalid_address_message" = "Proxy address has invalid format.";
-/* Error */
-"error_proxy_invalid_port_message" = "Proxy port is invalid.";
-/* Error */
-"error_proxy_host_not_resolved_message" = "Proxy host could not be resolved.";
+"error_proxy_host_not_resolved_message" = "Kunne ikke utlede mellomtjenerporten.";
 
 /* Error */
-"error_name_too_long" = "Name is too long.";
+"error_name_too_long" = "Navnet er for langt.";
 /* Error */
-"error_status_message_too_long" = "Status message is too long";
-
-/* Error */
-"error_contact_request_too_long" = "Message is too long";
-/* Error */
-"error_contact_request_no_message" = "No message specified";
-/* Error */
-"error_contact_request_own_key" = "Cannot add myself to contact list";
-/* Error */
-"error_contact_request_already_sent" = "Contact request was already sent";
-/* Error */
-"error_contact_request_bad_checksum" = "Bad checksum, please check entered Tox ID";
-/* Error */
-"error_contact_request_new_nospam" = "Bad nospam value, please check entered Tox ID";
-
-/* Call error */
-"call_error_already_in_call" = "Already in a call";
-/* Call error */
-"call_error_contact_is_offline" = "Contact is offline";
-/* Call error */
-"call_error_no_active_call" = "There is no active call";
-
-/* Error while using color theme */
-"theme_error_cannot_open" = "Cannot open theme, wrong format";
+"error_contact_request_already_sent" = "Kontaktforespørsel allerede sendt.";
 
 /* Tab chats badge ending */
-"accessibility_chats_ending" = "unread chats";
+"accessibility_chats_ending" = "uleste sludringer";
+/* PIN screen screen */
+"pin_touch_id_description" = "Bruk fingeravtrykket ditt som alternativ til å skive inn PIN.";
+/* Notification text */
+"notification_incoming_contact_request" = "Innkommende kontaktforespørsel";
+/* Notification text */
+"notification_is_calling" = "ringer …";
+/* Notification text */
+"notification_incoming_file" = "Innkommende fil";
+/* Call screen text */
+"call_reaching" = "Ringer …";
+/* Deleting contat confirmation */
+"delete_contact_title" = "Slett denne kontakten?\nSludringshistorikken vil gå tapt.";
+/* Error */
+"error_general_profile_encrypted_message" = "Profilen er kryptert.";
+/* Error */
+"error_proxy_title" = "Mellomtjenerfeil";
+/* File message text */
+"chat_paused" = "På hold";
+/* Error */
+"error_decrypt_wrong_password_message" = "Passordet er galt eller så er filen skadet.";
+/* Error */
+"error_contact_request_bad_checksum" = "Feilaktig sjekksum. Sjekk innskrevet Tox-ID.";
+/* Error */
+"error_proxy_invalid_address_message" = "Mellomtjeneradressen har ugyldig format.";
+/* Error */
+"error_status_message_too_long" = "Statusmeldingen er for lang.";
+
+/* Error */
+"error_contact_request_too_long" = "Meldingen er for lang.";
+/* Error */
+"error_contact_request_no_message" = "Ingen melding angitt.";
+/* Error */
+"error_contact_request_own_key" = "Du kan ikke legge til deg selv på kontaktlisten.";
+/* Call error */
+"call_error_contact_is_offline" = "Kontakten er frakoblet";
+/* Call error */
+"call_error_no_active_call" = "Det finnes ingen aktiv samtale";
+
+/* Error while using color theme */
+"theme_error_cannot_open" = "Kan ikke åpne drakt. Feil format.";
 /* Avatar button label in settings */
 "accessibility_avatar_button_label" = "Avatar";
-/* Avatar button hint in settings */
-"accessibility_avatar_button_hint" = "Sets or removes avatar.";
-/* Chat button label in contact screen */
-"accessibility_chat_button_label" = "Chat";
-/* Chat button hint in contact screen */
-"accessibility_chat_button_hint" = "Opens chat dialog.";
-/* Call button label in contact screen */
-"accessibility_call_button_label" = "Audio call";
-/* Call button hint in contact screen */
-"accessibility_call_button_hint" = "Makes audio call.";
-/* Video button label in contact screen */
-"accessibility_video_button_label" = "Video call";
-/* Video button hint in contact screen */
-"accessibility_video_button_hint" = "Makes video call.";
-/* Tap to copy hint */
-"accessibility_show_copy_hint" = "Shows copy menu.";
-/* Tap to edit value hint */
-"accessibility_edit_value_hint" = "Edits value.";
-/* Incoming message label */
-"accessibility_incoming_message_label" = "Message";
-/* Outgoing message label */
-"accessibility_outgoing_message_label" = "Your message";
