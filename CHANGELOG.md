@@ -1,5 +1,32 @@
 # Changelog
 
+## [1.4.24](https://github.com/Zoxcore/Antidote/tree/1.4.24) (2022-11-26)
+
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.23...1.4.24)
+
+**Implemented enhancements:**
+
+- Fix status indicators to show user status by default and connections status when debug mode is on. [\#146](https://github.com/Zoxcore/Antidote/pull/146) ([Tha14](https://github.com/Tha14))
+
+**Fixed bugs:**
+
+- Language italian [\#141](https://github.com/Zoxcore/Antidote/issues/141)
+
+**Merged pull requests:**
+
+- add missing translation languages [\#143](https://github.com/Zoxcore/Antidote/pull/143) ([zoff99](https://github.com/zoff99))
+- Translations update from Hosted Weblate [\#139](https://github.com/Zoxcore/Antidote/pull/139) ([weblate](https://github.com/weblate))
+
+## [1.4.23](https://github.com/Zoxcore/Antidote/tree/1.4.23) (2022-10-09)
+
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.22...1.4.23)
+
+**Merged pull requests:**
+
+- whitelist ntfy.sh server for push [\#138](https://github.com/Zoxcore/Antidote/pull/138) ([zoff99](https://github.com/zoff99))
+- Translations update from Hosted Weblate [\#137](https://github.com/Zoxcore/Antidote/pull/137) ([weblate](https://github.com/weblate))
+- Translations update from Hosted Weblate [\#136](https://github.com/Zoxcore/Antidote/pull/136) ([weblate](https://github.com/weblate))
+
 ## [1.4.22](https://github.com/Zoxcore/Antidote/tree/1.4.22) (2022-09-25)
 
 [Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.21...1.4.22)
@@ -198,6 +225,7 @@
 - update objcTox to msgV3 and useragent fix [\#62](https://github.com/Zoxcore/Antidote/pull/62) ([zoff99](https://github.com/zoff99))
 - update FAQ with new features [\#61](https://github.com/Zoxcore/Antidote/pull/61) ([zoff99](https://github.com/zoff99))
 - fix: text input field at bottom too low and make the arrow image view a nice circle shape [\#60](https://github.com/Zoxcore/Antidote/pull/60) ([zoff99](https://github.com/zoff99))
+- use dummy message instead of ignoring invalid UTF-8 [\#59](https://github.com/Zoxcore/Antidote/pull/59) ([zoff99](https://github.com/zoff99))
 
 ## [1.4.6](https://github.com/Zoxcore/Antidote/tree/1.4.6) (2021-12-19)
 
@@ -205,7 +233,6 @@
 
 **Merged pull requests:**
 
-- use dummy message instead of ignoring invalid UTF-8 [\#59](https://github.com/Zoxcore/Antidote/pull/59) ([zoff99](https://github.com/zoff99))
 - prevent crash on invalid UTF-8 incoming message, ready for msgV3 [\#58](https://github.com/Zoxcore/Antidote/pull/58) ([zoff99](https://github.com/zoff99))
 
 ## [1.4.5](https://github.com/Zoxcore/Antidote/tree/1.4.5) (2021-12-17)
