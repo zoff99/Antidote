@@ -65,7 +65,7 @@ See [CHANGELOG](CHANGELOG.md) for list of notable changes (unreleased, current a
 -  reading/scanning Tox ID via QR code
 -  file transfer
 -  read receipts
--  push message support (via Apple Push Notification) / Push in <a href="https://github.com/Zoxcore/qTox_enhanced/releases/tag/nightly/">qTox</a>.
+-  push message support (via Apple Push Notification) / Push in <a href="https://github.com/Zoxcore/qTox_enhanced/releases">qTox</a>.
 -  multiple profiles
 -  tox_save import/export
 -  avatars
