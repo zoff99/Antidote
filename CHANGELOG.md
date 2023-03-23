@@ -1,5 +1,37 @@
 # Changelog
 
+## [1.4.25](https://github.com/Zoxcore/Antidote/tree/1.4.25) (2023-03-23)
+
+[Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.24...1.4.25)
+
+**Implemented enhancements:**
+
+- TOR inside [\#140](https://github.com/Zoxcore/Antidote/issues/140)
+- warning: 'sendSynchronousRequest\(\_:returning:\)' was deprecated in iOS 9.0: Use \[NSURLSession dataTaskWithRequest:completionHandler:\] [\#95](https://github.com/Zoxcore/Antidote/issues/95)
+- warning: 'fetchAssets\(withALAssetURLs:options:\)' was deprecated in iOS 11: Will be removed in a future release [\#94](https://github.com/Zoxcore/Antidote/issues/94)
+- warning: 'UIImagePickerControllerReferenceURL' was deprecated in iOS 11.0: Will be removed in a future release, use PHPicker. [\#93](https://github.com/Zoxcore/Antidote/issues/93)
+- 'UILocalNotification' was deprecated in iOS 10.0: Use UserNotifications Framework's UNNotificationRequest [\#92](https://github.com/Zoxcore/Antidote/issues/92)
+- Realm: RLM\_ARRAY\_TYPE has been deprecated. Use RLM\_COLLECTION\_TYPE instead [\#91](https://github.com/Zoxcore/Antidote/issues/91)
+- add greek to available languages [\#162](https://github.com/Zoxcore/Antidote/pull/162) ([zoff99](https://github.com/zoff99))
+- bootstrap updates [\#159](https://github.com/Zoxcore/Antidote/pull/159) ([zoff99](https://github.com/zoff99))
+- Translations update from Hosted Weblate [\#156](https://github.com/Zoxcore/Antidote/pull/156) ([weblate](https://github.com/weblate))
+- Translations update from Hosted Weblate [\#155](https://github.com/Zoxcore/Antidote/pull/155) ([weblate](https://github.com/weblate))
+- feat: add stale bot [\#154](https://github.com/Zoxcore/Antidote/pull/154) ([Tha14](https://github.com/Tha14))
+- Translations update from Hosted Weblate [\#153](https://github.com/Zoxcore/Antidote/pull/153) ([weblate](https://github.com/weblate))
+- Translations update from Hosted Weblate [\#152](https://github.com/Zoxcore/Antidote/pull/152) ([weblate](https://github.com/weblate))
+
+**Fixed bugs:**
+
+- Copy-pasting new contact toxid doesn't enable Send button [\#149](https://github.com/Zoxcore/Antidote/issues/149)
+- try to fix pasting ToxID and activating the button [\#151](https://github.com/Zoxcore/Antidote/pull/151) ([zoff99](https://github.com/zoff99))
+
+**Merged pull requests:**
+
+- Translations update from Hosted Weblate [\#160](https://github.com/Zoxcore/Antidote/pull/160) ([weblate](https://github.com/weblate))
+- Translations update from Hosted Weblate [\#158](https://github.com/Zoxcore/Antidote/pull/158) ([weblate](https://github.com/weblate))
+- Translations update from Hosted Weblate [\#150](https://github.com/Zoxcore/Antidote/pull/150) ([weblate](https://github.com/weblate))
+- Translations update from Hosted Weblate [\#147](https://github.com/Zoxcore/Antidote/pull/147) ([weblate](https://github.com/weblate))
+
 ## [1.4.24](https://github.com/Zoxcore/Antidote/tree/1.4.24) (2022-11-26)
 
 [Full Changelog](https://github.com/Zoxcore/Antidote/compare/1.4.23...1.4.24)
@@ -225,7 +257,6 @@
 - update objcTox to msgV3 and useragent fix [\#62](https://github.com/Zoxcore/Antidote/pull/62) ([zoff99](https://github.com/zoff99))
 - update FAQ with new features [\#61](https://github.com/Zoxcore/Antidote/pull/61) ([zoff99](https://github.com/zoff99))
 - fix: text input field at bottom too low and make the arrow image view a nice circle shape [\#60](https://github.com/Zoxcore/Antidote/pull/60) ([zoff99](https://github.com/zoff99))
-- use dummy message instead of ignoring invalid UTF-8 [\#59](https://github.com/Zoxcore/Antidote/pull/59) ([zoff99](https://github.com/zoff99))
 
 ## [1.4.6](https://github.com/Zoxcore/Antidote/tree/1.4.6) (2021-12-19)
 
@@ -233,6 +264,7 @@
 
 **Merged pull requests:**
 
+- use dummy message instead of ignoring invalid UTF-8 [\#59](https://github.com/Zoxcore/Antidote/pull/59) ([zoff99](https://github.com/zoff99))
 - prevent crash on invalid UTF-8 incoming message, ready for msgV3 [\#58](https://github.com/Zoxcore/Antidote/pull/58) ([zoff99](https://github.com/zoff99))
 
 ## [1.4.5](https://github.com/Zoxcore/Antidote/tree/1.4.5) (2021-12-17)
